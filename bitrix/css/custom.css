@@ -1,0 +1,192 @@
+/* 1. Fonts */ 
+/* 2. Custom styles */ 
+
+
+/* 1. Fonts */
+
+@font-face {
+	font-family: 'Conv_MuseoSansCyrl_100';
+	src: url('fonts/MuseoSansCyrl_100.eot');
+	src: local('☺'), url('fonts/MuseoSansCyrl_100.woff') format('woff'), url('fonts/MuseoSansCyrl_100.ttf') format('truetype'), url('fonts/MuseoSansCyrl_100.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_MuseoSansCyrl_100_Italic';
+	src: url('fonts/MuseoSansCyrl_100_Italic.eot');
+	src: local('☺'), url('fonts/MuseoSansCyrl_100_Italic.woff') format('woff'), url('fonts/MuseoSansCyrl_100_Italic.ttf') format('truetype'), url('fonts/MuseoSansCyrl_100_Italic.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_MuseoSansCyrl_300';
+	src: url('fonts/MuseoSansCyrl_300.eot');
+	src: local('☺'), url('fonts/MuseoSansCyrl_300.woff') format('woff'), url('fonts/MuseoSansCyrl_300.ttf') format('truetype'), url('fonts/MuseoSansCyrl_300.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_MuseoSansCyrl_300_Italic';
+	src: url('fonts/MuseoSansCyrl_300_Italic.eot');
+	src: local('☺'), url('fonts/MuseoSansCyrl_300_Italic.woff') format('woff'), url('fonts/MuseoSansCyrl_300_Italic.ttf') format('truetype'), url('fonts/MuseoSansCyrl_300_Italic.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_MuseoSansCyrl_500';
+	src: url('fonts/MuseoSansCyrl_500.eot');
+	src: local('☺'), url('fonts/MuseoSansCyrl_500.woff') format('woff'), url('fonts/MuseoSansCyrl_500.ttf') format('truetype'), url('fonts/MuseoSansCyrl_500.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_MuseoSansCyrl_500_Italic';
+	src: url('fonts/MuseoSansCyrl_500_Italic.eot');
+	src: local('☺'), url('fonts/MuseoSansCyrl_500_Italic.woff') format('woff'), url('fonts/MuseoSansCyrl_500_Italic.ttf') format('truetype'), url('fonts/MuseoSansCyrl_500_Italic.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_MuseoSansCyrl_700';
+	src: url('fonts/MuseoSansCyrl_700.eot');
+	src: local('☺'), url('fonts/MuseoSansCyrl_700.woff') format('woff'), url('fonts/MuseoSansCyrl_700.ttf') format('truetype'), url('fonts/MuseoSansCyrl_700.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_MuseoSansCyrl_700_Italic';
+	src: url('fonts/MuseoSansCyrl_700_Italic.eot');
+	src: local('☺'), url('fonts/MuseoSansCyrl_700_Italic.woff') format('woff'), url('fonts/MuseoSansCyrl_700_Italic.ttf') format('truetype'), url('fonts/MuseoSansCyrl_700_Italic.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_MuseoSansCyrl_900';
+	src: url('fonts/MuseoSansCyrl_900.eot');
+	src: local('☺'), url('fonts/MuseoSansCyrl_900.woff') format('woff'), url('fonts/MuseoSansCyrl_900.ttf') format('truetype'), url('fonts/MuseoSansCyrl_900.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_MuseoSansCyrl_900_Italic';
+	src: url('fonts/MuseoSansCyrl_900_Italic.eot');
+	src: local('☺'), url('fonts/MuseoSansCyrl_900_Italic.woff') format('woff'), url('fonts/MuseoSansCyrl_900_Italic.ttf') format('truetype'), url('fonts/MuseoSansCyrl_900_Italic.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/* 2. Custom styles */ 
+
+*{
+	font-family: 'Conv_MuseoSansCyrl_500', Arial, Helvetica, sans-serif;
+	font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+	font-weight: normal;
+	font-weight: normal;
+/*	border: 1px solid;*/
+}
+
+.jqmOverlay, 
+.popup-window-overlay{
+	background: rgba(34, 34, 34, .3) !important;
+}
+
+h1{
+
+}
+
+h2{
+
+}
+
+h3{
+
+
+}
+
+.wrapper_inner {
+    max-width: 1162px;
+}
+
+.top-h-row{
+	background: #fff;
+	overflow: visible;
+}
+
+.official-agent {
+	float: left;
+	margin-right: 6%;
+	padding: 18px 0;
+}
+
+.official-agent img {
+	width: 87px;
+	vertical-align: middle;
+}
+
+.official-agent p {
+	display: inline-block;
+	text-transform: uppercase;
+	color: #898989;	
+/*	font-size: 14px;*/
+	font-size: 9px;
+	line-height: 10px;
+	letter-spacing: 0.03em;
+	margin: 0;
+	margin-left: 5px;
+	vertical-align: middle;
+}
+
+.has_menu .top-h-row ul.menu {
+    width: 60%;
+}
+
+.menu > li > a span{
+	padding: 15px 0;
+	font-size: 14px;
+	letter-spacing: 0.03em;
+}
+
+.top-h-row .h-user-block .have-user a.exit, 
+.top-h-row .h-user-block .have-user a.exit span, 
+.top-h-row .menu li a{
+	color: #222;
+}
+
+a:hover, 
+.header_wrap .top-h-row .menu li > a:hover, 
+.top-h-row .menu li.current > a{
+	color: #03396b;
+}
+
+ul.menu .child {
+    padding-top: 0;
+	top: 43px;
+}
+
+ul.menu li .child .child_wrapp, 
+.breadcrumbs .dropdown, 
+.authorization-cols .form-block{
+	border-top: none;
+}
+
+.logo a{
+	width: 190px;
+}
+
+.h_color_white .header_wrap #header .middle-h-row .logo_wrapp .logo a{
+	background: transparent;
+}
+
