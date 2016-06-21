@@ -77,297 +77,78 @@
 			line-height: 29px !important;
 		}
 	</style>
-	<script type="text/javascript" data-skip-moving="true">
-		(function (w, d) {
-			var v = w.frameCacheVars = {
-				'CACHE_MODE': 'HTMLCACHE',
-				'banner': {
-					'url': 'http://www.1c-bitrix.ru/composite/',
-					'text': 'Быстро с 1С-Битрикс',
-					'bgcolor': '#E94524',
-					'style': 'white'
-				},
-				'storageBlocks': ['bxdynamic_iIjGFB'],
-				'AUTO_UPDATE': true,
-				'AUTO_UPDATE_TTL': '0'
-			};
-			var inv = false;
-			if (v.AUTO_UPDATE === false) {
-				if (v.AUTO_UPDATE_TTL && v.AUTO_UPDATE_TTL > 0) {
-					var lm = Date.parse(d.lastModified);
-					if (!isNaN(lm)) {
-						var td = new Date().getTime();
-						if ((lm + v.AUTO_UPDATE_TTL * 1000) >= td) {
-							w.frameRequestStart = false;
-							w.preventAutoUpdate = true;
-							return;
-						}
-						inv = true;
-					}
-				} else {
-					w.frameRequestStart = false;
-					w.preventAutoUpdate = true;
-					return;
-				}
-			}
-			var r = w.XMLHttpRequest ? new XMLHttpRequest() : (w.ActiveXObject ? new w.ActiveXObject("Microsoft.XMLHTTP") : null);
-			if (!r) {
-				return;
-			}
-			w.frameRequestStart = true;
-			var m = v.CACHE_MODE;
-			var l = w.location;
-			var x = new Date().getTime();
-			var q = "?bxrand=" + x + (l.search.length > 0 ? "&" + l.search.substring(1) : "");
-			var u = l.protocol + "//" + l.host + l.pathname + q;
-			r.open("GET.html", u, true);
-			r.setRequestHeader("BX-ACTION-TYPE", "get_dynamic");
-			r.setRequestHeader("BX-CACHE-MODE", m);
-			if (inv) {
-				r.setRequestHeader("BX-INVALIDATE-CACHE", "Y");
-			}
-			try {
-				r.setRequestHeader("BX-REF", d.referrer || "");
-			} catch (e) {}
-			if (m === "APPCACHE") {
-				r.setRequestHeader("BX-APPCACHE-PARAMS", JSON.stringify(v.PARAMS));
-				r.setRequestHeader("BX-APPCACHE-URL", v.PAGE_URL ? v.PAGE_URL : "");
-			}
-			r.onreadystatechange = function () {
-				if (r.readyState != 4) {
-					return;
-				}
-				var a = r.getResponseHeader("BX-RAND");
-				var b = w.BX && w.BX.frameCache ? w.BX.frameCache : false;
-				if (a != x || !((r.status >= 200 && r.status < 300) || r.status === 304 || r.status === 1223 || r.status === 0)) {
-					var f = {
-						error: true,
-						reason: a != x ? "bad_rand" : "bad_status",
-						url: u,
-						xhr: r,
-						status: r.status
-					};
-					if (w.BX && w.BX.ready) {
-						BX.ready(function () {
-							setTimeout(function () {
-								BX.onCustomEvent("onFrameDataRequestFail", [f]);
-							}, 0);
-						});
-					} else {
-						w.frameRequestFail = f;
-					}
-					return;
-				}
-				if (b) {
-					b.onFrameDataReceived(r.responseText);
-					if (!w.frameUpdateInvoked) {
-						b.update(false);
-					}
-					w.frameUpdateInvoked = true;
-				} else {
-					w.frameDataString = r.responseText;
-				}
-			};
-			r.send();
-		})(window, document);
-	</script>
 
 
+
+	<!--
 	<link href="bitrix/cache/css/s1/aspro_mshop/kernel_main/kernel_main1e02.css?146580321848075" type="text/css" rel="stylesheet" />
 	<link href="bitrix/cache/css/s1/aspro_mshop/page_2aff7970cb8d26a3f6045490352a5f6d/page_2aff7970cb8d26a3f6045490352a5f6d13f3.css?146580321839614" type="text/css" rel="stylesheet" />
 	<link href="bitrix/panel/main/popup.min707b.css?145940585020704" type="text/css" rel="stylesheet" />
 	<link href="bitrix/cache/css/s1/aspro_mshop/default_08ce0ec443a9f21d1e05325518523cec/default_08ce0ec443a9f21d1e05325518523cece112.css?14655395603572" type="text/css" rel="stylesheet" />
 	<link href="bitrix/cache/css/s1/aspro_mshop/template_53203b3b3c1ef53c610c0f7b13245dd7/template_53203b3b3c1ef53c610c0f7b13245dd7a545.css?1465539560450084" type="text/css" data-template-style="true" rel="stylesheet" />
+-->
+
+	<link href="bitrix/templates/aspro_mshop/css/jquery.fancybox53ac.css" type="text/css" data-template-style="true" rel="stylesheet" />
+	<link href="bitrix/templates/aspro_mshop/css/custombd7c.css" type="text/css" data-template-style="true" rel="stylesheet" />
+	<link href="bitrix/templates/aspro_mshop/css/styles9b67.css" type="text/css" data-template-style="true" rel="stylesheet" />
+	<link href="bitrix/templates/aspro_mshop/css/media1a65.css" type="text/css" data-template-style="true" rel="stylesheet" />
+	<link href="bitrix/templates/aspro_mshop/styles8152.css" type="text/css" data-template-style="true" rel="stylesheet" />
+	<link href="bitrix/templates/aspro_mshop/template_stylescf42.css" type="text/css" data-template-style="true" rel="stylesheet" />
+	<link href="bitrix/templates/aspro_mshop/themes/custom_s1/themebf4b.css" type="text/css" data-template-style="true" rel="stylesheet" />
 	<link href="bitrix/css/custom.css" type="text/css" data-template-style="true" rel="stylesheet" />
-	<script type="text/javascript">
-		if (!window.BX) window.BX = {
-			message: function (mess) {
-				if (typeof mess == 'object')
-					for (var i in mess) BX.message[i] = mess[i];
-				return true;
-			}
-		};
-	</script>
-	<script type="text/javascript">
-		(window.BX || top.BX).message({
-			'JS_CORE_LOADING': 'Загрузка...',
-			'JS_CORE_NO_DATA': '- Нет данных -',
-			'JS_CORE_WINDOW_CLOSE': 'Закрыть',
-			'JS_CORE_WINDOW_EXPAND': 'Развернуть',
-			'JS_CORE_WINDOW_NARROW': 'Свернуть в окно',
-			'JS_CORE_WINDOW_SAVE': 'Сохранить',
-			'JS_CORE_WINDOW_CANCEL': 'Отменить',
-			'JS_CORE_WINDOW_CONTINUE': 'Продолжить',
-			'JS_CORE_H': 'ч',
-			'JS_CORE_M': 'м',
-			'JS_CORE_S': 'с',
-			'JSADM_AI_HIDE_EXTRA': 'Скрыть лишние',
-			'JSADM_AI_ALL_NOTIF': 'Показать все',
-			'JSADM_AUTH_REQ': 'Требуется авторизация!',
-			'JS_CORE_WINDOW_AUTH': 'Войти',
-			'JS_CORE_IMAGE_FULL': 'Полный размер'
-		});
-	</script>
-	<script type="text/javascript">
-		(window.BX || top.BX).message({
-			'LANGUAGE_ID': 'ru',
-			'FORMAT_DATE': 'DD.MM.YYYY',
-			'FORMAT_DATETIME': 'DD.MM.YYYY HH:MI:SS',
-			'COOKIE_PREFIX': 'BITRIX_SM',
-			'SERVER_TZ_OFFSET': '10800',
-			'SITE_ID': 's1',
-			'SITE_DIR': '/'
-		});
-	</script>
+
 
 
 	<script type="text/javascript" src="bitrix/cache/js/s1/aspro_mshop/kernel_main/kernel_maine99e.js?1465803218277796"></script>
-	<script type="text/javascript" src="bitrix/js/main/core/core_db.min75ac.js?14643378075048"></script>
-	<script type="text/javascript" src="bitrix/js/main/core/core_frame_cache.minfcd3.js?146433780910587"></script>
-	<script type="text/javascript" src="bitrix/js/main/jquery/jquery-1.8.3.mindb09.js?145466249593636"></script>
-	<script type="text/javascript" src="bitrix/js/main/ajax.mina72c.js?145466249522194"></script>
-	<script type="text/javascript" src="bitrix/cache/js/s1/aspro_mshop/kernel_currency/kernel_currency2a02.js?14655395601821"></script>
-	<script type="text/javascript">
-		BX.setJSList(['/bitrix/js/main/core/core.js?146433780770997', 'bitrix/js/main/core/core_ajax476f.js?145940595220978', 'bitrix/js/main/json/json2.min32a6.js?14546624953467', 'bitrix/js/main/core/core_lsa176.js?14546624957365', 'bitrix/js/main/core/core_fx7946.js?14546624959592', 'bitrix/js/main/core/core_popup5fa2.js?145940584731170', 'bitrix/js/main/core/core_windowd8c2.js?146433780774754', 'bitrix/js/main/session937b.js?14546624952511', 'bitrix/js/main/core/core_date3e5a.js?145940595534276', 'bitrix/js/main/utilsbd88.js?145466249519858', 'bitrix/js/currency/core_currency7d88.js?14546631541474', 'bitrix/templates/aspro_mshop/js/jquery.actual.min2c5c.js?14546693091108', 'bitrix/templates/aspro_mshop/js/jqModal7981.js?14546693093355', 'bitrix/templates/aspro_mshop/js/jquery.fancybox6183.js?145466930945891', 'bitrix/templates/aspro_mshop/js/jquery.history4a8f.js?145940620721571', 'bitrix/templates/aspro_mshop/js/jquery.flexsliderd4fe.js?145466930955515', 'bitrix/templates/aspro_mshop/js/jquery.validate.minbfb5.js?145466930922257', 'bitrix/templates/aspro_mshop/js/jquery.inputmask.bundle.min365e.js?145466930963845', 'bitrix/templates/aspro_mshop/js/jquery.easing.1.3031e.js?14546693098095', 'bitrix/templates/aspro_mshop/js/equalize.min511b.js?1454669309588', 'bitrix/templates/aspro_mshop/js/jquery.alphanumeric2451.js?14546693091972', 'bitrix/templates/aspro_mshop/js/jquery.cookiee0fc.js?14546693093066', 'bitrix/templates/aspro_mshop/js/jquery.plugin.minb4f3.js?14546693093181', 'bitrix/templates/aspro_mshop/js/jquery.countdown.minca7d.js?145466930913980', 'bitrix/templates/aspro_mshop/js/jquery.countdown-ru851b.js?14546693091400', 'bitrix/templates/aspro_mshop/js/jquery.ikSelect059e.js?145466930917154', 'bitrix/templates/aspro_mshop/js/sly9e59.js?145466930918266', 'bitrix/templates/aspro_mshop/js/equalize_ext8061.js?14635703432846', 'bitrix/templates/aspro_mshop/js/mainc1ab.js?146433785475088', 'bitrix/components/bitrix/search.title/script5bac.js?14546625346196', 'bitrix/templates/aspro_mshop/js/custom23d3.js?1454669309100', '/bitrix/templates/aspro_mshop/components/bitrix/sale.basket.basket.line/normal/script.js?14635703433834']);
-	</script>
-	<script type="text/javascript">
-		BX.setCSSList(['/bitrix/js/main/core/css/core.css?14546624952854', 'bitrix/js/main/core/css/core_popupe075.css?145940585033075', 'bitrix/js/main/core/css/core_date5a16.css?14546624959689', 'bitrix/templates/aspro_mshop/components/aspro/tabs.mshop/main/style1737.css?14546693094856', 'bitrix/templates/aspro_mshop/components/bitrix/catalog.viewed.products/main/style9109.css?145466930831971', 'bitrix/templates/aspro_mshop/css/jquery.fancybox53ac.css?14546693084353', 'bitrix/templates/aspro_mshop/css/styles9b67.css?1454669308122561', 'bitrix/templates/aspro_mshop/ajax/ajaxf38f.css?1454669309326', 'bitrix/templates/aspro_mshop/styles8152.css?14546693093661', 'bitrix/templates/aspro_mshop/template_stylescf42.css?1464337854215173', 'bitrix/templates/aspro_mshop/themes/custom_s1/themebf4b.css?145494000021438', 'bitrix/templates/aspro_mshop/css/media1a65.css?146433785477395', 'bitrix/templates/aspro_mshop/css/custombd7c.css?1454669308404', '/bitrix/templates/aspro_mshop/components/bitrix/sale.basket.basket.line/normal/style.css?14635703433326']);
-	</script>
-	<script type="text/javascript">
-		(function () {
-			"use strict";
+	<!--	<script type="text/javascript" src="bitrix/js/main/core/core_db.min75ac.js?14643378075048"></script>-->
+	<!--	<script type="text/javascript" src="bitrix/js/main/core/core_frame_cache.minfcd3.js?146433780910587"></script>-->
+	<!--	<script type="text/javascript" src="bitrix/js/main/jquery/jquery-1.8.3.mindb09.js?145466249593636"></script>-->
+	<!--	<script type="text/javascript" src="bitrix/js/main/ajax.mina72c.js?145466249522194"></script>-->
+	<!--	<script type="text/javascript" src="bitrix/cache/js/s1/aspro_mshop/kernel_currency/kernel_currency2a02.js?14655395601821"></script>-->
 
-			var counter = function () {
-				var cookie = (function (name) {
-					var parts = ("; " + document.cookie).split("; " + name + "=");
-					if (parts.length == 2) {
-						try {
-							return JSON.parse(decodeURIComponent(parts.pop().split(";").shift()));
-						} catch (e) {}
-					}
-				})("BITRIX_CONVERSION_CONTEXT_s1");
 
-				if (!cookie || cookie.EXPIRE < BX.message("SERVER_TIME")) {
-					var request = new XMLHttpRequest();
-					request.open("POST.html", "bitrix/tools/conversion/ajax_counter.html", true);
-					request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-					request.send(
-						"SITE_ID=" + encodeURIComponent(BX.message("SITE_ID")) + "&" +
-						"sessid=" + encodeURIComponent(BX.bitrix_sessid()) + "&" +
-						"HTTP_REFERER=" + encodeURIComponent(document.referrer)
-					);
-				}
-			};
-
-			if (window.frameRequestStart === true)
-				BX.addCustomEvent("onFrameDataReceived", counter);
-			else
-				BX.ready(counter);
-		})();
-	</script>
-	<script>
-		BX.message({
-			'PHONE': 'Телефон',
-			'SOCIAL': 'Социальные сети',
-			'DESCRIPTION': 'Описание магазина',
-			'ITEMS': 'Товары',
-			'LOGO': 'Логотип',
-			'REGISTER_INCLUDE_AREA': 'Текст о регистрации',
-			'AUTH_INCLUDE_AREA': 'Текст об авторизации',
-			'FRONT_IMG': 'Изображение компании',
-			'EMPTY_CART': 'пуста',
-			'CATALOG_VIEW_MORE': '... Показать все',
-			'CATALOG_VIEW_LESS': '... Свернуть',
-			'JS_REQUIRED': 'Заполните это поле!',
-			'JS_FORMAT': 'Неверный формат!',
-			'JS_FILE_EXT': 'Недопустимое расширение файла!',
-			'JS_PASSWORD_COPY': 'Пароли не совпадают!',
-			'JS_PASSWORD_LENGTH': 'Минимум 6 символов!',
-			'JS_ERROR': 'Неверно заполнено поле!',
-			'JS_FILE_SIZE': 'Максимальный размер 5мб!',
-			'JS_FILE_BUTTON_NAME': 'Выберите файл',
-			'JS_FILE_DEFAULT': 'Файл не найден',
-			'JS_DATE': 'Некорректная дата!',
-			'FANCY_CLOSE': 'Закрыть',
-			'FANCY_NEXT': 'Следующий',
-			'FANCY_PREV': 'Предыдущий',
-			'TOP_AUTH_REGISTER': 'Регистрация',
-			'CALLBACK': 'Заказать звонок',
-			'UNTIL_AKC': 'До конца акции',
-			'TITLE_QUANTITY_BLOCK': 'Остаток',
-			'TITLE_QUANTITY': 'штук',
-			'COUNTDOWN_SEC': 'сек.',
-			'COUNTDOWN_MIN': 'мин.',
-			'COUNTDOWN_HOUR': 'час.',
-			'COUNTDOWN_DAY0': 'дней',
-			'COUNTDOWN_DAY1': 'день',
-			'COUNTDOWN_DAY2': 'дня',
-			'COUNTDOWN_WEAK0': 'Недель',
-			'COUNTDOWN_WEAK1': 'Неделя',
-			'COUNTDOWN_WEAK2': 'Недели',
-			'COUNTDOWN_MONTH0': 'Месяцев',
-			'COUNTDOWN_MONTH1': 'Месяц',
-			'COUNTDOWN_MONTH2': 'Месяца',
-			'COUNTDOWN_YEAR0': 'Лет',
-			'COUNTDOWN_YEAR1': 'Год',
-			'COUNTDOWN_YEAR2': 'Года',
-			'CATALOG_PARTIAL_BASKET_PROPERTIES_ERROR': 'Заполнены не все свойства у добавляемого товара',
-			'CATALOG_EMPTY_BASKET_PROPERTIES_ERROR': 'Выберите свойства товара, добавляемые в корзину в параметрах компонента',
-			'CATALOG_ELEMENT_NOT_FOUND': 'Элемент не найден',
-			'ERROR_ADD2BASKET': 'Ошибка добавления товара в корзину',
-			'CATALOG_SUCCESSFUL_ADD_TO_BASKET': 'Успешное добавление товара в корзину',
-			'ERROR_BASKET_TITLE': 'Ошибка корзины',
-			'ERROR_BASKET_PROP_TITLE': 'Выберите свойства, добавляемые в корзину',
-			'ERROR_BASKET_BUTTON': 'Выбрать',
-			'BASKET_TOP': 'Корзина в шапке',
-			'ERROR_ADD_DELAY_ITEM': 'Ошибка отложенной корзины'
-		})
-	</script>
 	<link rel="shortcut icon" href="include/favicon8e5b.ico?1454669308" type="image/x-icon" />
 	<link rel="apple-touch-icon" sizes="57x57" href="include/favicon_57.png" />
 	<link rel="apple-touch-icon" sizes="72x72" href="include/favicon_72.png" />
 
 
 
+	<!--
 	<script type="text/javascript" src="bitrix/cache/js/s1/aspro_mshop/template_5ceea33a7050359d9458b73c59224961/template_5ceea33a7050359d9458b73c592249616fd2.js?1465539560371608"></script>
 	<script type="text/javascript" src="bitrix/cache/js/s1/aspro_mshop/default_a994963feb3191888923f74c3b4bc94f/default_a994963feb3191888923f74c3b4bc94fd224.js?14655395604474"></script>
-	<script type="text/javascript">
-		var _ba = _ba || [];
-		_ba.push(["aid", "c00ffd976d1a9c7180849c8bfe8ca644"]);
-		_ba.push(["host", "provance.flex.by"]);
-		(function () {
-			var ba = document.createElement("script");
-			ba.type = "text/javascript";
-			ba.async = true;
-			ba.src = (document.location.protocol == "https:" ? "https://" : "http://") + "bitrix.info/ba.js";
-			var s = document.getElementsByTagName("script")[0];
-			s.parentNode.insertBefore(ba, s);
-		})();
-	</script>
+-->
+
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jquery.keyboard.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/equalize.min511b.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/equalize_ext8061.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jqModal7981.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jquery.actual.min2c5c.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jquery.alphanumeric2451.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jquery.cookiee0fc.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jquery.countdown.minca7d.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jquery.countdown-ru851b.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jquery.easing.1.3031e.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jquery.fancybox6183.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jquery.flexsliderd4fe.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jquery.history4a8f.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jquery.ikSelect059e.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jquery.inputmask.bundle.min365e.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jquery.plugin.minb4f3.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/jquery.validate.minbfb5.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/sly9e59.js"></script>
+	<script type="text/javascript" src="bitrix/templates/aspro_mshop/js/mainc1ab.js"></script>
+
 
 
 
 	<script type="text/javascript" src="bitrix/js/custom.js"></script>
 	<!--[if gte IE 9]><style type="text/css">.basket_button, .button30, .icon {filter: none;}</style><![endif]-->
-<!--	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,400italic&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>-->
+
 </head>
 
 <body id="main">
-	<div id="panel"></div>
-	<div id="bx_incl_area_1"></div>
-	<script type="text/javascript">
-		var arMShopOptions = [];
-		if (typeof (BX.localStorage) !== 'undefined') {
-			arMShopOptions = BX.localStorage.get('arMShopOptions') ? BX.localStorage.get('arMShopOptions') : [];
-		}
-		jQuery.extend(jQuery.validator.messages, {
-			required: '',
-			email: '',
-			minlength: '',
-			equalTo: '',
-			captcha: '',
-		});
-	</script>
+
 	<!--'start_frame_cache_options-block'-->
 	<script type="text/javascript">
 		var arMShopOptions = ({
@@ -567,9 +348,10 @@
 				<div class="wrapper_inner">
 					<div class="official-agent">
 						<a href="#">
-							<img src="bitrix/images/logo2.png" alt="">
-							<p>официальный<br> 
-представитель</p>
+							<img src="/bitrix/images/logo2.png" alt="">
+							<p>официальный
+								<br> представитель
+							</p>
 						</a>
 					</div>
 					<div class="content_menu">
@@ -578,13 +360,13 @@
 								<li>
 									<a href="/company/"><span>О компании</span></a>
 									<div class="child submenu">
-									<div class="child_wrapp">
-										<a class="" href="#"><span>О компании</span></a>
-										<a class="" href="#"><span>Новости</span></a>
-										<a class="" href="#"><span>Дипломы и сертификаты</span></a>
-										<a class="" href="#"><span>Вакансии</span></a>
+										<div class="child_wrapp">
+											<a class="" href="#"><span>О компании</span></a>
+											<a class="" href="#"><span>Новости</span></a>
+											<a class="" href="#"><span>Дипломы и сертификаты</span></a>
+											<a class="" href="#"><span>Вакансии</span></a>
+										</div>
 									</div>
-								</div>
 								</li>
 								<li>
 									<a href="/help/payment/"><span>Оплата и доставка</span></a>
@@ -599,12 +381,7 @@
 									<a href="/contacts/"><span>Контакты</span></a>
 								</li>
 							</ul>
-							<script>
-								$(".content_menu .menu > li:not(.current) > a").click(function () {
-									$(this).parents("li").siblings().removeClass("current");
-									$(this).parents("li").addClass("current");
-								});
-							</script>
+
 						</div>
 					</div>
 					<div class="phones">
@@ -629,21 +406,7 @@
 											</div>
 										</form>
 									</div>
-									<script type="text/javascript">
-										var jsControl = new JCTitleSearch({
-											//'WAIT_IMAGE': '/bitrix/themes/.default/images/wait.gif',
-											'AJAX_PAGE': '/',
-											'CONTAINER_ID': 'title-search3',
-											'INPUT_ID': 'title-search-input3',
-											'MIN_QUERY_LEN': 2
-										});
-										$("#title-search-input3").focus(function () {
-											$(this).parents("form").find("button[type='submit']").addClass("hover");
-										});
-										$("#title-search-input3").blur(function () {
-											$(this).parents("form").find("button[type='submit']").removeClass("hover");
-										});
-									</script>
+
 								</div>
 							</div>
 						</div>
@@ -674,7 +437,7 @@
 							<tr>
 								<td class="logo_wrapp">
 									<div class="logo">
-										<a href="/"><img src="bitrix/images/logo.svg" alt="Сайт по умолчанию" title="Сайт по умолчанию"></a>
+										<a href="/"><img src="/bitrix/images/logo.svg" alt="Сайт по умолчанию" title="Сайт по умолчанию"></a>
 										<a href="/" class="print_img"><img src="" alt="Сайт по умолчанию" title="Сайт по умолчанию"></a>
 									</div>
 								</td>
@@ -834,24 +597,13 @@
 										</div>
 									</div>
 
-									<div class="middle_phone">
-										<div class="phones">
-											<span class="phone_wrap">
-											<span class="icons"></span>
-											<span class="phone_text">
-												<a rel="nofollow" href="tel:+7 000 000-00-00">+7 000 000-00-00</a>											</span>
-											</span>
-											<span class="order_wrap_btn">
-											<span class="callback_btn">Заказать звонок</span>
-											</span>
-										</div>
-									</div>
+									<!--									replace .search with .middle_phone-->
 									<div class="search">
 										<div id="bx_incl_area_6">
 											<div id="title-search" class="stitle_form">
 												<form action="/catalog/">
 													<div class="form-control bg">
-														<input id="title-searchs-input" type="text" name="q" value="" class="small_block" size="40" maxlength="50" autocomplete="off" placeholder="Поиск по сайту">
+														<input id="title-searchs-input" type="text" name="q" value="" class="small_block" size="40" maxlength="50" autocomplete="off" placeholder="Поиск по 30 000 позиций">
 														<input name="s" type="submit" value="Поиск" class="button icon">
 													</div>
 												</form>
@@ -871,6 +623,18 @@
 													$(this).parents("form").find("button[type='submit']").removeClass("hover");
 												});
 											</script>
+										</div>
+									</div>
+									<div class="middle_phone">
+										<div class="phones">
+											<span class="phone_wrap">
+											<span class="icons"></span>
+											<span class="phone_text">
+												<a rel="nofollow" href="tel:+7 000 000-00-00">+375 17 227-28-28</a>											</span>
+											</span>
+											<span class="order_wrap_btn">
+											<span class="callback_btn">Обратный звонок</span>
+											</span>
 										</div>
 									</div>
 								</td>
@@ -906,7 +670,7 @@
 													<!--noindex-->
 													<div class="wraps_icon_block delay ">
 														<a href="/basket/#tab_DelDelCanBuy" class="link" title="Список отложенных товаров"></a>
-														<div class="count">
+														<div class="count count-not-null">
 															<span>
 					<div class="items">
 						<div class="text">1</div>
@@ -921,15 +685,17 @@
 															<div class="count">
 																<span>
 						<div class="items">
-							<a href="/basket/">0</a>
+							<a href="/basket/">5</a>
 						</div>
 					</span>
 															</div>
 														</div>
 														<div class="text f-left">
 															<div class="title">Корзина</div>
+															<!--    delete
 															<div class="value">
 																пуста </div>
+-->
 														</div>
 														<div class="card_popup_frame popup">
 															<div class="basket_popup_wrapper">
@@ -987,66 +753,6 @@
 														});
 													</script>
 												</div>
-
-
-												<script>
-													bx_basket1.siteId = 's1';
-													bx_basket1.cartId = 'bx_basket1';
-													bx_basket1.ajaxPath = '/bitrix/components/bitrix/sale.basket.basket.line/ajax.php';
-													bx_basket1.templateName = 'normal';
-													bx_basket1.arParams = {
-														'PATH_TO_BASKET': '/basket/',
-														'PATH_TO_ORDER': '/order/',
-														'SHOW_DELAY': 'Y',
-														'SHOW_PRODUCTS': 'Y',
-														'SHOW_EMPTY_VALUES': 'Y',
-														'SHOW_NOTAVAIL': 'N',
-														'SHOW_SUBSCRIBE': 'N',
-														'SHOW_IMAGE': 'Y',
-														'SHOW_PRICE': 'Y',
-														'SHOW_SUMMARY': 'Y',
-														'SHOW_NUM_PRODUCTS': 'Y',
-														'SHOW_TOTAL_PRICE': 'Y',
-														'CACHE_TYPE': 'A',
-														'HIDE_ON_BASKET_PAGES': 'Y',
-														'SHOW_PERSONAL_LINK': 'N',
-														'PATH_TO_PERSONAL': '/personal/',
-														'SHOW_AUTHOR': 'N',
-														'PATH_TO_REGISTER': '/login/',
-														'PATH_TO_PROFILE': '/personal/',
-														'POSITION_FIXED': 'N',
-														'POSITION_VERTICAL': 'top',
-														'POSITION_HORIZONTAL': 'right',
-														'AJAX': 'N',
-														'~PATH_TO_BASKET': '/basket/',
-														'~PATH_TO_ORDER': '/order/',
-														'~SHOW_DELAY': 'Y',
-														'~SHOW_PRODUCTS': 'Y',
-														'~SHOW_EMPTY_VALUES': 'Y',
-														'~SHOW_NOTAVAIL': 'N',
-														'~SHOW_SUBSCRIBE': 'N',
-														'~SHOW_IMAGE': 'Y',
-														'~SHOW_PRICE': 'Y',
-														'~SHOW_SUMMARY': 'Y',
-														'~SHOW_NUM_PRODUCTS': 'Y',
-														'~SHOW_TOTAL_PRICE': 'Y',
-														'~CACHE_TYPE': 'A',
-														'~HIDE_ON_BASKET_PAGES': 'Y',
-														'~SHOW_PERSONAL_LINK': 'N',
-														'~PATH_TO_PERSONAL': '/personal/',
-														'~SHOW_AUTHOR': 'N',
-														'~PATH_TO_REGISTER': '/login/',
-														'~PATH_TO_PROFILE': '/personal/',
-														'~POSITION_FIXED': 'N',
-														'~POSITION_VERTICAL': 'top',
-														'~POSITION_HORIZONTAL': 'right',
-														'~AJAX': 'N',
-														'cartId': 'bx_basket1'
-													}; // TODO \Bitrix\Main\Web\Json::encode
-													bx_basket1.closeMessage = '';
-													bx_basket1.openMessage = '';
-													bx_basket1.activate();
-												</script>
 											</div>
 											<!--'end_frame_cache_header-cart'-->
 										</div>
@@ -1236,21 +942,23 @@
 				<div class="flexslider">
 
 					<div class="flex-viewport" style="overflow: hidden; position: relative;">
-						<ul class="slides" style="width: 1600%; transition-duration: 0s; transform: translate3d(-1583px, 0px, 0px);">
-							<li class="box dark left clone" id="bx_3685039667_21_clone" style="width: 1583px; float: left; display: block; background-image: url(&quot;/upload/iblock/f13/f13d1a4af00bb0d853852fcea4deee1a.jpg&quot;) !important;" aria-hidden="true">
+						<ul class="slides">
+							<li class="box dark left clone" id="bx_3685039667_21_clone" style="width: 1583px; float: left; display: block; background-image: url(&quot;bitrix/images/main_slider/slide1.jpg&quot;) !important;" aria-hidden="true">
 								<div class="wrapper_inner">
-									<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%" style="background: url(/upload/iblock/67b/67b98a701da7ae931fd3a8f721bdb1c8.png) center right no-repeat">
+									<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%">
 										<tbody>
 											<tr>
 												<td class="text left">
 													<a href="/catalog/sport/velosipedy/">
-														<div class="banner_title"><span>Бензопилы<br> Husqvarna<br> от 5 800 руб.</span></div>
+														<div class="banner_title"><span>Жаркие цены на Yamaha<br> для любителей скорости!</span></div>
 													</a>
 													<div class="banner_buttons">
 														<a href="/sale/videokamery_so_skidkoy_5_do_novogo_goda/" class="button wide">
-																	Подробнее об акции																</a>
+																	скидки на товары yamaha																</a>
+														<!--
 														<a href="/catalog/elektroinstrument/dreli/" class="button wide grey">
 																	Каталог																</a>
+-->
 													</div>
 
 												</td>
@@ -1264,16 +972,16 @@
 									</table>
 								</div>
 							</li>
-							<li class="box light left flex-active-slide" id="bx_3685039667_9" style="width: 1583px; float: left; display: block; background-image: url(&quot;/upload/iblock/05a/05ae8f4db506357f581c69f9ac337727.jpg&quot;) !important;">
+							<li class="box light left flex-active-slide" id="bx_3685039667_9" style="width: 1583px; float: left; display: block; background-image: url(&quot;bitrix/images/main_slider/slide1.jpg&quot;) !important;">
 								<div class="wrapper_inner">
-									<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%" style="background: url(/upload/iblock/00e/00e78bd1644099e145d338c15bfaa5d7.png) center right no-repeat">
+									<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%">
 										<tbody>
 											<tr>
 												<td class="text left">
 													<a href="/catalog/odezhda/muzhskaya_odezhda/">
 														<div class="banner_title"><span>Туристическое снаряжение Tatonka</span></div>
 													</a>
-													<div class="banner_text">Специальный защитный чехол для iPhone 5. Отлично защищает от воды, грязи, пыли, ударов и падений. Сохраняет полный доступ ко всем портам и функциям телефона.</div>
+													<!--													<div class="banner_text">Специальный защитный чехол для iPhone 5. Отлично защищает от воды, грязи, пыли, ударов и падений. Сохраняет полный доступ ко всем портам и функциям телефона.</div>-->
 													<div class="banner_buttons">
 														<a href="/catalog/odezhda/muzhskaya_odezhda/" class="button wide">
 																	Подробнее об акции																</a>
@@ -1290,9 +998,9 @@
 									</table>
 								</div>
 							</li>
-							<li class="box light left" id="bx_3685039667_7" style="width: 1583px; float: left; display: block; background-image: url(&quot;/upload/iblock/8ea/8ea26bec1756893bb266fc0ac5cc6e5a.jpg&quot;) !important;">
+							<li class="box light left" id="bx_3685039667_7" style="width: 1583px; float: left; display: block; background-image: url(&quot;bitrix/images/main_slider/slide1.jpg&quot;) !important;">
 								<div class="wrapper_inner">
-									<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%" style="background: url(/upload/iblock/cc3/cc30ef7dc83d80a789ef9d63500c71b0.png) center right no-repeat">
+									<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%">
 										<tbody>
 											<tr>
 												<td class="text left">
@@ -1315,149 +1023,21 @@
 									</table>
 								</div>
 							</li>
-							<li class="box light left" id="bx_3685039667_32" style="width: 1583px; float: left; display: block; background-image: url(&quot;/upload/iblock/45a/45a1de478e32cbe3795d5589d4cd94b2.jpg&quot;) !important;">
-								<div class="wrapper_inner">
-									<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%" style="background: url(/upload/iblock/6c2/6c24e5498b6e13ad88003a36b5ca66dc.png) center right no-repeat">
-										<tbody>
-											<tr>
-												<td class="text left">
-													<a href="/catalog/sport/veloryukzaki/">
-														<div class="banner_title"><span>Велосипедные<br>рюкзаки<br>от 3 400 руб.</span></div>
-													</a>
-													<div class="banner_buttons">
-														<a href="/catalog/sport/veloryukzaki/" class="button wide">
-																	Перейти в каталог																</a>
-													</div>
-
-												</td>
-												<td class="img">
-													<a href="/catalog/sport/veloryukzaki/">
-													</a>
-
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</li>
-							<li class="box light right" id="bx_3685039667_4" style="width: 1583px; float: left; display: block; background-image: url(&quot;/upload/iblock/b1b/b1b228710fed23029a22745cf4a17554.jpg&quot;) !important;">
-								<div class="wrapper_inner">
-									<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%" style="background: url(/upload/iblock/63e/63ef195fa255588cb26f0a231e2d8c4e.png) center left no-repeat">
-										<tbody>
-											<tr>
-												<td class="img">
-													<a href="/catalog/elektroinstrument/perforatory/">
-													</a>
-
-												</td>
-												<td class="text right">
-													<a href="/catalog/elektroinstrument/perforatory/">
-														<div class="banner_title"><span>Широкая линейка фитнес-трекеров</span></div>
-													</a>
-													<div class="banner_text">Созданы специально для работы в экстримальных условиях. Профессионалы по всему миру выбирают Bosch. </div>
-													<div class="banner_buttons">
-														<a href="/catalog/elektroinstrument/perforatory/" class="button wide">
-																	Перейти в каталог																</a>
-													</div>
-
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</li>
-							<li class="box dark left" id="bx_3685039667_18" style="width: 1583px; float: left; display: block; background-image: url(&quot;/upload/iblock/71f/71f62577e2083ce4210bb2b96bc796b0.jpg&quot;) !important;">
-								<div class="wrapper_inner">
-									<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%" style="background: url(/upload/iblock/f5f/f5f5fd97d6537c38630ab428f004682a.png) center right no-repeat">
-										<tbody>
-											<tr>
-												<td class="text left">
-													<a href="/catalog/sport/velosipedy/">
-														<div class="banner_title"><span>Беговая обувь,<br>кросовки, кеды<br>от 2 500 руб.</span></div>
-													</a>
-													<div class="banner_buttons">
-														<a href="/catalog/sport/velosipedy/" class="button wide">
-																	Перейти в каталог																</a>
-													</div>
-
-												</td>
-												<td class="img">
-													<a href="/catalog/sport/velosipedy/">
-													</a>
-
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</li>
-							<li class="box dark left" id="bx_3685039667_21" style="width: 1583px; float: left; display: block; background-image: url(&quot;/upload/iblock/f13/f13d1a4af00bb0d853852fcea4deee1a.jpg&quot;) !important;">
-								<div class="wrapper_inner">
-									<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%" style="background: url(/upload/iblock/67b/67b98a701da7ae931fd3a8f721bdb1c8.png) center right no-repeat">
-										<tbody>
-											<tr>
-												<td class="text left">
-													<a href="/catalog/sport/velosipedy/">
-														<div class="banner_title"><span>Бензопилы<br> Husqvarna<br> от 5 800 руб.</span></div>
-													</a>
-													<div class="banner_buttons">
-														<a href="/sale/videokamery_so_skidkoy_5_do_novogo_goda/" class="button wide">
-																	Подробнее об акции																</a>
-														<a href="/catalog/elektroinstrument/dreli/" class="button wide grey">
-																	Каталог																</a>
-													</div>
-
-												</td>
-												<td class="img">
-													<a href="/catalog/sport/velosipedy/">
-													</a>
-
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</li>
-							<li class="box light left clone" id="bx_3685039667_9_clone" style="width: 1583px; float: left; display: block; background-image: url(&quot;/upload/iblock/05a/05ae8f4db506357f581c69f9ac337727.jpg&quot;) !important;" aria-hidden="true">
-								<div class="wrapper_inner">
-									<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%" style="background: url(/upload/iblock/00e/00e78bd1644099e145d338c15bfaa5d7.png) center right no-repeat">
-										<tbody>
-											<tr>
-												<td class="text left">
-													<a href="/catalog/odezhda/muzhskaya_odezhda/">
-														<div class="banner_title"><span>Туристическое снаряжение Tatonka</span></div>
-													</a>
-													<div class="banner_text">Специальный защитный чехол для iPhone 5. Отлично защищает от воды, грязи, пыли, ударов и падений. Сохраняет полный доступ ко всем портам и функциям телефона.</div>
-													<div class="banner_buttons">
-														<a href="/catalog/odezhda/muzhskaya_odezhda/" class="button wide">
-																	Подробнее об акции																</a>
-													</div>
-
-												</td>
-												<td class="img">
-													<a href="/catalog/odezhda/muzhskaya_odezhda/">
-													</a>
-
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</li>
 						</ul>
 					</div>
+					<!--
 					<ol class="flex-control-nav flex-control-paging">
 						<li><a class="flex-active">1</a></li>
 						<li><a class="">2</a></li>
 						<li><a class="">3</a></li>
-						<li><a class="">4</a></li>
-						<li><a class="">5</a></li>
-						<li><a class="">6</a></li>
 					</ol>
+-->
+					<!--
 					<ul class="flex-direction-nav">
 						<li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li>
 						<li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li>
 					</ul>
+-->
 				</div>
 			</div>
 			<script type="text/javascript">
@@ -1500,33 +1080,25 @@
 				<div class="tizers_block">
 					<div id="bx_3218110189_94" class="item" title="Двойной щелчок - Изменить тизер">
 						<a class="name" href="#">
-							<div class="img"><img src="/upload/iblock/09c/09ce7a89a1103c05a782eef8b6c35f91.png" alt="Наличный и безналичный расчет" title="Наличный и безналичный расчет"></div>
+							<div class="img"><img src="bitrix/images/icons_main/ruby.png" alt="Наличный и безналичный расчет" title="Наличный и безналичный расчет"></div>
 							<div class="title">
-								Наличный и безналичный расчет </div>
+								Отличный сервис и высокое качество обслуживания</div>
 						</a>
 					</div>
 					<div id="bx_3218110189_95" class="item" title="Двойной щелчок - Изменить тизер">
-						<div class="img"><img src="/upload/iblock/16d/16d475ff4f5389034152b6881cc856d4.png" alt="Доставка<br/> по всей России" title="Доставка<br/> по всей России"></div>
+						<div class="img"><img src="bitrix/images/icons_main/delivery.png" alt="Доставка<br/> по всей России" title="Доставка<br/> по всей России"></div>
 						<div class="title">
-							Доставка
-							<br> по всей России </div>
+							Доставка по всей территории Беларуси</div>
 					</div>
 					<div id="bx_3218110189_96" class="item" title="Двойной щелчок - Изменить тизер">
-						<div class="img"><img src="/upload/iblock/74f/74fb0102c2f2c3813505e7aff8413984.png" alt="Возврат товара<br/> в течение 30 дней" title="Возврат товара<br/> в течение 30 дней"></div>
+						<div class="img"><img src="bitrix/images/icons_main/best_price.png" alt="Возврат товара<br/> в течение 30 дней" title="Возврат товара<br/> в течение 30 дней"></div>
 						<div class="title">
-							Возврат товара
-							<br> в течение 30 дней </div>
+							Лучшие цены на все категории товаров</div>
 					</div>
 					<div id="bx_3218110189_97" class="item" title="Двойной щелчок - Изменить тизер">
-						<div class="img"><img src="/upload/iblock/e71/e713d61453ff90981a66f82d1669ca38.png" alt="Гарантия качества всех товаров" title="Гарантия качества всех товаров"></div>
+						<div class="img"><img src="bitrix/images/icons_main/icon_to_pay.png" alt="Гарантия качества всех товаров" title="Гарантия качества всех товаров"></div>
 						<div class="title">
-							Гарантия качества всех товаров </div>
-					</div>
-					<div id="bx_3218110189_98" class="item" title="Двойной щелчок - Изменить тизер">
-						<div class="img"><img src="/upload/iblock/256/25602449f49aed4417dac1ee3466a30c.png" alt="Бесплатный звонок<br/> 8 800 123-45-67" title="Бесплатный звонок<br/> 8 800 123-45-67"></div>
-						<div class="title">
-							Бесплатный звонок
-							<br> 8 800 123-45-67 </div>
+							Оплачивайте удобным способом, в т.ч. онлайн</div>
 					</div>
 				</div>
 			</div>
@@ -1534,52 +1106,51 @@
 		<div class="wrapper_inner wides">
 			<div id="bx_incl_area_12">
 				<div class="start_promo other">
-					<div class="item s_1 hover wide50" id="bx_1118597001_23">
+					<div class="item s_1 hover wide50 height430" id="bx_1118597001_23">
 						<a href="/catalog/foto_i_video/videokamery/" class="opacity_block" title="Тенты и палатки" target=""></a>
 						<div class="wrap_tizer">
 							<div class="wr_block">
 								<span class="wrap_outer title">
-																	<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
-																	<span class="inner_text">
-										Тенты и палатки									</span>
+									<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
+										<span class="inner_text">
+										Лодки ПВХ									</span>
 								</a>
 								</span>
 							</div>
 							<div class="wr_block price">
 								<span class="wrap_outer">
-																			<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
-																			<span class="inner_text">
-											от 6 790 руб.										</span>
+									<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
+										<span class="inner_text">
+											от 1 000 000 руб.</span>
 								</a>
 								</span>
 							</div>
 						</div>
 						<a href="/catalog/foto_i_video/videokamery/" target="">
-							<img src="/upload/iblock/b70/b70846d90d1cef6125cd948f10c3ee51.jpg" alt="Тенты и палатки" title="Тенты и палатки">
+							<img src="bitrix/images/banners/ban1.png" alt="Тенты и палатки" title="Тенты и палатки">
 						</a>
 					</div>
-					<div class="item s_2 hover normal" id="bx_1118597001_25">
+					<div class="item s_2 hover normal height430" id="bx_1118597001_25">
 						<a href="/catalog/foto_i_video/videokamery/" class="opacity_block" title="Рюкзаки" target=""></a>
 						<div class="wrap_tizer">
 							<div class="wr_block">
 								<span class="wrap_outer title">
-																	<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
-																	<span class="inner_text">
-										Рюкзаки									</span>
+									<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
+										<span class="inner_text">
+										Спасательные жилеты	</span>
 								</a>
 								</span>
 							</div>
 							<div class="wr_block price">
 								<span class="wrap_outer">
-																			<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
-																			<span class="inner_text">
-											от 2 790 руб.										</span>
+									<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
+										<span class="inner_text">от 305 000 руб.	</span>
 								</a>
 								</span>
 							</div>
 						</div>
 						<a href="/catalog/foto_i_video/videokamery/" target="">
-							<img src="/upload/iblock/26e/26e5b603b2d19d64d9db13596b20a1ad.jpg" alt="Рюкзаки" title="Рюкзаки">
+							<img src="bitrix/images/banners/ban2.png" alt="Рюкзаки" title="Рюкзаки">
 						</a>
 					</div>
 					<div class="item s_3 hover normal" id="bx_1118597001_26">
@@ -1587,101 +1158,97 @@
 						<div class="wrap_tizer">
 							<div class="wr_block">
 								<span class="wrap_outer title">
-																	<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
-																	<span class="inner_text">
-										Спальники									</span>
+									<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
+										<span class="inner_text">Воблеры</span>
 								</a>
 								</span>
 							</div>
 							<div class="wr_block price">
 								<span class="wrap_outer">
-																			<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
-																			<span class="inner_text">
-											от 990 руб.										</span>
+									<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
+										<span class="inner_text">
+											от 90 000 руб.										</span>
 								</a>
 								</span>
 							</div>
 						</div>
 						<a href="/catalog/foto_i_video/videokamery/" target="">
-							<img src="/upload/iblock/2f8/2f805930b24957ea3a88e83e6293b8cc.jpg" alt="Спальники" title="Спальники">
+							<img src="bitrix/images/banners/ban3.png" alt="Спальники" title="Спальники">
 						</a>
 					</div>
-					<div class="item s_4 hover normal" id="bx_1118597001_27">
-						<a href="/catalog/foto_i_video/videokamery/" class="opacity_block" title="Кресла" target=""></a>
-						<div class="wrap_tizer">
-							<div class="wr_block">
-								<span class="wrap_outer title">
-																	<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
-																	<span class="inner_text">
-										Кресла									</span>
-								</a>
-								</span>
-							</div>
-							<div class="wr_block price">
-								<span class="wrap_outer">
-																			<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
-																			<span class="inner_text">
-											от 730 руб.										</span>
-								</a>
-								</span>
-							</div>
-						</div>
-						<a href="/catalog/foto_i_video/videokamery/" target="">
-							<img src="/upload/iblock/cef/ceff45cd02726d96cde1266b9e3165da.jpg" alt="Кресла" title="Кресла">
-						</a>
-					</div>
-					<div class="item s_5 hover wide50" id="bx_1118597001_28">
-						<a href="/catalog/foto_i_video/videokamery/" class="opacity_block" title="Трекинговая обувь" target=""></a>
-						<div class="wrap_tizer">
-							<div class="wr_block">
-								<span class="wrap_outer title">
-																	<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
-																	<span class="inner_text">
-										Трекинговая обувь									</span>
-								</a>
-								</span>
-							</div>
-							<div class="wr_block price">
-								<span class="wrap_outer">
-																			<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
-																			<span class="inner_text">
-											от 2290 руб.										</span>
-								</a>
-								</span>
-							</div>
-						</div>
-						<a href="/catalog/foto_i_video/videokamery/" target="">
-							<img src="/upload/iblock/ec3/ec3dcb6dfb40ad26ce154d56abcada72.jpg" alt="Трекинговая обувь" title="Трекинговая обувь">
-						</a>
-					</div>
-					<div class="item s_6 hover normal" id="bx_1118597001_29">
+					<div class="item s_4 hover normal height430" id="bx_1118597001_27">
 						<a href="/catalog/foto_i_video/videokamery/" class="opacity_block" title="Топоры" target=""></a>
 						<div class="wrap_tizer">
 							<div class="wr_block">
 								<span class="wrap_outer title">
-																	<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
-																	<span class="inner_text">
-										Топоры									</span>
+									<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
+										<span class="inner_text">Эхолоты	</span>
 								</a>
 								</span>
 							</div>
 							<div class="wr_block price">
 								<span class="wrap_outer">
-																			<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
-																			<span class="inner_text">
-											от 740 руб.										</span>
+									<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
+										<span class="inner_text">от 500 000 руб.</span>
 								</a>
 								</span>
 							</div>
 						</div>
 						<a href="/catalog/foto_i_video/videokamery/" target="">
-							<img src="/upload/iblock/9b1/9b1ee4f544eeaa23d7296db314c04831.jpg" alt="Топоры" title="Топоры">
+							<img src="bitrix/images/banners/ban6.png" alt="Топоры" title="Топоры">
 						</a>
 					</div>
+					<div class="item s_5 hover" id="bx_1118597001_28">
+						<a href="/catalog/foto_i_video/videokamery/" class="opacity_block" title="Кресла" target=""></a>
+						<div class="wrap_tizer">
+							<div class="wr_block">
+								<span class="wrap_outer title">
+									<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
+										<span class="inner_text">Помпы	</span>
+								</a>
+								</span>
+							</div>
+							<div class="wr_block price">
+								<span class="wrap_outer">
+									<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
+										<span class="inner_text">от 1 320 000 руб.</span>
+								</a>
+								</span>
+							</div>
+						</div>
+						<a href="/catalog/foto_i_video/videokamery/" target="">
+							<img src="bitrix/images/banners/ban4.png" alt="Кресла" title="Кресла">
+						</a>
+					</div>
+					<div class="item s_6 hover wide50 normal" id="bx_1118597001_29">
+						<a href="/catalog/foto_i_video/videokamery/" class="opacity_block" title="Трекинговая обувь" target=""></a>
+						<div class="wrap_tizer">
+							<div class="wr_block">
+								<span class="wrap_outer title">
+									<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
+										<span class="inner_text">Лодочные моторы Yamaha</span>
+								</a>
+								</span>
+							</div>
+							<div class="wr_block price">
+								<span class="wrap_outer">
+									<a class="outer_text" href="/catalog/foto_i_video/videokamery/" target="">
+										<span class="inner_text">от 20 060 300 руб.	</span>
+								</a>
+								</span>
+							</div>
+						</div>
+						<a href="/catalog/foto_i_video/videokamery/" target="">
+							<img src="bitrix/images/banners/ban5.png" alt="Трекинговая обувь" title="Трекинговая обувь">
+						</a>
+
+					</div>
 					<div class="clearfix"></div>
+					<!--   delete
 					<div class="catalog_btn">
 						<a class="button transparent big" href="/catalog/">Перейти в каталог</a>
 					</div>
+-->
 				</div>
 			</div>
 		</div>
@@ -1690,13 +1257,15 @@
 				<div id="bx_incl_area_13">
 					<div class="tab_slider_wrapp specials s_UZHoyrcnZQ best_block">
 						<div class="top_blocks">
+							<div class="title_block">Лучшее</div>
 							<ul class="tabs">
 								<li data-code="HIT" class="cur"><span>Хит</span></li>
-								<li data-code="RECOMMEND"><span>Советуем</span></li>
+								<li data-code="RECOMMEND"><span>Рекомендуем</span></li>
 								<li data-code="NEW"><span>Новинка</span></li>
 								<li data-code="STOCK"><span>Акция</span></li>
 								<li class="stretch"></li>
 							</ul>
+							<a href="#" class="all_catalog">Весь каталог</a>
 							<ul class="slider_navigation top">
 								<li class="tabs_slider_navigation HIT_nav cur" data-code="HIT">
 									<ul class="flex-direction-nav">
@@ -1709,12 +1278,12 @@
 								<li class="tabs_slider_navigation STOCK_nav " data-code="STOCK"></li>
 							</ul>
 						</div>
-						<ul class="tabs_content" style="height: 408px;">
+						<ul class="tabs_content">
 							<li class="tab HIT_wrapp cur" data-code="HIT" data-unhover="408" data-hover="491">
 
-								<div class="flex-viewport" style="overflow: hidden; position: relative;">
-									<ul class="tabs_slider HIT_slides wr" style="width: 800%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-										<li id="bx_2662763187_226" class="catalog_item" style="width: 170px; height: 350px; float: left; display: block; opacity: 1;">
+								<div class="flex-viewport">
+									<ul class="tabs_slider HIT_slides wr">
+										<li id="bx_2662763187_226" class="catalog_item">
 											<div class="image_wrapper_block">
 												<a href="/catalog/foto_i_video/obektivy/226/" class="thumb">
 													<div class="stickers">
@@ -1730,29 +1299,35 @@
 															<span title="В сравнении" class="compare_item in added" style="display: none;" data-iblock="13" data-item="226"><i></i></span>
 														</div>
 													</div>
-													<img border="0" src="/upload/iblock/4dd/4ddeb5cbaed448244ce5471c6cb8c8f6.jpg" alt="Объектив Canon EF24-105 F4L IS USM" title="Объектив Canon EF24-105 F4L IS USM" draggable="false">
+													<img border="0" src="bitrix/images/products/prod1.png" alt="Объектив Canon EF24-105 F4L IS USM" title="Объектив Canon EF24-105 F4L IS USM" draggable="false">
 												</a>
 											</div>
-											<div class="item_info" style="height: 161px;">
-												<div class="item-title" style="height: 60px;">
-													<a href="/catalog/foto_i_video/obektivy/226/"><span>Объектив Canon EF24-105 F4L IS USM</span></a>
+											<div class="item_info">
+												<div class="item-title">
+													<a href="/catalog/foto_i_video/obektivy/226/"><span>Объектив Canon EF24-105 F4L IS USM</span>
+													</a>
+													<p>Бесшумным и мощный катер</p>
 												</div>
-												<div class="item-stock"><span class="icon stock"></span><span class="value"></span></div>
+												<div class="item-stock"><span class="icon stock"></span><span class="value">В наличии</span></div>
 												<div class="cost prices clearfix">
-													<div class="price">33 300 руб. /шт </div>
 													<div class="price discount">
 														<strike>37 000 руб.</strike>
 													</div>
+													<div class="price">33 300 руб. /шт </div>
+
+													<!--delete block
 													<div class="sale_block">
 														<div class="value">-10%</div>
 														<div class="text">Экономия 3 700 руб.</div>
 														<div class="clearfix"></div>
 													</div>
+-->
 												</div>
-												<div class="basket_props_block" id="bx_basket_div_226" style="display: none;">
+												<div class="basket_props_block" id="bx_basket_div_226">
 												</div>
-												<div class="buttons_block clearfix" style="display: none;">
-													<a class="button basket read_more" rel="nofollow" href="/catalog/foto_i_video/obektivy/226/" data-item="226">Подробнее</a> </div>
+												<div class="buttons_block clearfix">
+													<a class="button basket read_more" rel="nofollow" href="/catalog/foto_i_video/obektivy/226/" data-item="226">Подробнее</a>
+												</div>
 											</div>
 										</li>
 										<li id="bx_2662763187_223" class="catalog_item" style="width: 170px; height: 350px; float: left; display: block; opacity: 1;">
@@ -1771,32 +1346,29 @@
 															<span title="В сравнении" class="compare_item in added" style="display: none;" data-iblock="13" data-item="223"><i></i></span>
 														</div>
 													</div>
-													<img border="0" src="/upload/iblock/438/43862579c22ec731834ad93352b646ee.jpg" alt="Автомагнитола JVC KD-LX50R" title="Автомагнитола JVC KD-LX50R" draggable="false">
+													<img border="0" src="bitrix/images/products/prod2.png" alt="Автомагнитола JVC KD-LX50R" title="Автомагнитола JVC KD-LX50R" draggable="false">
 												</a>
 											</div>
-											<div class="item_info" style="height: 161px;">
-												<div class="item-title" style="height: 60px;">
+											<div class="item_info">
+												<div class="item-title">
 													<a href="/catalog/avtoelektronika/magnitoly/223/"><span>Автомагнитола JVC KD-LX50R</span></a>
+													<p>Подвесной лодочный электромотор</p>
 												</div>
-												<div class="item-stock"><span class="icon stock"></span><span class="value"></span></div>
+												<div class="item-stock"><span class="icon order"></span><span class="value">Под заказ</span></div>
 												<div class="cost prices clearfix">
-													<div class="price">2 610 руб. </div>
 													<div class="price discount">
 														<strike>2 900 руб.</strike>
 													</div>
-													<div class="sale_block">
-														<div class="value">-10%</div>
-														<div class="text">Экономия 290 руб.</div>
-														<div class="clearfix"></div>
-													</div>
+													<div class="price">2 610 руб. </div>
+
 												</div>
-												<div class="basket_props_block" id="bx_basket_div_223" style="display: none;">
+												<div class="basket_props_block" id="bx_basket_div_223">
 												</div>
-												<div class="buttons_block clearfix" style="display: none;">
+												<div class="buttons_block clearfix">
 													<a class="button basket read_more" rel="nofollow" href="/catalog/avtoelektronika/magnitoly/223/" data-item="223">Подробнее</a> </div>
 											</div>
 										</li>
-										<li id="bx_2662763187_220" class="catalog_item" style="width: 170px; height: 350px; float: left; display: block; opacity: 1;">
+										<li id="bx_2662763187_220" class="catalog_item">
 											<div class="image_wrapper_block">
 												<a href="/catalog/foto_i_video/fotoapparaty/220/" class="thumb">
 													<div class="stickers">
@@ -1816,29 +1388,27 @@
 													<img border="0" src="/upload/iblock/8b5/8b57ac73161b4261a89123709cc4a9ec.jpg" alt="Фотоаппарат зеркальный Sony SLT-A37K+SAL1855" title="Фотоаппарат зеркальный Sony SLT-A37K+SAL1855" draggable="false">
 												</a>
 											</div>
-											<div class="item_info" style="height: 161px;">
-												<div class="item-title" style="height: 60px;">
+											<div class="item_info">
+												<div class="item-title">
 													<a href="/catalog/foto_i_video/fotoapparaty/220/"><span>Фотоаппарат зеркальный Sony SLT-A37K+SAL1855</span></a>
+													<p>Подвесной лодочный электромотор</p>
 												</div>
-												<div class="item-stock"><span class="icon stock"></span><span class="value"></span></div>
+												<div class="item-stock"><span class="icon stock"></span><span class="value">В наличии</span></div>
 												<div class="cost prices clearfix">
-													<div class="price">16 191 руб. </div>
 													<div class="price discount">
 														<strike>17 990 руб.</strike>
 													</div>
-													<div class="sale_block">
-														<div class="value">-10%</div>
-														<div class="text">Экономия 1 799 руб.</div>
-														<div class="clearfix"></div>
-													</div>
+													<div class="price">16 191 руб. </div>
+
+
 												</div>
 												<div class="basket_props_block" id="bx_basket_div_220" style="display: none;">
 												</div>
-												<div class="buttons_block clearfix" style="display: none;">
+												<div class="buttons_block clearfix">
 													<a class="button basket read_more" rel="nofollow" href="/catalog/foto_i_video/fotoapparaty/220/" data-item="220">Подробнее</a> </div>
 											</div>
 										</li>
-										<li id="bx_2662763187_182" class="catalog_item" style="width: 170px; height: 350px; float: left; display: block; opacity: 1;">
+										<li id="bx_2662763187_182" class="catalog_item">
 											<div class="image_wrapper_block">
 												<a href="/catalog/elektroinstrument/perforatory/182/" class="thumb">
 													<div class="stickers">
@@ -1861,21 +1431,18 @@
 												<div class="item-title" style="height: 60px;">
 													<a href="/catalog/elektroinstrument/perforatory/182/"><span>Перфоратор Bosch Professional GBH 2-26</span></a>
 												</div>
-												<div class="item-stock"><span class="icon stock"></span><span class="value"></span></div>
+												<div class="item-stock"><span class="icon stock"></span><span class="value">В наличии</span></div>
 												<div class="cost prices clearfix">
-													<div class="price">3 092.40 руб. </div>
+
 													<div class="price discount">
 														<strike>3 436 руб.</strike>
 													</div>
-													<div class="sale_block">
-														<div class="value">-10%</div>
-														<div class="text">Экономия 343.60 руб.</div>
-														<div class="clearfix"></div>
-													</div>
+													<div class="price">3 092.40 руб. </div>
+
 												</div>
 												<div class="basket_props_block" id="bx_basket_div_182" style="display: none;">
 												</div>
-												<div class="buttons_block clearfix" style="display: none;">
+												<div class="buttons_block clearfix">
 													<a class="button basket read_more" rel="nofollow" href="/catalog/elektroinstrument/perforatory/182/" data-item="182">Подробнее</a> </div>
 											</div>
 										</li>
@@ -3028,8 +2595,128 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="wrapper_inner">
+			<div class="news_akc_block news">
+				<div class="top_block">
+					<!--						<div class="title_block">Новости компании</div>-->
+					<a href="/sale/">Новости, акции, новые поступления</a>
+				</div>
+
+				<div class="news_slider_wrapp">
+
+					<div class="flex-viewport" >
+						<ul class="news_slider wr" >
+							<li id="bx_3485106786_164" class="item" >
+								<div class="img">
+									<a href="/sale/note/">
+										<img border="0" src="/bitrix/images/news/news1.jpg" alt="Ноутбуки по весенней акции" title="Ноутбуки по весенней акции" draggable="false">
+									</a>
+								</div>
+								<div class="info" >
+									
+									<a class="name" href="/sale/note/">Ноутбуки по весенней акции</a>
+									<div class="date">29 Июля, 2015</div>
+								</div>
+							</li>
+							<li id="bx_3485106786_163" class="item" >
+								<div class="img">
+									<a href="/sale/videokamery_so_skidkoy_5_do_novogo_goda/">
+										<img border="0" src="/bitrix/images/news/news1.jpg" alt="Видеокамеры со скидкой до 30%! " title="Видеокамеры со скидкой до 30%! " draggable="false">
+									</a>
+								</div>
+								<div class="info" >
+									
+									<a class="name" href="/sale/videokamery_so_skidkoy_5_do_novogo_goda/">Видеокамеры со скидкой до 30%! </a>
+									<div class="date">26 Мая, 2015</div>
+								</div>
+							</li>
+							<li id="bx_3485106786_165" class="item" >
+								<div class="img">
+									<a href="/sale/sad/">
+										<img border="0" src="/bitrix/images/news/news1.jpg" alt="Садовая техника по акции" title="Садовая техника по акции" draggable="false">
+									</a>
+								</div>
+								<div class="info" >
+									
+									<a class="name" href="/sale/sad/">Садовая техника по акции</a>
+									<div class="date">28 Ноября, 2013</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<script>
+				var timeoutSlide;
+				InitFlexSliderNews = function () {
+					var flexsliderItemWidth = 369,
+						flexsliderItemMargin = 20;
+					$(".news_slider_wrapp").flexslider({
+						animation: "slide",
+						selector: ".news_slider > li",
+						slideshow: false,
+						slideshowSpeed: 6000,
+						animationSpeed: 600,
+						directionNav: true,
+						//controlNav: false,
+						pauseOnHover: true,
+						animationLoop: true,
+						controlsContainer: ".news_slider_navigation",
+						itemWidth: flexsliderItemWidth,
+						itemMargin: flexsliderItemMargin,
+						// manualControls: ".block_wr .flex-control-nav.flex-control-paging li a"
+						start: function () {
+							$('.news_slider_wrapp .flex-viewport .news_slider').equalize({
+								children: '.item .info'
+							});
+							$('.flex-control-nav li a').on('touchend', function () {
+								$(this).addClass('touch');
+							});
+							$('.news_slider_wrapp li').css('opacity', 1);
+						}
+					});
+					$('.stores').equalize({
+						children: '.wrapp_block',
+						reset: true
+					});
+				}
+				$(document).ready(function () {
+					$(window).resize(function () {
+						clearTimeout(timeoutSlide);
+						timeoutSlide = setTimeout(InitFlexSliderNews(), 50);
+					})
+				});
+				/*$(document).ready(function(){
+					var flexsliderItemWidth = 268,
+						flexsliderItemMargin = 20;
+					$(".news_slider_wrapp").flexslider({
+						animation: "slide",
+						selector: ".news_slider > li",
+						slideshow: false,
+						slideshowSpeed: 6000,
+						animationSpeed: 600,
+						directionNav: true,
+						//controlNav: true,
+						pauseOnHover: true,
+						animationLoop: true, 
+						controlsContainer: ".news_slider_navigation",
+						itemWidth: flexsliderItemWidth,
+						itemMargin: flexsliderItemMargin, 
+						manualControls: ".news_akc_block .flex-control-nav.flex-control-paging li a",
+						start: function(){
+							$('.news_slider_wrapp .flex-viewport .news_slider').equalize({children: '.item .info'});
+						}
+					});
+					$(window).resize(function(){
+						//$('.news_slider_wrapp .flex-viewport .news_slider').equalize({children: '.item'});
+					})
+				})*/
+			</script>
+		</div>
 		<div class="wrapper_inner">
 			<div id="bx_incl_area_14">
+			<hr>
 				<div class="brands_slider_wrapp">
 
 					<div class="brands_slider_navigation absolute">
@@ -3038,26 +2725,26 @@
 							<li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li>
 						</ul>
 					</div>
-					<div class="flex-viewport" style="overflow: hidden; position: relative;">
-						<ul class="brands_slider" style="width: 4400%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-							<li id="bx_651765591_137" title="Двойной щелчок - Изменить бренд" style="width: 179px; float: left; display: block;">
+					<div class="flex-viewport">
+						<ul class="brands_slider">
+							<li id="bx_651765591_137" title="Двойной щелчок - Изменить бренд">
 								<a href="/info/brands/panasonic/">
-									<img border="0" src="/upload/iblock/ccc/ccc80a60fbd5a638d8c2e65f06a5909b.jpg" alt="Panasonic" title="Panasonic" draggable="false">
+									<img border="0" src="/bitrix/images/brands/adventure.png" alt="Panasonic" title="Panasonic" draggable="false">
 								</a>
 							</li>
-							<li id="bx_651765591_138" title="Двойной щелчок - Изменить бренд" style="width: 179px; float: left; display: block;">
+							<li id="bx_651765591_138" title="Двойной щелчок - Изменить бренд">
 								<a href="/info/brands/canon/">
-									<img border="0" src="/upload/iblock/f11/f11eb75a194f8198bb77cde9d0918d39.jpg" alt="Canon" title="Canon" draggable="false">
+									<img border="0" src="/bitrix/images/brands/yamaha.png" alt="Canon" title="Canon" draggable="false">
 								</a>
 							</li>
-							<li id="bx_651765591_141" title="Двойной щелчок - Изменить бренд" style="width: 179px; float: left; display: block;">
+							<li id="bx_651765591_141" title="Двойной щелчок - Изменить бренд">
 								<a href="/info/brands/sony/">
-									<img border="0" src="/upload/iblock/9fb/9fb4876227955af4ca976dc86a6e902f.jpg" alt="Sony" title="Sony" draggable="false">
+									<img border="0" src="/bitrix/images/brands/attwood.png" alt="Sony" title="Sony" draggable="false">
 								</a>
 							</li>
-							<li id="bx_651765591_139" title="Двойной щелчок - Изменить бренд" style="width: 179px; float: left; display: block;">
+							<li id="bx_651765591_139" title="Двойной щелчок - Изменить бренд">
 								<a href="/info/brands/nikon/">
-									<img border="0" src="/upload/iblock/ef5/ef56bb7e096275658ea31dfe53115698.jpg" alt="Nikon" title="Nikon" draggable="false">
+									<img border="0" src="/bitrix/images/brands/buster.png" alt="Nikon" title="Nikon" draggable="false">
 								</a>
 							</li>
 							<li id="bx_651765591_127" title="Двойной щелчок - Изменить бренд" style="width: 179px; float: left; display: block;">
@@ -3065,7 +2752,7 @@
 									<img border="0" src="/upload/iblock/81c/81c3bd5303ade8e2976da47651e92aac.jpg" alt="BOSCH" title="BOSCH" draggable="false">
 								</a>
 							</li>
-							<li id="bx_651765591_148" title="Двойной щелчок - Изменить бренд" style="width: 179px; float: left; display: block;">
+							<li id="bx_651765591_148" title="Двойной щелчок - Изменить бренд">
 								<a href="/info/brands/columbia/">
 									<img border="0" src="/upload/iblock/f45/f4553bc748cd773bf4f386eff0d9452d.jpg" alt="Columbia" title="Columbia" draggable="false">
 								</a>
@@ -3168,633 +2855,69 @@
 					});
 				</script>
 			</div>
-			<hr class="grey">
-			<div class="wrap_md">
-				<div class="news_wrap">
-					<div id="bx_incl_area_15">
-						<div class="news_block news">
-							<div class="top_block">
-								<div class="title_block">Новости</div>
-								<a href="/company/news/">Все новости</a>
-							</div>
-							<div class="info_block">
-								<div class="news_items">
-									<div id="bx_1373509569_153" class="item box-sizing" title="Двойной щелчок - Изменить новость">
-										<div class="image">
-											<a href="/company/news/2015/apple/">
-												<img class="img-responsive" src="/upload/resize_cache/iblock/84e/90_90_0/84ee4910a7a03480a53c250fe88269db.png" alt="Apple представляет совершенно новый MacBook Pro с дисплеем Retina" title="Apple представляет совершенно новый MacBook Pro с дисплеем Retina">
-											</a>
-										</div>
-										<div class="info">
-											<div class="date">2 Июня 2015</div>
-											<a class="name" href="/company/news/2015/apple/">Apple представляет совершенно новый MacBook Pro с дисплеем Retina</a>
-											<div class="preview">Сегодня компания Apple представила совершенно новый 15-дюймовый MacBook Pro с потрясающим дисплеем Retina, flash-накопителем и четырёхъядерн...</div>
-										</div>
-									</div>
-									<div id="bx_1373509569_161" class="item box-sizing" title="Двойной щелчок - Изменить новость">
-										<div class="image">
-											<a href="/company/news/2014/foxconn/">
-												<img class="img-responsive" src="/upload/resize_cache/iblock/e43/90_90_0/e431530900f446565750c36455a61ed7.jpg" alt="Foxconn выпускает полмиллиона iPhone 5s ежедневно, чтобы выполнить заказ Apple" title="Foxconn выпускает полмиллиона iPhone 5s ежедневно, чтобы выполнить заказ Apple">
-											</a>
-										</div>
-										<div class="info">
-											<div class="date">28 Ноября 2014</div>
-											<a class="name" href="/company/news/2014/foxconn/">Foxconn выпускает полмиллиона iPhone 5s ежедневно, чтобы выполнить заказ Apple</a>
-											<div class="preview">Каждую неделю поступают сводки с полей борьбы с дефицитом. Apple всеми силами старается преодолеть нехватку iPhone 5s.</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="subscribe_wrap">
-					<div id="bx_incl_area_16">
-						<!--'start_frame_cache_IzufVt'-->
-						<div class="subscribe-form" id="subscribe-form">
-							<div class="wrap_bg" style="background-position: 10% -399px;">
-								<div class="top_block box-sizing">
-									<div class="image"></div>
-									<div class="text">
-										<div class="title">Подписывайтесь!</div>
-										<div class="more">Узнавайте свежую информацию о скидках и акциях первым.</div>
-									</div>
-								</div>
-								<form action="/personal/subscribe/" class="sform box-sizing" novalidate="novalidate">
-									<label for="sf_RUB_ID_1" class="hidden">
-										<input type="checkbox" name="sf_RUB_ID[]" id="sf_RUB_ID_1" value="1" checked=""> Новости магазина </label>
-									<div class="email_wrap form-control">
-										<input type="email" name="sf_EMAIL" required="" size="20" value="" placeholder="Оставьте свой e-mail" aria-required="true">
-									</div>
-									<div class="button_wrap form-control">
-										<input type="submit" name="OK" class="button transparent white medium" value="Подписаться">
-									</div>
-								</form>
-							</div>
-						</div>
-						<script>
-							$(document).ready(function () {
-								$("form.sform").validate({
-									rules: {
-										"sf_EMAIL": {
-											email: true
-										}
-									}
-								});
-							})
-
-							$(window).scroll(function () {
-								var x = $(window).scrollTop() / $(document).height();
-								x = parseInt(x * 1000 - 400);
-								if (x > -3) x = -3;
-								$('.subscribe-form .wrap_bg').stop().animate({
-									'background-position-x': '10%',
-									'background-position-y': x + 'px'
-								}, 500, 'swing');
-
-							});
-						</script>
-						<!--'end_frame_cache_IzufVt'-->
-					</div>
-				</div>
-			</div>
 		</div>
-		<div class="grey_bg">
-			<div class="wrapper_inner">
-				<div id="bx_incl_area_17">
-					<div class="news_akc_block news">
-						<div class="top_block">
-							<div class="title_block">Действующие акции</div>
-							<a href="/sale/">Все акции</a>
-						</div>
-						<div class="news_slider_navigation slider_navigation top">
-							<ol class="flex-control-nav flex-control-paging">
-								<li><a class="flex-active">1</a></li>
-								<li><a>2</a></li>
-							</ol>
-							<ul class="flex-direction-nav">
-								<li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li>
-								<li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li>
-							</ul>
-						</div>
-						<div class="news_slider_wrapp">
-
-							<div class="flex-viewport" style="overflow: hidden; position: relative;">
-								<ul class="news_slider wr" style="width: 1000%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-									<li id="bx_3485106786_164" class="item" title="Двойной щелчок - Изменить акцию" style="width: 268px; float: left; display: block; opacity: 1;">
-										<div class="img">
-											<a href="/sale/note/">
-												<img border="0" src="/upload/resize_cache/iblock/238/268_166_2/238e36586bd16f1541fe08bb3373ef43.jpg" alt="Ноутбуки по весенней акции" title="Ноутбуки по весенней акции" draggable="false">
-											</a>
-										</div>
-										<div class="info" style="height: 129px;">
-											<div class="date">29 Июля 2015</div>
-											<a class="name" href="/sale/note/">Ноутбуки по весенней акции</a>
-											<div class="preview">Долгожданная Черная пятница в нашем магазине!
-												<br>Одежда, Книги, Электроника и многое другое по безумно низким ценам</div>
-										</div>
-									</li>
-									<li id="bx_3485106786_163" class="item" title="Двойной щелчок - Изменить акцию" style="width: 268px; float: left; display: block; opacity: 1;">
-										<div class="img">
-											<a href="/sale/videokamery_so_skidkoy_5_do_novogo_goda/">
-												<img border="0" src="/upload/resize_cache/iblock/537/268_166_2/5374dd33e659a7df85eb685ec922d837.jpg" alt="Видеокамеры со скидкой до 30%! " title="Видеокамеры со скидкой до 30%! " draggable="false">
-											</a>
-										</div>
-										<div class="info" style="height: 129px;">
-											<div class="date">26 Мая 2015</div>
-											<a class="name" href="/sale/videokamery_so_skidkoy_5_do_novogo_goda/">Видеокамеры со скидкой до 30%! </a>
-											<div class="preview">Видеокамеры со скидкой 5%! До нового года! Эти функции становятся частью более масштабного «комплекса маркетинга» (marketing mix), то есть н...</div>
-										</div>
-									</li>
-									<li id="bx_3485106786_162" class="item" title="Двойной щелчок - Изменить акцию" style="width: 268px; float: left; display: block; opacity: 1;">
-										<div class="img">
-											<a href="/sale/rasprodazha_gps_navigatorov/">
-												<img border="0" src="/upload/resize_cache/iblock/ca2/268_166_2/ca2438c3618603dd56437fe6f5f261b7.jpg" alt="Распродажа GPS-навигаторов" title="Распродажа GPS-навигаторов" draggable="false">
-											</a>
-										</div>
-										<div class="info" style="height: 129px;">
-											<div class="date">6 Мая 2015</div>
-											<a class="name" href="/sale/rasprodazha_gps_navigatorov/">Распродажа GPS-навигаторов</a>
-											<div class="preview">Суперскидка на GPS-навигаторы, специально к Новому году, лучший подарок для автомобилистов</div>
-										</div>
-									</li>
-									<li id="bx_3485106786_166" class="item" title="Двойной щелчок - Изменить акцию" style="width: 268px; float: left; display: block; opacity: 1;">
-										<div class="img">
-											<a href="/sale/instrument/">
-												<img border="0" src="/upload/resize_cache/iblock/7c9/268_166_2/7c9b14bf5a7d2b48aea7eea488fcce9a.jpg" alt="Распродажа инструмента" title="Распродажа инструмента" draggable="false">
-											</a>
-										</div>
-										<div class="info" style="height: 129px;">
-											<div class="date">28 Ноября 2013</div>
-											<a class="name" href="/sale/instrument/">Распродажа инструмента</a>
-											<div class="preview">Долгожданная Черная пятница в нашем магазине!
-												<br>Одежда, Книги, Электроника и многое другое по безумно низким ценам</div>
-										</div>
-									</li>
-									<li id="bx_3485106786_165" class="item" title="Двойной щелчок - Изменить акцию" style="width: 268px; float: left; display: block; opacity: 1;">
-										<div class="img">
-											<a href="/sale/sad/">
-												<img border="0" src="/upload/resize_cache/iblock/9b2/268_166_2/9b2f3f85487e78c8a8bc0b5a2516f672.jpg" alt="Садовая техника по акции" title="Садовая техника по акции" draggable="false">
-											</a>
-										</div>
-										<div class="info" style="height: 129px;">
-											<div class="date">28 Ноября 2013</div>
-											<a class="name" href="/sale/sad/">Садовая техника по акции</a>
-											<div class="preview">Долгожданная Черная пятница в нашем магазине!
-												<br>Одежда, Книги, Электроника и многое другое по безумно низким ценам</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<script>
-						var timeoutSlide;
-						InitFlexSliderNews = function () {
-							var flexsliderItemWidth = 268,
-								flexsliderItemMargin = 20;
-							$(".news_slider_wrapp").flexslider({
-								animation: "slide",
-								selector: ".news_slider > li",
-								slideshow: false,
-								slideshowSpeed: 6000,
-								animationSpeed: 600,
-								directionNav: true,
-								//controlNav: false,
-								pauseOnHover: true,
-								animationLoop: true,
-								controlsContainer: ".news_slider_navigation",
-								itemWidth: flexsliderItemWidth,
-								itemMargin: flexsliderItemMargin,
-								// manualControls: ".block_wr .flex-control-nav.flex-control-paging li a"
-								start: function () {
-									$('.news_slider_wrapp .flex-viewport .news_slider').equalize({
-										children: '.item .info'
-									});
-									$('.flex-control-nav li a').on('touchend', function () {
-										$(this).addClass('touch');
-									});
-									$('.news_slider_wrapp li').css('opacity', 1);
-								}
-							});
-							$('.stores').equalize({
-								children: '.wrapp_block',
-								reset: true
-							});
-						}
-						$(document).ready(function () {
-							$(window).resize(function () {
-								clearTimeout(timeoutSlide);
-								timeoutSlide = setTimeout(InitFlexSliderNews(), 50);
-							})
-						});
-						/*$(document).ready(function(){
-							var flexsliderItemWidth = 268,
-								flexsliderItemMargin = 20;
-							$(".news_slider_wrapp").flexslider({
-								animation: "slide",
-								selector: ".news_slider > li",
-								slideshow: false,
-								slideshowSpeed: 6000,
-								animationSpeed: 600,
-								directionNav: true,
-								//controlNav: true,
-								pauseOnHover: true,
-								animationLoop: true, 
-								controlsContainer: ".news_slider_navigation",
-								itemWidth: flexsliderItemWidth,
-								itemMargin: flexsliderItemMargin, 
-								manualControls: ".news_akc_block .flex-control-nav.flex-control-paging li a",
-								start: function(){
-									$('.news_slider_wrapp .flex-viewport .news_slider').equalize({children: '.item .info'});
-								}
-							});
-							$(window).resize(function(){
-								//$('.news_slider_wrapp .flex-viewport .news_slider').equalize({children: '.item'});
-							})
-						})*/
-					</script>
-				</div>
-			</div>
-		</div>
-		<div id="bx_incl_area_18">
-			<div class="block_wr parrallax-shops light">
-				<div class="bg_map" style="background-position-y: 0px;"></div>
-				<div class="wrapper_inner">
-					<div class="stores news">
-						<div class="top_block">
-							<div class="title_block">Наши магазины</div>
-							<a href="/contacts/stores/">Все магазины</a>
-						</div>
-						<div class="stores_list">
-							<div class="stores_navigation slider_navigation">
-								<ol class="flex-control-nav flex-control-paging">
-									<li style="opacity: 1;"><a class="flex-active">1</a></li>
-									<li style="opacity: 1;"><a>2</a></li>
-								</ol>
-								<ul class="flex-direction-nav">
-									<li class="flex-nav-prev" style="opacity: 1;"><a class="flex-prev" href="#">Previous</a></li>
-									<li class="flex-nav-next" style="opacity: 1;"><a class="flex-next" href="#">Next</a></li>
-								</ul>
-							</div>
-
-							<ul class="flex-control-nav flex-control-paging">
-								<li style="opacity: 1;">
-									<a></a>
-								</li>
-								<li style="opacity: 1;">
-									<a></a>
-								</li>
-							</ul>
-							<div class="flex-viewport" style="overflow: hidden; position: relative;">
-								<ul class="stores_list_wr wr" style="width: 1000%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-									<li class="item" style="height: 76px; width: 216px; float: left; display: block; opacity: 1;">
-										<div class="wrapp_block" style="height: 76px;">
-											<a href="/contacts/stores/99/"><span class="icon"></span><span class="text">г. Москва</span></a>
-											<div class="store_text">
-												<span class="title">Адрес:</span>
-												<span class="value">ул. Большая, 7/10</span>
-											</div>
-											<div class="clear"></div>
-											<div class="store_text">
-												<span class="title">Телефон</span>
-												<span class="value">+7 (888) 987-65-43</span>
-											</div>
-											<div class="clear"></div>
-										</div>
-									</li>
-									<li class="item" style="height: 76px; width: 216px; float: left; display: block; opacity: 1;">
-										<div class="wrapp_block" style="height: 76px;">
-											<a href="/contacts/stores/100/"><span class="icon"></span><span class="text">г. Москва</span></a>
-											<div class="store_text">
-												<span class="title">Адрес:</span>
-												<span class="value">ул. Охотный Ряд, 2</span>
-											</div>
-											<div class="clear"></div>
-											<div class="store_text">
-												<span class="title">Телефон</span>
-												<span class="value">+7 (888) 987-65-43</span>
-											</div>
-											<div class="clear"></div>
-										</div>
-									</li>
-									<li class="item" style="height: 76px; width: 216px; float: left; display: block; opacity: 1;">
-										<div class="wrapp_block" style="height: 76px;">
-											<a href="/contacts/stores/101/"><span class="icon"></span><span class="text">г. Санкт-Петербург</span></a>
-											<div class="store_text">
-												<span class="title">Адрес:</span>
-												<span class="value">Невский проспект, 35</span>
-											</div>
-											<div class="clear"></div>
-											<div class="store_text">
-												<span class="title">Телефон</span>
-												<span class="value">+7 (888) 987-65-43</span>
-											</div>
-											<div class="clear"></div>
-										</div>
-									</li>
-									<li class="item" style="height: 76px; width: 216px; float: left; display: block; opacity: 1;">
-										<div class="wrapp_block" style="height: 76px;">
-											<a href="/contacts/stores/102/"><span class="icon"></span><span class="text">г. Нижний Новгород</span></a>
-											<div class="store_text">
-												<span class="title">Адрес:</span>
-												<span class="value">пр. Ленина, 12</span>
-											</div>
-											<div class="clear"></div>
-											<div class="store_text">
-												<span class="title">Телефон</span>
-												<span class="value">+7 (888) 987-65-43</span>
-											</div>
-											<div class="clear"></div>
-										</div>
-									</li>
-									<li class="item" style="height: 76px; width: 216px; float: left; display: block; opacity: 1;">
-										<div class="wrapp_block" style="height: 76px;">
-											<a href="/contacts/stores/103/"><span class="icon"></span><span class="text">г. Челябинск</span></a>
-											<div class="store_text">
-												<span class="title">Адрес:</span>
-												<span class="value">ул. Артиллерийская, 11</span>
-											</div>
-											<div class="clear"></div>
-											<div class="store_text">
-												<span class="title">Телефон</span>
-												<span class="value">+7 (888) 987-65-43</span>
-											</div>
-											<div class="clear"></div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="all_map">
-							<a href="/contacts/stores/" class="wrapp_block" style="height: 76px;">
-								<div class="icon"></div>
-								<div class="text">Посмотреть все магазины на карте</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-			<script>
-				$(window).scroll(function () {
-					var x = $(window).scrollTop() / $(document).height();
-					x = parseInt(-x * 360);
-					$('.parrallax-shops .bg_map').stop().animate({
-						'background-position-x': 'center',
-						'background-position-y': x + 'px'
-					}, 700, 'swing');
-				});
-
-				var timeoutSlide;
-				InitFlexSlider = function () {
-					var flexsliderItemWidth = 268,
-						flexsliderItemMargin = 20;
-					$(".stores .stores_list").flexslider({
-						animation: "slide",
-						selector: ".stores_list_wr > li",
-						slideshow: false,
-						slideshowSpeed: 6000,
-						animationSpeed: 600,
-						directionNav: true,
-						pauseOnHover: true,
-						animationLoop: true,
-						controlsContainer: ".stores_navigation",
-						itemWidth: flexsliderItemWidth,
-						itemMargin: flexsliderItemMargin,
-						start: function (slider) {
-							$('.flex-control-nav li a').on('touchend', function () {
-								$(this).addClass('touch');
-							})
-							slider.find('li').css('opacity', 1);
-						}
-					});
-					$('.stores').equalize({
-						children: '.wrapp_block',
-						reset: true
-					});
-				}
-				$(document).ready(function () {
-					$(window).resize(function () {
-						clearTimeout(timeoutSlide);
-						timeoutSlide = setTimeout(InitFlexSlider(), 50);
-						$('.stores .flex-viewport .stores_list_wr').equalize({
-							children: '.item'
-						});
-					})
-				});
-			</script>
-			<script type="text/javascript">
-				$(document).ready(function () {
-					$('.stores.news').parents('.block_wr').addClass('light');
-				});
-			</script>
-		</div>
-		<div class="grey_bg">
+		<!--		delete block .news_akc_block with wrapper-->
+		<!--		delete block .bg_map with wrapper-->
+		
+		<div class="about_bg">
 			<div class="wrapper_inner">
 				<div class="wrap_md">
-					<div class="md-50 img" style="height: 393px;">
-						<img alt="companypic.png" src="/include/d634e35004ae7f5ca27752156a7f8042.png" title="companypic.png"> </div>
-					<div class="md-50 big">
+					<div class="about_block">
 						<div id="bx_incl_area_19">
-							<div class="title_block">О компании</div>
-							<p>
-								Сайт, торгующий товарами в Интернете. Позволяет пользователям сформировать заказ на покупку, выбрать способ оплаты и доставки заказа в сети Интернет. Выбрав необходимые товары или услуги, пользователь обычно имеет возможность тут же на сайте выбрать метод оплаты и доставки.
+							<div class="title_block">В нашем арсенале качественные и, самое главное, уловистые рыболовные принадлежности</div>
+							<p class="subtitle">
+								Мы всегда рады видеть вас в нашем магазине «Кингфиш»
 							</p>
-							<p>
-								Основное отличие Интернет-магазина от традиционного — в типе торговой площадки. Обычному магазину нужен торговый зал, витрины, ценники, а также продавцы, кассиры и опытные консультанты, у онлайн-магазина же вся инфраструктура реализована программно.
+							<p><span>Более 30 000 товаров </span> У нас представлено огромное количество товаров для рыбалки: лодки, лодочные моторы, удилища и катушки, шнуры, лески, крючки и приманки, эхолоты, навигационное оборудование, одежда и обувь.
 							</p>
-							<a href="/company/" class="icon_more">Подробнее</a></div>
+							<p><span>Более 50 брендов</span> Наша компания осуществляет продажи только качественных рыболовных товаров таких крупных рыболовных брендов, как Shimano, Rapala, Graphiteleader, Major Craft, Fox Rage, Sawamura, Fish Arrow, Smith, Jackson, Gambler, Noike, и многих др.
+							</p>
+							<p><span>Покупки в реальном времени</span> Кингфиш» — это не только интернет-магазин магазин, но и реальный розничный магазин, где вы можете посмотреть и выбрать любой понравившийся вам товар. А наши консультанты помогут в выборе и расскажут вам о его особенностях.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!--	delete .similar_products_wrapp block-->
+<!--		add .delivery_pay_block-->
 		<div class="wrapper_inner">
-			<div id="bx_incl_area_20">
-				<!--'start_frame_cache_rJCt68'-->
-				<div class="viewed_slider common_product wrapper_block s_qsNgU0">
-					<div class="top_block">
-						<div class="title_block">Ранее вы смотрели</div>
-					</div>
-					<ul class="viewed_navigation slider_navigation top_big">
-						<ul class="flex-direction-nav">
-							<li class="flex-nav-prev"><a class="flex-prev flex-disabled" href="#" tabindex="-1">Previous</a></li>
-							<li class="flex-nav-next"><a class="flex-next flex-disabled" href="#" tabindex="-1">Next</a></li>
-						</ul>
-					</ul>
-					<div class="all_wrapp" style="height: 394px;">
-						<div class="content_inner tab absolute" data-unhover="394" data-hover="477">
-
-							<div class="flex-viewport" style="overflow: hidden; position: relative;">
-								<ul class="slides wr" style="width: 600%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-									<li class="catalog_item" id="bx_1374213980_263" style="width: 170px; height: 349px; float: left; display: block; opacity: 1;">
-										<div class="image_wrapper_block">
-											<a href="/catalog/foto_i_video/fotoapparaty/263/" class="thumb">
-												<div class="like_icons">
-													<div class="wish_item_button">
-														<span title="Отложить" class="wish_item to" data-item="263" style="display: none;"><i></i></span>
-														<span title="В отложенных" class="wish_item in added" style="" data-item="263"><i></i></span>
-													</div>
-													<div class="compare_item_button">
-														<span title="Сравнить" class="compare_item to" data-iblock="13" data-item="263"><i></i></span>
-														<span title="В сравнении" class="compare_item in added" style="display: none;" data-iblock="13" data-item="263"><i></i></span>
-													</div>
-												</div>
-												<img border="0" src="/upload/iblock/9dc/9dc43d61be9fa8cc9b844cf522f56940.jpg" alt="Комплект Canon EOS 5D Mark III + объектив EF24-105 F4L IS" title="Комплект Canon EOS 5D Mark III + объектив EF24-105 F4L IS" draggable="false">
-											</a>
-										</div>
-										<div class="item_info" style="height: 160px;">
-											<div class="item-title" style="height: 60px;">
-												<a href="/catalog/foto_i_video/fotoapparaty/263/"><span>Комплект Canon EOS 5D Mark III + объектив EF24-105 F4L IS</span></a>
-											</div>
-											<div class="item-stock"><span class="icon stock"></span><span class="value"></span></div>
-											<div class="cost prices clearfix">
-												<div class="price">37 918 руб. /шт </div>
-											</div>
-											<div class="buttons_block clearfix" style="display: none;">
-												<a class="button basket read_more" rel="nofollow" href="/catalog/foto_i_video/fotoapparaty/263/" data-item="263">Подробнее</a> </div>
-										</div>
-									</li>
-									<li class="catalog_item" id="bx_1374213980_235" style="width: 170px; height: 349px; float: left; display: block; opacity: 1;">
-										<div class="image_wrapper_block">
-											<a href="/catalog/odezhda/zhenskaya_odezhda/235/" class="thumb">
-												<div class="stickers">
-													<div class="sticker_new" title="Новинка"></div>
-												</div>
-												<div class="like_icons">
-													<div class="compare_item_button">
-														<span title="Сравнить" class="compare_item to" data-iblock="13" data-item="235"><i></i></span>
-														<span title="В сравнении" class="compare_item in added" style="display: none;" data-iblock="13" data-item="235"><i></i></span>
-													</div>
-												</div>
-												<img border="0" src="/upload/iblock/dcd/dcd44f5f96b13963e67db109bc55f6e6.jpg" alt="Джемпер женский Nike Rally Signal Full-Zip" title="Джемпер женский Nike Rally Signal Full-Zip" draggable="false">
-											</a>
-										</div>
-										<div class="item_info" style="height: 160px;">
-											<div class="item-title" style="height: 60px;">
-												<a href="/catalog/odezhda/zhenskaya_odezhda/235/"><span>Джемпер женский Nike Rally Signal Full-Zip</span></a>
-											</div>
-											<div class="item-stock"><span class="icon  order"></span><span class="value"></span></div>
-											<div class="cost prices clearfix">
-												<div class="price"> 3 060 руб. /шт </div>
-												<div class="price discount">
-													<strike>3 400 руб.</strike>
-												</div>
-												<div class="sale_block">
-													<div class="value">-10%</div>
-													<div class="text">Экономия 340 руб.</div>
-													<div class="clearfix"></div>
-												</div>
-											</div>
-											<div class="buttons_block clearfix" style="display: none;">
-												<a class="button basket read_more" rel="nofollow" href="/catalog/odezhda/zhenskaya_odezhda/235/" data-item="235">Подробнее</a> </div>
-										</div>
-									</li>
-									<li class="catalog_item" id="bx_1374213980_226" style="width: 170px; height: 349px; float: left; display: block; opacity: 1;">
-										<div class="image_wrapper_block">
-											<a href="/catalog/foto_i_video/obektivy/226/" class="thumb">
-												<div class="stickers">
-													<div class="sticker_hit" title="Хит"></div>
-												</div>
-												<div class="like_icons">
-													<div class="wish_item_button">
-														<span title="Отложить" class="wish_item to" data-item="226"><i></i></span>
-														<span title="В отложенных" class="wish_item in added" style="display: none;" data-item="226"><i></i></span>
-													</div>
-													<div class="compare_item_button">
-														<span title="Сравнить" class="compare_item to" data-iblock="13" data-item="226"><i></i></span>
-														<span title="В сравнении" class="compare_item in added" style="display: none;" data-iblock="13" data-item="226"><i></i></span>
-													</div>
-												</div>
-												<img border="0" src="/upload/iblock/4dd/4ddeb5cbaed448244ce5471c6cb8c8f6.jpg" alt="Объектив Canon EF24-105 F4L IS USM" title="Объектив Canon EF24-105 F4L IS USM" draggable="false">
-											</a>
-										</div>
-										<div class="item_info" style="height: 160px;">
-											<div class="item-title" style="height: 60px;">
-												<a href="/catalog/foto_i_video/obektivy/226/"><span>Объектив Canon EF24-105 F4L IS USM</span></a>
-											</div>
-											<div class="item-stock"><span class="icon stock"></span><span class="value"></span></div>
-											<div class="cost prices clearfix">
-												<div class="price">33 300 руб. /шт </div>
-												<div class="price discount">
-													<strike>37 000 руб.</strike>
-												</div>
-												<div class="sale_block">
-													<div class="value">-10%</div>
-													<div class="text">Экономия 3 700 руб.</div>
-													<div class="clearfix"></div>
-												</div>
-											</div>
-											<div class="buttons_block clearfix" style="display: none;">
-												<a class="button basket read_more" rel="nofollow" href="/catalog/foto_i_video/obektivy/226/" data-item="226">Подробнее</a> </div>
-										</div>
-									</li>
-								</ul>
-							</div>
+			<div class="delivery_pay_block">
+			<div class="top_block">
+					<!--						<div class="title_block">Новости компании</div>-->
+					<a href="/sale/">Доставка и оплата</a>
+				</div>
+				<div class="item">
+					<div class="item__header">
+						<div class="item__icon">
 						</div>
+						<span>Самовывоз</span>
+					</div>
+					<div class="item__text">
+						<p>Заказанный товар вы можете забрать самостоятельно в нашем магазине «Кингфиш», находящийся по адресу: <span class="bold">г. Минск, улица Петра Мстиславца, дом 20.</span></p>
+						<p class="time">Ежедневно, с 10<sup>00</sup> до 19<sup>00</sup>.</p>
 					</div>
 				</div>
-				<script type="text/javascript">
-					$(document).ready(function () {
-						var flexsliderItemWidth = 210;
-						var flexsliderItemMargin = 20;
-						var sliderWidth = $('.specials_slider_wrapp').outerWidth();
-						//var flexsliderMinItems = Math.floor(sliderWidth / (flexsliderItemWidth + flexsliderItemMargin));
-						$('.viewed_slider.s_qsNgU0 .content_inner').flexslider({
-							animation: 'slide',
-							selector: '.slides > li',
-							slideshow: false,
-							animationSpeed: 600,
-							directionNav: true,
-							controlNav: false,
-							pauseOnHover: true,
-							animationLoop: true,
-							itemWidth: flexsliderItemWidth,
-							itemMargin: flexsliderItemMargin,
-							//minItems: flexsliderMinItems,
-							controlsContainer: '.viewed_navigation',
-							start: function (slider) {
-								slider.find('li').css('opacity', 1);
-							}
-						});
-						$(window).resize(function () {
-							var itemsButtonsHeight = $('.wrapper_block.s_qsNgU0 .wr > li .buttons_block').height();
-							$('.wrapper_block.s_qsNgU0 .wr .buttons_block').hide();
-							if ($('.wrapper_block.s_qsNgU0 .all_wrapp .content_inner').attr('data-hover') == undefined) {
-								var tabsContentUnhover = ($('.wrapper_block.s_qsNgU0 .all_wrapp').height() * 1) + 20;
-								var tabsContentHover = tabsContentUnhover + itemsButtonsHeight + 50;
-								$('.wrapper_block.s_qsNgU0 .all_wrapp .content_inner').attr('data-unhover', tabsContentUnhover);
-								$('.wrapper_block.s_qsNgU0 .all_wrapp .content_inner').attr('data-hover', tabsContentHover);
-								$('.wrapper_block.s_qsNgU0 .all_wrapp').height(tabsContentUnhover);
-								$('.wrapper_block.s_qsNgU0 .all_wrapp .content_inner').addClass('absolute');
-							}
-						});
-						$(window).resize();
-						$('.wrapper_block.s_qsNgU0 .wr > li').hover(
-							function () {
-								//if($(window).outerWidth()>550){
-								var tabsContentHover = $(this).closest('.content_inner').attr('data-hover') * 1;
-								$(this).closest('.content_inner').fadeTo(100, 1);
-								$(this).closest('.content_inner').stop().css({
-									'height': tabsContentHover
-								});
-								$(this).find('.buttons_block').fadeIn(750, 'easeOutCirc');
-								//}
-							},
-							function () {
-								//if($(window).outerWidth()>550){
-								var tabsContentUnhoverHover = $(this).closest('.content_inner').attr('data-unhover') * 1;
-								$(this).closest('.content_inner').stop().animate({
-									'height': tabsContentUnhoverHover
-								}, 100);
-								$(this).find('.buttons_block').stop().fadeOut(203);
-								//}
-							}
-						);
-					})
-				</script>
-				<!--'end_frame_cache_rJCt68'-->
+				<div class="item">
+					<div class="item__header">
+						<div class="item__icon"></div>
+						<span>Почтой</span>
+					</div>
+					<div class="item__text">
+						<p>Заказанный товар вы можете забрать самостоятельно в нашем магазине «Кингфиш», находящийся по адресу: <span>г. Минск, улица Петра Мстиславца, дом 20.</span></p>
+						<a href="#">Примерный расчет стоимости доставки</a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item__header">
+						<div class="item__icon"></div>
+						<span>Курьером</span>
+					</div>
+					<div class="item__text">
+						<p>Заказанный товар вы можете забрать самостоятельно в нашем магазине «Кингфиш», находящийся по адресу: <span>г. Минск, улица Петра Мстиславца, дом 20.</span></p>
+						<p class="time">Время доставки с 10<sup>00</sup> до 19<sup>00</sup>. <br>Суббота и воскресенье выходной. </p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -3810,12 +2933,8 @@
 									<div class="wrap_md">
 										<div class="wrap_bg iblock">
 											<div class="wrap_text">
-												<div class="wrap_icon iblock">
-
-												</div>
 												<div class="wrap_more_text iblock">
-													Подписывайтесь
-													<br> на новости и акции </div>
+													Подписаться на новинки <br>и скидки нашей компании</div>
 											</div>
 										</div>
 										<div class="forms iblock">
@@ -3825,7 +2944,7 @@
 													<input type="checkbox" name="sf_RUB_ID[]" id="sf_RUB_ID_1" value="1" checked=""> Новости магазина </label>
 												<div class="wrap_md">
 													<div class="email_wrap form-control iblock">
-														<input type="email" name="sf_EMAIL" class="grey medium" required="" size="20" value="" placeholder="Оставьте свой e-mail" aria-required="true">
+														<input type="email" name="sf_EMAIL" class="grey medium" required="" size="20" value="" placeholder="Ваш E-mail" aria-required="true">
 													</div>
 													<div class="button_wrap iblock">
 														<input type="submit" name="OK" class="button medium" value="Подписаться">
@@ -3849,20 +2968,30 @@
 								<!--'end_frame_cache_8ofwKu'-->
 							</div>
 						</div>
-						<div class="iblock phones">
-							<div class="wrap_md">
-								<div class="empty_block iblock"></div>
-								<div class="phone_block iblock">
-									<span class="phone_wrap">
-											<span class="icons"></span>
-									<span><a rel="nofollow" href="tel:+7 000 000-00-00">+7 000 000-00-00</a></span>
-									</span>
-									<span class="order_wrap_btn">
-											<span class="callback_btn">Заказать звонок</span>
-									</span>
+							<div class="social_wrapper iblock">
+									<div class="social">
+										<div id="bx_incl_area_26">
+											<a href="http://vk.ru/" target="_blank">
+												<img border="0" src="/bitrix/components/aspro/social.info.mshop/images/vk.png" alt="ВКонтакте" title="ВКонтакте">
+											</a>
+											<a href="http://www.odnoklassniki.ru/" target="_blank">
+												<img border="0" src="/bitrix/components/aspro/social.info.mshop/images/odn.png" alt="Одноклассники" title="Одноклассники">
+											</a>
+											<a href="http://www.facebook.com/a" target="_blank">
+												<img border="0" src="/bitrix/components/aspro/social.info.mshop/images/facebook.png" alt="Facebook" title="Facebook">
+											</a>
+											<a href="http://twitter.com/" target="_blank">
+												<img border="0" src="/bitrix/components/aspro/social.info.mshop/images/twitter.png" alt="Twitter" title="Twitter">
+											</a>
+											<a href="http://instagram.com/" target="_blank">
+												<img border="0" src="/bitrix/components/aspro/social.info.mshop/images/inst.png" alt="Instagram" title="Instagram">
+											</a>
+											<a href="http://www.my.mail.ru/" target="_blank">
+												<img border="0" src="/bitrix/components/aspro/social.info.mshop/images/mail.png" alt="Мой мир" title="Мой мир">
+											</a>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 				<div class="footer_bottom">
