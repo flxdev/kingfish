@@ -481,6 +481,16 @@ body .top_slider_wrapp .flex-direction-nav li{
 	width: 25%;
 }
 
+.tizers_block .item .img {
+    max-width: 42px;
+    min-width: 36px;
+}
+
+.tizers_block .item .img {
+	object-fit: cover;
+	width: 100%;
+}
+
 .start_promo .item{
 	height: 205px;
 	padding-bottom: 0;
@@ -841,7 +851,7 @@ input.button,
 }
 
 .about_bg{
-	background: url('/bitrix/images/about_bg.jpg') center no-repeat;
+	background: url('../images/about_bg.jpg') center no-repeat;
 	background-size: cover;
 }
 
@@ -917,15 +927,18 @@ input.button,
 }
 
 .delivery_pay_block .item:nth-child(2) .item__header .item__icon{
-	background: url('/bitrix/images/delivery_block/pickup.png') center no-repeat, #f8f8f8;
+	background: url('../images/delivery_block/pickup.svg') center no-repeat;
+	background-size: cover;
 }
 
 .delivery_pay_block .item:nth-child(3) .item__header .item__icon{
-	background: url('/bitrix/images/delivery_block/post.png') center no-repeat, #f8f8f8;
+	background: url('../images/delivery_block/post.svg') center no-repeat;
+	background-size: cover;
 }
 
 .delivery_pay_block .item:nth-child(4) .item__header .item__icon{
-	background: url('/bitrix/images/delivery_block/delivery.png') center no-repeat, #f8f8f8;
+	background: url('../images/delivery_block/courier.svg') center no-repeat;
+	background-size: cover;
 }
 
 .delivery_pay_block .item .item__header > span {
@@ -976,7 +989,7 @@ input.button,
 }
 
 #footer .footer_top{
-	background: url('/bitrix/images/footer_bg.jpg') center no-repeat;
+	background: url('../images/footer_bg.jpg') center no-repeat;
 	background-size: cover;
 	padding: 25px 35px;
 	border-radius: 10px;
@@ -993,8 +1006,9 @@ input.button,
 	width: 75%;
 }
 
-.footer_top > .wrap_md > .sblock.social_wrapper{
+.footer_top > .wrap_md > .social_wrapper{
 	width: 25%;
+	text-align: right;
 }
 
 .footer_top .sblock .wrap_bg{
@@ -1027,4 +1041,69 @@ input.button,
 	letter-spacing: 0.03em;
 	text-transform: capitalize;
 	color: #184873;
+}
+.social a{
+	margin-left: 15px;
+	display: inline-block;
+}
+
+.social_wrapper .social a > .img{
+	width: 30px;
+	height: 30px;
+	position: relative;
+}
+
+.social_wrapper .social a > .img svg path{
+	fill: #ffffff;
+	transition: fill 0.3s ease;
+}
+
+.social a:hover > .img{
+}
+
+.social_wrapper .social a:hover > .img.facebook svg path{
+	fill: #3D5A98;
+}
+
+.social_wrapper .social a:hover > .img.mail svg path{
+	fill: #F49B19;
+}
+
+.social_wrapper .social a:hover > .img.vk svg path{
+	fill: #4B74A5;
+}
+
+.social_wrapper .social a:hover > .img.odnoklassniki svg path{
+	fill: #F58220;
+}
+
+.social_wrapper .social a:hover > .img.twitter svg path{
+	fill: #55ACEE;
+}
+
+.footer_bottom .all_menu_block {
+    padding: 0;
+    width: 100%;
+}
+
+.footer_bottom .all_menu_block .submenu_block, .footer_bottom .submenu_top .menu_item {
+    width: 25%;
+}
+
+.footer_bottom .copy_block{
+	width: 100%;
+	margin-top: 30px;
+	padding: 50px 0 0 0;
+	border-top: 1px solid #e5e5e5;
+}
+
+#footer .copyright {
+    margin: 0px 0px 37px;
+    width: 25%;
+    float: left;
+}
+
+#footer .flxmd{
+	width: 25%;
+	float: right;
 }
