@@ -57,11 +57,12 @@
 	<script type="text/javascript" src="../../bitrix/templates/aspro_mshop/js/jquery.inputmask.bundle.min365e.js"></script>
 	<script type="text/javascript" src="../../bitrix/templates/aspro_mshop/js/jquery.plugin.minb4f3.js"></script>
 	<script type="text/javascript" src="../../bitrix/templates/aspro_mshop/js/jquery.validate.minbfb5.js"></script>
+	<script type="text/javascript" src="../../bitrix/templates/aspro_mshop/components/bitrix/catalog.smart.filter/main/script69c4.js"></script>
 	<script type="text/javascript" src="../../bitrix/templates/aspro_mshop/js/sly9e59.js"></script>
 	<script type="text/javascript" src="../../bitrix/templates/aspro_mshop/js/mainc1ab.js"></script>
 
 
-	<script type="text/javascript" src="../bitrix/js/custom.js"></script>
+	<script type="text/javascript" src="../../bitrix/js/custom.js"></script>
 	<!--[if gte IE 9]><style type="text/css">.basket_button, .button30, .icon {filter: none;}</style><![endif]-->
 
 </head>
@@ -711,16 +712,16 @@
 																	<input class="max-price" type="text" name="MSHOP_SMART_FILTER_P1_MAX" id="MSHOP_SMART_FILTER_P1_MAX" value="" size="5" onkeyup="smartFilter.keyup(this)" />
 																</div>
 															</div>
-															<span class="divider"></span>
+<!--	delete														<span class="divider"></span>-->
 															<div style="clear: both;"></div>
 														</div>
 														<div class="wrapp_slider iblock">
 															<div class="bx_ui_slider_track" id="drag_track_c4ca4238a0b923820dcc509a6f75849b">
-																<div class="bx_ui_slider_part first p1"><span>1 400</span></div>
-																<div class="bx_ui_slider_part p2"><span>1 925</span></div>
-																<div class="bx_ui_slider_part p3"><span>2 450</span></div>
-																<div class="bx_ui_slider_part p4"><span>2 975</span></div>
-																<div class="bx_ui_slider_part last p5"><span>3 500</span></div>
+																<div class="bx_ui_slider_part first p1"><span>2 200 000</span></div>
+																<div class="bx_ui_slider_part p2"><span>9 275 000</span></div>
+																<div class="bx_ui_slider_part p3"><span>16 350 000</span></div>
+																<div class="bx_ui_slider_part p4"><span>23 425 000</span></div>
+																<div class="bx_ui_slider_part last p5"><span>30 500 000</span></div>
 
 																<div class="bx_ui_slider_pricebar_VD" style="left: 0;right: 0;" id="colorUnavailableActive_c4ca4238a0b923820dcc509a6f75849b"></div>
 																<div class="bx_ui_slider_pricebar_VN" style="left: 0;right: 0;" id="colorAvailableInactive_c4ca4238a0b923820dcc509a6f75849b"></div>
@@ -745,13 +746,13 @@
 													'trackerWrap': 'drag_track_c4ca4238a0b923820dcc509a6f75849b',
 													'minInputId': 'MSHOP_SMART_FILTER_P1_MIN',
 													'maxInputId': 'MSHOP_SMART_FILTER_P1_MAX',
-													'minPrice': '1400.00',
-													'maxPrice': '3500.00',
+													'minPrice': '2200000',
+													'maxPrice': '30500000',
 													'curMinPrice': '',
 													'curMaxPrice': '',
-													'fltMinPrice': '1400.00',
-													'fltMaxPrice': '3500.00',
-													'precision': '2',
+													'fltMinPrice': '2200000',
+													'fltMaxPrice': '30500000',
+													'precision': '0',
 													'colorUnavailableActive': 'colorUnavailableActive_c4ca4238a0b923820dcc509a6f75849b',
 													'colorAvailableActive': 'colorAvailableActive_c4ca4238a0b923820dcc509a6f75849b',
 													'colorAvailableInactive': 'colorAvailableInactive_c4ca4238a0b923820dcc509a6f75849b'
@@ -761,10 +762,8 @@
 										<div class="bx_filter_parameters_box active" data-expanded="Y" data-prop_code=hit property_id="41">
 											<span class="bx_filter_container_modef"></span>
 											<div class="bx_filter_parameters_box_title">
-												<span>
-									Наши предложения									<div class="char_name">
-										<div class="props_list">
-																																												</div>
+												<span>Тип лодки	<div class="char_name">
+										<div class="props_list"></div>
 									</div>
 								</span>
 											</div>
@@ -773,8 +772,23 @@
 													<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_41_945058907" id="MSHOP_SMART_FILTER_41_945058907" onclick="smartFilter.click(this)" />
 													<label data-role="label_MSHOP_SMART_FILTER_41_945058907" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_41_945058907">
 														<span class="bx_filter_input_checkbox">
-												
-												<span class="bx_filter_param_text" title="Новинка">Новинка</span>
+															<span class="bx_filter_param_text" title="Новинка">Катер</span>
+														</span>
+													</label>
+												</div>
+												<div class="bx_filter_parameters_box_container ">
+													<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_41_945058908" id="MSHOP_SMART_FILTER_41_945058908" onclick="smartFilter.click(this)" />
+													<label data-role="label_MSHOP_SMART_FILTER_41_945058907" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_41_945058908">
+														<span class="bx_filter_input_checkbox">
+															<span class="bx_filter_param_text" title="Новинка">Моторная</span>
+														</span>
+													</label>
+												</div>
+												<div class="bx_filter_parameters_box_container ">
+													<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_41_945058909" id="MSHOP_SMART_FILTER_41_945058909" onclick="smartFilter.click(this)" />
+													<label data-role="label_MSHOP_SMART_FILTER_41_945058907" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_41_945058909">
+														<span class="bx_filter_input_checkbox">
+															<span class="bx_filter_param_text" title="Новинка">ПВХ</span>
 														</span>
 													</label>
 												</div>
@@ -784,10 +798,8 @@
 										<div class="bx_filter_parameters_box active" data-expanded="Y" data-prop_code=brand property_id="42">
 											<span class="bx_filter_container_modef"></span>
 											<div class="bx_filter_parameters_box_title">
-												<span>
-									Бренд									<div class="char_name">
-										<div class="props_list">
-																																												</div>
+												<span>Производитель<div class="char_name">
+										<div class="props_list"></div>
 									</div>
 								</span>
 											</div>
@@ -797,86 +809,55 @@
 													<label data-role="label_MSHOP_SMART_FILTER_42_930177377" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_42_930177377">
 														<span class="bx_filter_input_checkbox">
 												
-												<span class="bx_filter_param_text" title="Nike">Nike</span>
+												<span class="bx_filter_param_text" title="Nike">Yamaran</span>
+														</span>
+													</label>
+												</div>
+												<div class="bx_filter_parameters_box_container ">
+													<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_42_930177378" id="MSHOP_SMART_FILTER_42_930177378" onclick="smartFilter.click(this)" />
+													<label data-role="label_MSHOP_SMART_FILTER_42_930177377" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_42_930177378">
+														<span class="bx_filter_input_checkbox">
+												
+												<span class="bx_filter_param_text" title="Nike">Silverado Sport</span>
+														</span>
+													</label>
+												</div>
+												<div class="bx_filter_parameters_box_container ">
+													<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_42_930177379" id="MSHOP_SMART_FILTER_42_930177379" onclick="smartFilter.click(this)" />
+													<label data-role="label_MSHOP_SMART_FILTER_42_930177377" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_42_930177379">
+														<span class="bx_filter_input_checkbox">
+												
+												<span class="bx_filter_param_text" title="Nike">Kingfish</span>
+														</span>
+													</label>
+												</div>
+												<div class="bx_filter_parameters_box_container ">
+													<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_42_930177376" id="MSHOP_SMART_FILTER_42_930177376" onclick="smartFilter.click(this)" />
+													<label data-role="label_MSHOP_SMART_FILTER_42_930177377" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_42_930177376">
+														<span class="bx_filter_input_checkbox">
+												
+												<span class="bx_filter_param_text" title="Nike">Adventure</span>
+														</span>
+													</label>
+												</div>
+												<div class="bx_filter_parameters_box_container ">
+													<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_42_930177375" id="MSHOP_SMART_FILTER_42_930177375" onclick="smartFilter.click(this)" />
+													<label data-role="label_MSHOP_SMART_FILTER_42_930177377" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_42_930177375">
+														<span class="bx_filter_input_checkbox">
+												
+												<span class="bx_filter_param_text" title="Nike">Buster</span>
 														</span>
 													</label>
 												</div>
 												<div class="clb"></div>
 											</div>
 										</div>
-										<div class="bx_filter_parameters_box active" data-expanded="Y" data-prop_code=prop_2033 property_id="43">
-											<span class="bx_filter_container_modef"></span>
-											<div class="bx_filter_parameters_box_title">
-												<span>
-									Тип									<div class="char_name">
-										<div class="props_list">
-																																				<div class="hint"><span class="icon"><i>?</i></span>
-												<div class="tooltip" style="display: none;">Пример подсказки</div>
-											</div>
-										</div>
-								</div>
-								</span>
-							</div>
-							<div class="bx_filter_block">
-								<div class="bx_filter_parameters_box_container ">
-									<div class="filter label_block radio">
-										<input type="radio" value="" name="MSHOP_SMART_FILTER_43" id="all_MSHOP_SMART_FILTER_43_3863747946" onclick="smartFilter.click(this)" />
-										<label class="bx_filter_param_label" for="all_MSHOP_SMART_FILTER_43_3863747946">
-											Все </label>
-									</div>
-									<div class="filter label_block radio">
-										<input type="radio" value="3863747946" name="MSHOP_SMART_FILTER_43" id="MSHOP_SMART_FILTER_43_3863747946" onclick="smartFilter.click(this)" />
-										<label data-role="label_MSHOP_SMART_FILTER_43_3863747946" class="bx_filter_param_label" for="MSHOP_SMART_FILTER_43_3863747946">
-											<span class="bx_filter_input_checkbox ">
-													
-													<span class="bx_filter_param_text1" title="Джемпер">Джемпер</span>
-											</span>
-										</label>
-									</div>
-									<div class="filter label_block radio">
-										<input type="radio" value="2590601467" name="MSHOP_SMART_FILTER_43" id="MSHOP_SMART_FILTER_43_2590601467" onclick="smartFilter.click(this)" />
-										<label data-role="label_MSHOP_SMART_FILTER_43_2590601467" class="bx_filter_param_label" for="MSHOP_SMART_FILTER_43_2590601467">
-											<span class="bx_filter_input_checkbox ">
-													
-													<span class="bx_filter_param_text1" title="Топ">Топ</span>
-											</span>
-										</label>
-									</div>
-								</div>
-								<div class="clb"></div>
-							</div>
-						</div>
-						<div class="bx_filter_parameters_box active" data-expanded="Y" data-prop_code=color_ref2 property_id="60">
-							<span class="bx_filter_container_modef"></span>
-							<div class="bx_filter_parameters_box_title">
-								<span>
-									Цвет									<div class="char_name">
-										<div class="props_list">
-																																												</div>
-									</div>
-								</span>
-							</div>
-							<div class="bx_filter_block">
-								<div class="bx_filter_parameters_box_container pict_block">
-									<div class="pict">
-										<input style="display: none" type="checkbox" name="MSHOP_SMART_FILTER_60_2654390964" id="MSHOP_SMART_FILTER_60_2654390964" value="Y" />
-										<label for="MSHOP_SMART_FILTER_60_2654390964" data-role="label_MSHOP_SMART_FILTER_60_2654390964" class="bx_filter_param_label nab dib" onclick="smartFilter.keyup(BX('MSHOP_SMART_FILTER_60_2654390964')); BX.toggleClass(this, 'active');">
-											<span class="bx_filter_param_btn bx_color_sl" title="Синий">
-																										<span class="bx_filter_btn_color_icon" title="Синий" style="background-image:url('../../../upload/uf/d62/d622a497e015353af9aaa0769cd3bbb9.png');"></span>
-											</span>
-										</label>
-									</div>
-								</div>
-								<div class="clb"></div>
-							</div>
-						</div>
+					
 						<div class="bx_filter_parameters_box " data-expanded="N" data-prop_code=prop_2083 property_id="72">
 							<span class="bx_filter_container_modef"></span>
 							<div class="bx_filter_parameters_box_title">
-								<span>
-									Материал									<div class="char_name">
-										<div class="props_list">
-																																												</div>
+								<span>Тип днища	<div class="char_name">
+										<div class="props_list"></div>
 									</div>
 								</span>
 							</div>
@@ -885,8 +866,47 @@
 									<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_72_3121288984" id="MSHOP_SMART_FILTER_72_3121288984" onclick="smartFilter.click(this)" />
 									<label data-role="label_MSHOP_SMART_FILTER_72_3121288984" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_72_3121288984">
 										<span class="bx_filter_input_checkbox">
-												
-												<span class="bx_filter_param_text" title="60 % хлопок, 40 % полиэстер">60 % хлопок, 40 % полиэстер</span>
+												<span class="bx_filter_param_text" title="60 % хлопок, 40 % полиэстер">Надувное</span>
+										</span>
+									</label>
+								</div>
+								<div class="bx_filter_parameters_box_container ">
+									<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_72_3121288983" id="MSHOP_SMART_FILTER_72_3121288983" onclick="smartFilter.click(this)" />
+									<label data-role="label_MSHOP_SMART_FILTER_72_3121288984" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_72_3121288983">
+										<span class="bx_filter_input_checkbox">
+												<span class="bx_filter_param_text" title="60 % хлопок, 40 % полиэстер">Слань</span>
+										</span>
+									</label>
+								</div>
+								<div class="bx_filter_parameters_box_container ">
+									<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_72_3121288982" id="MSHOP_SMART_FILTER_72_3121288982" onclick="smartFilter.click(this)" />
+									<label data-role="label_MSHOP_SMART_FILTER_72_3121288984" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_72_3121288982">
+										<span class="bx_filter_input_checkbox">
+												<span class="bx_filter_param_text" title="60 % хлопок, 40 % полиэстер">Жесткое без стрингеров</span>
+										</span>
+									</label>
+								</div>
+								<div class="bx_filter_parameters_box_container ">
+									<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_72_3121288981" id="MSHOP_SMART_FILTER_72_3121288981" onclick="smartFilter.click(this)" />
+									<label data-role="label_MSHOP_SMART_FILTER_72_3121288984" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_72_3121288981">
+										<span class="bx_filter_input_checkbox">
+												<span class="bx_filter_param_text" title="60 % хлопок, 40 % полиэстер">Жесткое со стрингерами</span>
+										</span>
+									</label>
+								</div>
+								<div class="bx_filter_parameters_box_container ">
+									<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_72_3121288980" id="MSHOP_SMART_FILTER_72_3121288980" onclick="smartFilter.click(this)" />
+									<label data-role="label_MSHOP_SMART_FILTER_72_3121288984" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_72_3121288980">
+										<span class="bx_filter_input_checkbox">
+												<span class="bx_filter_param_text" title="60 % хлопок, 40 % полиэстер">Реечное</span>
+										</span>
+									</label>
+								</div>
+								<div class="bx_filter_parameters_box_container ">
+									<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_72_3121288979" id="MSHOP_SMART_FILTER_72_3121288979" onclick="smartFilter.click(this)" />
+									<label data-role="label_MSHOP_SMART_FILTER_72_3121288984" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_72_3121288979">
+										<span class="bx_filter_input_checkbox">
+												<span class="bx_filter_param_text" title="60 % хлопок, 40 % полиэстер">Алюминиевое</span>
 										</span>
 									</label>
 								</div>
@@ -896,76 +916,51 @@
 						<div class="bx_filter_parameters_box " data-expanded="N" data-prop_code=sizes property_id="74">
 							<span class="bx_filter_container_modef"></span>
 							<div class="bx_filter_parameters_box_title">
-								<span>
-									Размер									<div class="char_name">
-										<div class="props_list">
-																																												</div>
+								<span>Диаметр баллона,&nbsp;см	<div class="char_name">
+										<div class="props_list"></div>
 									</div>
 								</span>
 							</div>
 							<div class="bx_filter_block" style='display:none;'>
 								<div class="bx_filter_parameters_box_container ">
-									<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_74_1060745282" id="MSHOP_SMART_FILTER_74_1060745282" onclick="smartFilter.click(this)" />
-									<label data-role="label_MSHOP_SMART_FILTER_74_1060745282" class="bx_filter_param_label nab sku  " for="MSHOP_SMART_FILTER_74_1060745282">
+									<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_72_3121288981" id="MSHOP_SMART_FILTER_72_3121288981" onclick="smartFilter.click(this)" />
+									<label data-role="label_MSHOP_SMART_FILTER_72_3121288984" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_72_3121288981">
 										<span class="bx_filter_input_checkbox">
-												
-												<span class="bx_filter_param_text" title="S">S</span>
+												<span class="bx_filter_param_text" title="60 % хлопок, 40 % полиэстер">10</span>
 										</span>
 									</label>
-									<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_74_2944839123" id="MSHOP_SMART_FILTER_74_2944839123" onclick="smartFilter.click(this)" />
-									<label data-role="label_MSHOP_SMART_FILTER_74_2944839123" class="bx_filter_param_label nab sku last " for="MSHOP_SMART_FILTER_74_2944839123">
+								</div>
+								<div class="bx_filter_parameters_box_container ">
+									<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_72_3121288980" id="MSHOP_SMART_FILTER_72_3121288980" onclick="smartFilter.click(this)" />
+									<label data-role="label_MSHOP_SMART_FILTER_72_3121288984" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_72_3121288980">
 										<span class="bx_filter_input_checkbox">
-												
-												<span class="bx_filter_param_text" title="M">M</span>
+												<span class="bx_filter_param_text" title="60 % хлопок, 40 % полиэстер">20</span>
+										</span>
+									</label>
+								</div>
+								<div class="bx_filter_parameters_box_container ">
+									<input type="checkbox" value="Y" name="MSHOP_SMART_FILTER_72_3121288979" id="MSHOP_SMART_FILTER_72_3121288979" onclick="smartFilter.click(this)" />
+									<label data-role="label_MSHOP_SMART_FILTER_72_3121288984" class="bx_filter_param_label  last " for="MSHOP_SMART_FILTER_72_3121288979">
+										<span class="bx_filter_input_checkbox">
+												<span class="bx_filter_param_text" title="60 % хлопок, 40 % полиэстер">30</span>
 										</span>
 									</label>
 								</div>
 								<div class="clb"></div>
 							</div>
 						</div>
-						<div class="bx_filter_parameters_box " data-expanded="N" data-prop_code=color_ref property_id="75">
-							<span class="bx_filter_container_modef"></span>
-							<div class="bx_filter_parameters_box_title">
-								<span>
-									Цвет									<div class="char_name">
-										<div class="props_list">
-																																												</div>
-									</div>
-								</span>
-							</div>
-							<div class="bx_filter_block" style='display:none;'>
-								<div class="bx_filter_parameters_box_container pict_block">
-									<div class="pict">
-										<input style="display: none" type="checkbox" name="MSHOP_SMART_FILTER_75_2307242536" id="MSHOP_SMART_FILTER_75_2307242536" value="Y" />
-										<label for="MSHOP_SMART_FILTER_75_2307242536" data-role="label_MSHOP_SMART_FILTER_75_2307242536" class="bx_filter_param_label nab dib" onclick="smartFilter.keyup(BX('MSHOP_SMART_FILTER_75_2307242536')); BX.toggleClass(this, 'active');">
-											<span class="bx_filter_param_btn bx_color_sl" title="Черный">
-																										<span class="bx_filter_btn_color_icon" title="Черный" style="background-image:url('../../../upload/uf/b44/b44b6aee20276624e22c4255df91d3f9.png');"></span>
-											</span>
-										</label>
-									</div>
-									<div class="pict">
-										<input style="display: none" type="checkbox" name="MSHOP_SMART_FILTER_75_2248097766" id="MSHOP_SMART_FILTER_75_2248097766" value="Y" />
-										<label for="MSHOP_SMART_FILTER_75_2248097766" data-role="label_MSHOP_SMART_FILTER_75_2248097766" class="bx_filter_param_label nab dib" onclick="smartFilter.keyup(BX('MSHOP_SMART_FILTER_75_2248097766')); BX.toggleClass(this, 'active');">
-											<span class="bx_filter_param_btn bx_color_sl" title="Серый">
-																										<span class="bx_filter_btn_color_icon" title="Серый" style="background-image:url('../../../upload/uf/f30/f30370621533fd0ee063b8725f88d55d.png');"></span>
-											</span>
-										</label>
-									</div>
-								</div>
-								<div class="clb"></div>
-							</div>
-						</div>
+						
 						<div class="clb"></div>
 						<div class="bx_filter_button_box active">
 							<div class="bx_filter_block">
 								<div class="bx_filter_parameters_box_container">
-									<div class="bx_filter_popup_result right" id="modef_mobile" style="display:none" style="display: inline-block;">
+									<div class="bx_filter_popup_result right" id="modef_mobile" style="display: inline-block;">
 										Выбрано <span id="modef_num_mobile">0</span> <a href="filter/clear/apply/index.html" class="button white_bg">Показать</a>
 									</div>
-									<div class="bx_filter_popup_result right" id="modef" style="display:none" style="display: inline-block;">
+									<div class="bx_filter_popup_result right" id="modef" style="display: inline-block;">
 										Выбрано <span id="modef_num">0</span> <a href="filter/clear/apply/index.html" class="button white_bg">Показать</a>
 									</div>
-									<input class="bx_filter_search_button button small" type="submit" id="set_filter" name="set_filter" value="Показать" />
+									<input class="bx_filter_search_button button small" type="submit" id="set_filter" name="set_filter" value="Подобрать" />
 									<input class="bx_filter_search_reset button small transparent" type="reset" id="del_filter" name="del_filter" value="Сбросить" />
 								</div>
 							</div>
@@ -1139,60 +1134,51 @@
 					<ul class="sections_list_wrapp">
 
 						<li class="item " id="bx_4145281613_33" data-id="33">
-							<a href="../../stroitelnye_materialy/index.html" class="parent"><span>Прованс</span></a>
+							<a href="../../stroitelnye_materialy/index.html" class="parent"><span>Продукция Yamaha</span></a>
 							<div class="child_container">
 								<div class="child_wrapp ">
 									<ul class="child">
-										<li class="menu_item " data-id="34"><a href="../../stroitelnye_materialy/klei/index.html">Клеи</a></li>
-										<li class="menu_item " data-id="35"><a href="../../stroitelnye_materialy/lakokrasochnye_materialy/index.html">Лакокрасочные материалы</a></li>
-										<li class="menu_item " data-id="36"><a href="../../stroitelnye_materialy/sukhie_stroitelnye_smesi/index.html">Сухие строительные смеси</a></li>
-									</ul>
-								</div>
-							</div>
-						</li>
-
-						<li class="item " id="bx_4145281613_37" data-id="37">
-							<a href="../../foto_i_video/index.html" class="parent"><span>Лофт</span></a>
-							<div class="child_container">
-								<div class="child_wrapp ">
-									<ul class="child">
-										<li class="menu_item " data-id="38"><a href="../../foto_i_video/videokamery/index.html">Видеокамеры</a></li>
-										<li class="menu_item " data-id="39"><a href="../../foto_i_video/obektivy/index.html">Объективы</a></li>
-										<li class="menu_item " data-id="40"><a href="../../foto_i_video/fotoapparaty/index.html">Фотоаппараты</a></li>
-										<li class="menu_item " data-id="41"><a href="../../foto_i_video/tsifrovye_fotoramki/index.html">Цифровые фоторамки</a></li>
+										<li class="menu_item " data-id="34"><a href="#">Клеи</a></li>
+										<li class="menu_item " data-id="35"><a href="#">Лакокрасочные материалы</a></li>
+										<li class="menu_item " data-id="36"><a href="#">Сухие строительные смеси</a></li>
 									</ul>
 								</div>
 							</div>
 						</li>
 
 						<li class="item cur" id="bx_4145281613_42" data-id="42">
-							<a href="../index.html" class="parent"><span>Кантри</span></a>
+							<a href="../index.html" class="parent"><span>Лодки</span></a>
 							<div class="child_container">
 								<div class="child_wrapp ">
 									<ul class="child">
-										<li class="menu_item cur" data-id="43"><a href="index.html">Женская одежда</a></li>
-										<li class="menu_item " data-id="44"><a href="../muzhskaya_odezhda/index.html">Мужская одежда</a></li>
-										<li class="menu_item " data-id="45"><a href="../detskaya_dlya_devochek/index.html">Детская для девочек</a></li>
-										<li class="menu_item " data-id="46"><a href="../dlya_malchikov/index.html">Детская для мальчиков</a></li>
+										<li class="menu_item " data-id="43"><a href="#">Женская одежда</a></li>
+										<li class="menu_item " data-id="44"><a href="#">Мужская одежда</a></li>
+										<li class="menu_item " data-id="45"><a href="#">Детская для девочек</a></li>
+										<li class="menu_item " data-id="46"><a href="#">Детская для мальчиков</a></li>
 									</ul>
 								</div>
 							</div>
 						</li>
+						
+						<li class="item " id="bx_4145281613_37" data-id="37">
+							<a href="../../foto_i_video/index.html" class="parent"><span>Прицепы к лодкам</span></a>
+					
+						</li>
 
 						<li class="item " id="bx_4145281613_47" data-id="47">
-							<a href="../../sport/index.html" class="parent"><span>Коллекции</span></a>
+							<a href="../../sport/index.html" class="parent"><span>Аксессуары</span></a>
 							<div class="child_container">
 								<div class="child_wrapp ">
 									<ul class="child">
-										<li class="menu_item " data-id="48"><a href="../../sport/veloryukzaki/index.html">Велорюкзаки</a></li>
-										<li class="menu_item " data-id="49"><a href="../../sport/velosipedy/index.html">Велосипеды</a></li>
+										<li class="menu_item " data-id="48"><a href="#">Велорюкзаки</a></li>
+										<li class="menu_item " data-id="49"><a href="#">Велосипеды</a></li>
 									</ul>
 								</div>
 							</div>
 						</li>
 
 						<li class="item " id="bx_4145281613_50" data-id="50">
-							<a href="../../elektroinstrument/index.html" class="parent"><span>Предметы</span></a>
+							<a href="../../elektroinstrument/index.html" class="parent"><span>Электромоторы</span></a>
 							<div class="child_container">
 								<div class="child_wrapp ">
 									<ul class="child">
@@ -1308,6 +1294,7 @@
 											<div class="item_info N">
 												<div class="item-title">
 													<a href="235/index.html"><span>Джемпер женский Nike Rally Signal Full-Zip</span></a>
+													<p>Подвесной лодочный электромотор</p>
 												</div>
 												<div class="item-stock" id=bx_3966226736_235_store_quantity><span class="icon  order"></span><span class="value">Под заказ</span></div>
 												<div class="cost prices clearfix">
@@ -1369,6 +1356,7 @@
 											<div class="item_info N">
 												<div class="item-title">
 													<a href="236/index.html"><span>Топ женский Nike Pro Classic Bash</span></a>
+													<p>Подвесной лодочный электромотор</p>
 												</div>
 												<div class="item-stock" id=bx_3966226736_236_store_quantity><span class="icon stock"></span><span class="value">В наличии</span></div>
 												<div class="cost prices clearfix">
@@ -1418,6 +1406,7 @@
 											<div class="item_info N">
 												<div class="item-title">
 													<a href="264/index.html"><span>Джемпер женский Nike Rally Signal Full-Zip</span></a>
+													<p>Подвесной лодочный электромотор</p>
 												</div>
 												<div class="item-stock" id=bx_3966226736_264_store_quantity><span class="icon  order"></span><span class="value">Под заказ</span></div>
 												<div class="cost prices clearfix">
@@ -1452,6 +1441,13 @@
 						</div>
 
 						<div class="bottom_nav block">
+							<ul class="pagination">
+								<a role="button" href="#" class="pagination-prev disabled"></a>
+									<li class=""><a class="current" href="#">1</a></li>
+									<li class=""><a class="" href="#">2</a></li>
+									<li class=""><a class="" href="#">3</a></li>
+								<a role="button" href="#" class="pagination-next"></a>			
+							</ul>
 						</div>
 
 						<script>
