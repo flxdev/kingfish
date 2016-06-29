@@ -7,7 +7,7 @@
 <!-- /Added by HTTrack -->
 
 <head>
-	<title>Классный интернет-магазин</title>
+	<title>Персональные данные</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="HandheldFriendly" content="true" />
 	<meta name="yes" content="yes" />
@@ -884,248 +884,234 @@
 		<div class="wrapper_inner">
 			<section class="middle">
 				<div class="container">
-					<div class="breadcrumbs" id="navigation"><a href="../../index.html" id="bx_breadcrumb_0" title="Главная"><span>Главная</span></a><span class="separator">&bull;</span><span>Регистрация</span>
+					<div class="breadcrumbs" id="navigation"><a href="../../index.html" id="bx_breadcrumb_0" title="Главная"><span>Главная</span></a><span class="separator">&bull;</span><span>Личный кабинет</span>
 					</div>
-					<h1 id="pagetitle">Регистрация</h1>
+					<h1 id="pagetitle">Персональные данные</h1>
 					<div id="content">
+						<div class="left_block">
+							<ul class="left_menu">
+								<li class=" current  item ">
+									<a href="/personal/personal-data/">
+										<span>Персональные данные</span>
+									</a>
+								</li>
+								<li class=" item ">
+									<a href="/personal/history-of-orders/">
+										<span>История заказов</span>
+									</a>
+								</li>
+								<li class=" item ">
+									<a href="/personal/change-password/">
+										<span>Сменить пароль</span>
+									</a>
+								</li>
+								<li class=" item ">
+									<a href="/personal/subscribe/">
+										<span>Подписка на новости</span>
+									</a>
+								</li>
+								<li class=" item exit">
+									<a href="/personal/?logout=yes&amp;login=yes">
+										<span>Выйти</span>
+									</a>
+								</li>
+							</ul>
+							<script type="text/javascript">
+								$("ul.left_menu li:not(.current)").click(function () {
+									$(this).siblings().removeClass("current");
+									$(this).addClass("current");
+								});
+								if ($('.child_container').length) {
+									$('.child_container .menu_item').each(function () {
+										if ($(this).hasClass('current')) {
+											$(this).closest('.item').addClass('current');
+										}
+									})
+								}
+							</script>
 
-						<div class="module-form-block-wr registraion-page">
+						</div>
+						<div class="right_block">
+<!--delete class .border_block-->
+							<div class="module-form-block-wr lk-page">
 
-							<div class="form-block border_block">
-								<div class="wrap_md">
-									<div class="main_info iblock">
-<!--delete
-										<div class="top">
-											<p>После регистрации на сайте вам будет доступно отслеживание состояния заказов, личный кабинет и другие новые возможности.</p>
-										</div>
--->
-										<script>
-											$(document).ready(function () {
-												$("form#registraion-page-form").validate({
-													rules: {
-														emails: "email"
-													},
-													messages: {
-														"captcha_word": {
-															remote: 'Неверное значение'
-														},
-													},
-													highlight: function (element) {
-														$(element).parent().addClass('error');
-													},
-													unhighlight: function (element) {
-														$(element).parent().removeClass('error');
-													},
-													submitHandler: function (form) {
-														form.submit();
-														if ($("form#registraion-page-form").valid()) {
-															setTimeout(function () {
-																//$(form).find('button[type="submit"]').attr("disabled", "disabled");
-															}, 300);
-														}
-													},
-													errorPlacement: function (error, element) {
-														error.insertBefore(element);
-													}
-												});
-												$("form[name=bx_auth_servicesform_inline]").validate();
-											})
-										</script>
+								<script>
+									$(document).ready(function () {
+										$(".form-block-wr form").validate({
+											rules: {
+												EMAIL: {
+													email: true
+												}
+											}
+										});
+									})
+								</script>
 
-										<form id="registraion-page-form" method="post" action="http://provance.flex.by/auth/registration/" name="regform" enctype="multipart/form-data">
-											<input type="hidden" name="register_submit_button" value="reg" />
-											<div class="type-block">
-												<h3>Выберете тип покупателя</h3>
-												<div class="section filter">
-												
-													<div class="label left">
-														<input type="radio" id="PERSON_TYPE_1" name="PERSON_TYPE" value="1" checked="checked" onclick="submitForm()">
-														<label for="PERSON_TYPE_1"><span>Физическое лицо</span>
-														</label>
-													</div>
-													<div class="label left">
-														<input type="radio" id="PERSON_TYPE_2" name="PERSON_TYPE" value="2" onclick="submitForm()">
-														<label for="PERSON_TYPE_2"><span>Юридическое лицо</span>
-														</label>
-													</div>
-													<div class="clear"></div>
-													<input type="hidden" name="PERSON_TYPE_OLD" value="1">
-												</div>
-											</div>
-											
-												<h3>Заполните контактную информацию</h3>
-											<div class="form-control bg">
-												<div class="wrap_md">
-													<div class="iblock label_block">
-														<label for="input_NAME">Ваше имя <span class="star">*</span>
-														</label>
-
-														<input size="30" type="text" id="input_NAME" name="REGISTER[NAME]" required value="" />
-													</div>
-<!--
-													<div class="iblock text_block">
-														Ваше имя необходимо для того, чтобы мы знали с кем имеем дело)) </div>
--->
-												</div>
-											</div>
-											<div class="form-control bg">
-												<div class="wrap_md">
-													<div class="iblock label_block">
-														<label for="input_EMAIL">E-mail <span class="star">*</span>
-														</label>
-
-														<input size="30" type="email" id="input_EMAIL" name="REGISTER[EMAIL]" required value="" id="emails" />
-													</div>
-													<!-- <div class="iblock text_block">
-														Является логином для входа на сайт.
-														<br/>Также на него будут приходить уведомления о статусах заказа </div> -->
-												</div>
-											</div>
-											<div class="form-control bg">
-												<div class="wrap_md">
-													<div class="iblock label_block">
-														<label for="input_PERSONAL_PHONE">Телефон <span class="star">*</span>
-														</label>
-
-														<input size="30" type="text" id="input_PERSONAL_PHONE" name="REGISTER[PERSONAL_PHONE]" class="phone " required value="" />
-													</div>
-<!--
-													<div class="iblock text_block">
-														Контактный телефон нужен для уточнения деталей заказа </div>
--->
-												</div>
-											</div>
-											<div class="form-control bg">
-												<div class="wrap_md">
-													<div class="iblock label_block">
-														<label for="input_PASSWORD">Пароль <span class="star">*</span>
-														</label>
-
-														<input size="30" type="password" id="input_PASSWORD" name="REGISTER[PASSWORD]" required value="" autocomplete="off" class="password " />
-
-													</div>
-<!--
-													<div class="iblock text_block">
-														Длина пароля не менее 6 символов </div>
--->
-												</div>
-											</div>
-											
-											<div class="form-control bg">
-												<div class="wrap_md">
-													<div class="iblock label_block">
-														<label for="input_CONFIRM_PASSWORD">повторите Пароль <span class="star">*</span>
-														</label>
-
-														<input size="30" type="password" id="input_CONFIRM_PASSWORD" name="REGISTER[CONFIRM_PASSWORD]" required value="" autocomplete="off" class="confirm_password " />
-
-													</div>
-													<div class="iblock text_block">
-													</div>
-												</div>
-											</div>
-
-											<input size="30" id="input_LOGIN" type="hidden" value="1" name="REGISTER[LOGIN]" />
-<!--											add div class="register-captcha-block -->
-											<div class="register-captcha-block">
-											<h3>Введите проверочный код</h3>
-												<div class="form-control bg register-captcha captcha-row clearfix">
+								<div class="form-block-wr">
+									<form method="post" name="form1" class="main" action="/personal/personal-data/?" enctype="multipart/form-data" novalidate="novalidate">
+										<input type="hidden" name="sessid" id="sessid" value="ad935c202a355d6acb0bf56c93fa7bde">
+										<input type="hidden" name="LOGIN" maxlength="50" value="admin">
+										<input type="hidden" name="lang" value="s1">
+										<input type="hidden" name="ID" value="1">
+										<div class="form-control">
+											<div class="wrap_md">
 												<div class="iblock label_block">
-													<label><span>Проверочный код&nbsp;<span class="star">*</span></span>
-													</label>
-													<div class="captcha_image">
-														<img src="../../bitrix/tools/captcha01e7.jpg?captcha_sid=0349479bd2172384a004f788edd9600d" border="0" />
-														<input type="hidden" name="captcha_sid" value="0349479bd2172384a004f788edd9600d" />
-														<div class="captcha_reload">Обновить</div>
+													<label>Ваше имя<span class="star">*</span></label>
+													<input required="" type="text" name="NAME" maxlength="50" value="" aria-required="true">
+												</div>
+<!--
+												<div class="iblock text_block">
+													Ваше имя необходимо для того, чтобы мы знали с кем имеем дело)) </div>
+-->
+											</div>
+										</div>
+										<div class="form-control">
+											<div class="wrap_md">
+												<div class="iblock label_block">
+													<label>E-mail<span class="star">*</span></label>
+													<input required="" type="text" name="EMAIL" maxlength="50" placeholder="name@company.ru" value="" aria-required="true">
+												</div>
+<!--
+												<div class="iblock text_block">
+													Является логином для входа на сайт. Также на него будут приходить уведомления о статусах заказа </div>
+-->
+											</div>
+										</div>
+										<div class="form-control">
+											<div class="wrap_md">
+												<div class="iblock label_block">
+													<label>Телефон<span class="star">*</span></label>
+													<input required="" type="text" name="PERSONAL_PHONE" class="phone" maxlength="255" value="" aria-required="true">
+												</div>
+<!--
+												<div class="iblock text_block">
+													Контактный телефон нужен для уточнения деталей заказа </div>
+-->
+											</div>
+										</div>
+										<div class="but-r">
+											<button class="button" type="submit" name="save" value="Сохранить изменения"><span>Сохранить изменения</span></button>
+										</div>
+
+									</form>
+									
+<!--delete block
+									<div class="soc-serv-main">
+										<div class="soc-serv-title-grey">
+											Вы можете связать свой профиль с профилями в социальных сетях и сервисах </div>
+										<div class="row clearfix">
+											<a title="Livejournal" href="javascript:void(0)" onclick="BxShowAuthService('Livejournal', '')" class="button1 livejournal" type="livejournal" id="bx_auth_href_Livejournal">
+												<i class="soc-icon livejournal"></i>
+											</a>
+											<a title="Mail.Ru" href="javascript:void(0)" onclick="BxShowAuthService('MailRuOpenID', '')" class="button1 openid-mail-ru" type="openid-mail-ru" id="bx_auth_href_MailRuOpenID">
+												<i class="soc-icon openid-mail-ru"></i>
+											</a>
+											<a title="Liveinternet" href="javascript:void(0)" onclick="BxShowAuthService('Liveinternet', '')" class="button1 liveinternet" type="liveinternet" id="bx_auth_href_Liveinternet">
+												<i class="soc-icon liveinternet"></i>
+											</a>
+											<a title="OpenID" href="javascript:void(0)" onclick="BxShowAuthService('OpenID', '')" class="button1 openid" type="openid" id="bx_auth_href_OpenID">
+												<i class="soc-icon openid"></i>
+											</a>
+											<div style="clear:both;"></div>
+											<form method="post" name="bx_auth_services" target="_top" action="/personal/personal-data/" novalidate="novalidate">
+												<div id="bx_auth_serv" style="display:none">
+
+													<div class="form-control bg" id="bx_auth_serv_Livejournal" style="display:none">
+														<span class="bx-ss-icon livejournal"></span>
+														<input type="text" name="OPENID_IDENTITY_LIVEJOURNAL" value="" size="20" class="required" required="required">
+														<span>.livejournal.com</span>
+														<input type="hidden" name="sessid" id="sessid_1" value="ad935c202a355d6acb0bf56c93fa7bde">
+														<input type="hidden" name="auth_service_error" value="">
+														<input type="submit" class="button" name="" value="Войти">
 													</div>
-													<div class="captcha_input">
-														<input type="text" class="inputtext captcha" name="captcha_word" size="30" maxlength="50" value="" required />
+
+													<div class="form-control bg" id="bx_auth_serv_MailRuOpenID" style="display:none">
+														<span class="bx-ss-icon openid-mail-ru"></span>
+														<input type="text" name="OPENID_IDENTITY_MAILRU" value="" size="20" class="required" required="required">
+														<span>@mail.ru</span>
+														<input type="hidden" name="sessid" id="sessid_2" value="ad935c202a355d6acb0bf56c93fa7bde">
+														<input type="hidden" name="auth_service_error" value="">
+														<input type="submit" class="button" name="" value="Войти">
+													</div>
+
+													<div class="form-control bg" id="bx_auth_serv_Liveinternet" style="display:none">
+														<span class="bx-ss-icon liveinternet"></span>
+														<span>liveinternet.ru/users/</span>
+														<input type="text" name="OPENID_IDENTITY_LIVEINTERNET" value="" size="15" class="required" required="required">
+														<input type="hidden" name="sessid" id="sessid_3" value="ad935c202a355d6acb0bf56c93fa7bde">
+														<input type="hidden" name="auth_service_error" value="">
+														<input type="submit" class="button" name="" value="Войти">
+													</div>
+
+													<div class="form-control bg" id="bx_auth_serv_OpenID" style="display:none">
+														<span class="bx-ss-icon openid"></span>
+														<span>OpenID:</span>
+														<input type="text" name="OPENID_IDENTITY_OPENID" value="" size="30" class="required" required="required">
+														<input type="hidden" name="sessid" id="sessid_4" value="ad935c202a355d6acb0bf56c93fa7bde">
+														<input type="hidden" name="auth_service_error" value="">
+														<input type="submit" class="button" name="" value="Войти">
 													</div>
 												</div>
-												<div class="iblock text_block"></div>
-											</div>
-											</div>
-											
-											<div class="but-r">
-												<button class="button short" type="submit" name="register_submit_button1" value="Регистрация">
-													<span>Зарегистрироваться</span>
-												</button>
-												<div class="clearboth"></div>
-											</div>
-										</form>
-									</div>
-<!--delete block
-									<div class="social_block iblock">
-										<div class="soc-avt inline">
-											Войти как пользователь
-											<div class="bx-auth row">
-												<form method="post" name="bx_auth_servicesform_inline" target="_top" action="http://provance.flex.by/auth/registration/?login=yes">
-													<div class="bx-auth-services">
-														<div>
-															<a href="javascript:void(0)" onclick="BxShowAuthService('Livejournal', 'form_inline')" id="bx_auth_href_form_inlineLivejournal">
-																<i class="soc-icon livejournal" title="livejournal" alt="livejournal"></i>
-															</a>
-														</div>
-														<div>
-															<a href="javascript:void(0)" onclick="BxShowAuthService('MailRuOpenID', 'form_inline')" id="bx_auth_href_form_inlineMailRuOpenID">
-																<i class="soc-icon openid-mail-ru" title="openid-mail-ru" alt="openid-mail-ru"></i>
-															</a>
-														</div>
-														<div>
-															<a href="javascript:void(0)" onclick="BxShowAuthService('Liveinternet', 'form_inline')" id="bx_auth_href_form_inlineLiveinternet">
-																<i class="soc-icon liveinternet" title="liveinternet" alt="liveinternet"></i>
-															</a>
-														</div>
-														<div>
-															<a href="javascript:void(0)" onclick="BxShowAuthService('OpenID', 'form_inline')" id="bx_auth_href_form_inlineOpenID">
-																<i class="soc-icon openid" title="openid" alt="openid"></i>
-															</a>
-														</div>
-													</div>
-													<div class="bx-auth-line clearfix"></div>
-													<div class="bx-auth-service-form" id="bx_auth_servform_inline" style="display:none">
-														<div id="bx_auth_serv_form_inlineLivejournal" style="display:none">
-															<span class="bx-ss-icon livejournal"></span>
-															<input type="text" required name="OPENID_IDENTITY_LIVEJOURNAL" value="" size="20" />
-															<span>.livejournal.com</span>
-															<input type="hidden" name="sessid" id="sessid_4" value="4ca8e1536781b2d310b5761755c25185" />
-															<input type="hidden" name="auth_service_error" value="" />
-															<input type="submit" class="button short" name="" value="Войти" />
-														</div>
-														<div id="bx_auth_serv_form_inlineMailRuOpenID" style="display:none">
-															<span class="bx-ss-icon openid-mail-ru"></span>
-															<input type="text" required name="OPENID_IDENTITY_MAILRU" value="" size="20" />
-															<span>@mail.ru</span>
-															<input type="hidden" name="sessid" id="sessid_5" value="4ca8e1536781b2d310b5761755c25185" />
-															<input type="hidden" name="auth_service_error" value="" />
-															<input type="submit" class="button short" name="" value="Войти" />
-														</div>
-														<div id="bx_auth_serv_form_inlineLiveinternet" style="display:none">
-															<span class="bx-ss-icon liveinternet"></span>
-															<span>liveinternet.ru/users/</span>
-															<input type="text" required name="OPENID_IDENTITY_LIVEINTERNET" value="" size="15" />
-															<input type="hidden" name="sessid" id="sessid_6" value="4ca8e1536781b2d310b5761755c25185" />
-															<input type="hidden" name="auth_service_error" value="" />
-															<input type="submit" class="button short" name="" value="Войти" />
-														</div>
-														<div id="bx_auth_serv_form_inlineOpenID" style="display:none">
-															<span class="bx-ss-icon openid"></span>
-															<span>OpenID:</span>
-															<input type="text" required name="OPENID_IDENTITY_OPENID" value="" size="30" />
-															<input type="hidden" name="sessid" id="sessid_7" value="4ca8e1536781b2d310b5761755c25185" />
-															<input type="hidden" name="auth_service_error" value="" />
-															<input type="submit" class="button short" name="" value="Войти" />
-														</div>
-													</div>
-													<input type="hidden" name="auth_service_id" value="" />
-												</form>
-											</div>
-											<script>
-												$(document).ready(function () {
-													$("form[name=bx_auth_servicesform_inline]").validate();
-												})
-											</script>
+												<input type="hidden" name="auth_service_id" value="">
+											</form>
 										</div>
+
+										<script>
+											$("#bx_auth_serv input[type=text]").each(function () {
+												$(this).addClass("required").attr("required", "true");
+											});
+
+											function BxShowAuthService(id, suffix) {
+												var bxCurrentAuthId = '';
+												if (window['bxCurrentAuthId' + suffix])
+													bxCurrentAuthId = window['bxCurrentAuthId' + suffix];
+
+												BX('bx_auth_serv' + suffix).style.display = '';
+												if (bxCurrentAuthId != '' && bxCurrentAuthId != id) {
+													//BX('bx_auth_href_'+suffix+bxCurrentAuthId).className = BX('bx_auth_href_'+suffix+bxCurrentAuthId).type;
+													BX('bx_auth_serv_' + suffix + bxCurrentAuthId).style.display = 'none';
+												}
+												//BX('bx_auth_href_'+suffix+id).className = BX('bx_auth_href_'+suffix+id).className+' bx-ss-selected';
+												BX('bx_auth_href_' + suffix + id).blur();
+												BX('bx_auth_serv_' + suffix + id).style.display = '';
+												var el = BX.findChild(BX('bx_auth_serv_' + suffix + id), {
+													'tag': 'input',
+													'attribute': {
+														'type': 'text'
+													}
+												}, true);
+												if (el)
+													try {
+														el.focus();
+													} catch (e) {}
+												window['bxCurrentAuthId' + suffix] = id;
+												if (document.forms['bx_auth_services' + suffix])
+													document.forms['bx_auth_services' + suffix].auth_service_id.value = id;
+												else if (document.forms['bx_user_profile_form' + suffix])
+													document.forms['bx_user_profile_form' + suffix].auth_service_id.value = id;
+											}
+
+											var bxAuthWnd = false;
+
+											function BxShowAuthFloat(id, suffix) {
+												var bCreated = false;
+												if (!bxAuthWnd) {
+													bxAuthWnd = new BX.CDialog({
+														'content': '<div id="bx_auth_float_container"></div>',
+														'width': 640,
+														'height': 400,
+														'resizable': false
+													});
+													bCreated = true;
+												}
+												bxAuthWnd.Show();
+
+												if (bCreated)
+													BX('bx_auth_float_container').appendChild(BX('bx_auth_float'));
+
+												BxShowAuthService(id, suffix);
+											}
+										</script>
 									</div>
 -->
 								</div>
