@@ -7,7 +7,7 @@
 <!-- /Added by HTTrack -->
 
 <head>
-	<title>История заказов</title>
+	<title>Подписка на новости</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="HandheldFriendly" content="true" />
 	<meta name="yes" content="yes" />
@@ -884,30 +884,29 @@
 		<div class="wrapper_inner">
 			<section class="middle">
 				<div class="container">
-					<div class="breadcrumbs" id="navigation"><a href="../../index.html" id="bx_breadcrumb_0" title="Главная"><span>Главная</span></a><span class="separator">&bull;</span><a href="../../index.html" id="bx_breadcrumb_1" title="Главная"><span>Личный кабинет</span></a><span class="separator">&bull;</span><span>История заказов</span>
-					</div>
-					<h1 id="pagetitle">История заказов</h1>
+					<div class="breadcrumbs" id="navigation"><a href="/" id="bx_breadcrumb_0" title="Главная"><span>Главная</span></a><span class="separator">&bull;</span><a href="/personal/" id="bx_breadcrumb_1" title="Личный кабинет"><span>Личный кабинет</span></a><span class="separator">&bull;</span><span>Подписка на новости</span></div>
+					<h1 id="pagetitle">Подписка на новости</h1>
 					<div id="content">
 						<div class="left_block">
 							<ul class="left_menu">
-								<li class="   item ">
+								<li class=" item ">
 									<a href="/personal/personal-data/">
 										<span>Персональные данные</span>
 									</a>
 								</li>
-								<li class="current item ">
+								<li class=" item ">
 									<a href="/personal/history-of-orders/">
 										<span>История заказов</span>
 									</a>
 								</li>
-								<li class=" item ">
+								<li class="   item ">
 									<a href="/personal/change-password/">
 										<span>Сменить пароль</span>
 									</a>
 								</li>
-								<li class=" item ">
+								<li class="current item ">
 									<a href="/personal/subscribe/">
-										<span>Подписка на новости</span>
+										<span>Подписка на акции и новости</span>
 									</a>
 								</li>
 								<li class=" item exit">
@@ -932,364 +931,54 @@
 
 						</div>
 						<div class="right_block">
-
-							<div class="module-order-history">
-								<div class="filter_block border_block">
-									<ul>
-										<li class="prop active">
-											<span>Все</span>
-										</li>
-										<li class="prop ">
-											<a href="/personal/history-of-orders/?filter_history=N&amp;filter_canceled=N">Текущие</a>
-										</li>
-										<li class="prop ">
-											<a href="/personal/history-of-orders/?filter_status=F&amp;filter_history=Y">Завершенные</a>
-										</li>
-										<li class="prop ">
-											<a href="/personal/history-of-orders/?filter_canceled=Y&amp;filter_history=Y">Отмененные</a>
-										</li>
-									</ul>
-									<div class="cls"></div>
-								</div>
+							<div class="subscribe-edit ">
+								<form action="/personal/subscribe/" method="post">
+									<input type="hidden" name="sessid" id="sessid_1" value="ad935c202a355d6acb0bf56c93fa7bde">
+									<table width="100%" border="0" cellpadding="0" cellspacing="0" class="data-table top">
+										<thead>
+											<tr>
+												<td colspan="2">
+													<h4>Настройки подписки</h4></td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr valign="top">
+												<td class="left_blocks">
+													<div class="form-control">
+														<label>Ваш e-mail <span class="star">*</span></label>
+														<input type="text" name="EMAIL" value="" size="30" maxlength="255">
+													</div>
+													<h5>Рубрики<span class="star">*</span></h5>
+													<div class="filter label_block">
+														<input type="checkbox" name="RUB_ID[]" id="RUB_ID_1" value="1">
+														<label for="RUB_ID_1">Новости</label>
+													</div>
+													<div class="filter label_block">
+														<input type="checkbox" name="RUB_ID[]" id="RUB_ID_2" value="1">
+														<label for="RUB_ID_2">Акции и скидки</label>
+													</div>
+													<br>
+												</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<td colspan="2">
+													<input type="submit" name="Save" class="button vbig_btn" value="Подписаться">
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+									<input type="hidden" name="PostAction" value="Add">
+									<input type="hidden" name="ID" value="">
+								</form>
 								<br>
-								<table class="module-orders-list colored">
-									<thead>
-										<tr>
-											<td class="item-name-th">Номер заказа</td>
-											<td class="date-th">Дата</td>
-											<td class="count-th">Количество</td>
-											<td class="price-th">Сумма</td>
-											<td class="pay-status-th">Оплата</td>
-											<td class="order-status-th">Статус</td>
-										</tr>
-									</thead>
-									<tbody>
-
-										<tr class="tr-d">
-											<td class="item-name-cell">
-												<a class="item_name"><span class="icon opener_icon"><i></i></span><span class="name">Заказ №5</span></a>
-
-												<span class="order-extra-properties">	
-							, <span class="item">
-								Дата: 29.06.2016,
-							</span>
-												<span class="item">
-								позиций:&nbsp;4,
-							</span>
-												<span class="item">
-								Сумма:&nbsp;
-								109 000 руб.							</span>
-												<span class="item">Оплата:&nbsp; 
-								<span class="pay-status-cell payed">Оплачен</span>,
-												</span>
-												<span class="item">
-								Статус:&nbsp; 
-								Выполнен							</span>
-												</span>
-											</td>
-											<td class="date-cell"> 29.06.2016</td>
-											<td class="count-cell">4&nbsp;шт.</td>
-											<td class="price-cell">109 000 руб.</td>
-											<td class="pay-status-cell payed">
-												Оплачен </td>
-											<td class="order-status-cell">
-												<span class="status delivered">Выполнен</span> </td>
-										</tr>
-										<tr class="drop">
-											<td colspan="6" class="drop-cell wrap-all">
-												<div class="drop-container">
-													<table class="item-shell">
-														<thead>
-															<tr>
-																<td class="name-th">Товар</td>
-																<td class="price-th">Цена</td>
-																<td class="count-th">Количество</td>
-																<td class="summ-th">Сумма</td>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/foto_i_video/fotoapparaty/263/">Комплект Canon EOS 5D Mark III + объектив EF24-105 F4L IS</a>
-																	<div class="item-extra-properties">
-																		37 918 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	37 918 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	37 918 руб. </td>
-															</tr>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/foto_i_video/obektivy/226/">Объектив Canon EF24-105 F4L IS USM</a>
-																	<div class="item-extra-properties">
-																		33 300 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	33 300 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	33 300 руб. </td>
-															</tr>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/foto_i_video/obektivy/227/">Объектив Canon Tokina AT-X 10-17 F/3.5-4.5</a>
-																	<div class="item-extra-properties">
-																		21 591 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	21 591 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	21 591 руб. </td>
-															</tr>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/foto_i_video/fotoapparaty/220/">Фотоаппарат зеркальный Sony SLT-A37K+SAL1855</a>
-																	<div class="item-extra-properties">
-																		16 191 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	16 191 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	16 191 руб. </td>
-															</tr>
-														</tbody>
-													</table>
-													<div class="result-row">
-														<div class="result">
-
-															<table cellspacing="0" cellpadding="0" border="0">
-																<tbody>
-																	<tr class="order_property price">
-																		<td class="name">Итого:</td>
-																		<td class="r">109 000 руб.</td>
-																	</tr>
-																</tbody>
-															</table>
-														</div>
-														<!--noindex-->
-														<a href="/personal/history-of-orders/order_detail.php?ID=5" class="button msmall"><span>Подробнее</span></a>
-<!--														add class transparent-->
-														<a href="/personal/history-of-orders/?ID=5&amp;COPY_ORDER=Y" class="button msmall transparent"><span>Повторить заказ</span></a>
-														<a href="/personal/history-of-orders/order_cancel.php?ID=5&amp;CANCEL=Y" class="button msmall transparent"><span>Отменить заказ</span></a>
-														<!--/noindex-->
-													</div>
-												</div>
-											</td>
-										</tr>
-
-										<tr class="tr-d">
-											<td class="item-name-cell">
-												<a class="item_name"><span class="icon opener_icon"><i></i></span><span class="name">Заказ №4</span></a>
-
-												<span class="order-extra-properties">	
-							, <span class="item">
-								Дата: 29.06.2016,
-							</span>
-												<span class="item">
-								позиций:&nbsp;3,
-							</span>
-												<span class="item">
-								Сумма:&nbsp;
-								67 589 руб.							</span>
-												<span class="item">Оплата:&nbsp; 
-								<span class="pay-status-cell not_payed">Не оплачен</span>,
-												</span>
-												<span class="item">
-								Статус:&nbsp; 
-								Отменен							</span>
-												</span>
-											</td>
-											<td class="date-cell"> 29.06.2016</td>
-											<td class="count-cell">3&nbsp;шт.</td>
-											<td class="price-cell">67 589 руб.</td>
-											<td class="pay-status-cell not_payed">
-												Не оплачен </td>
-											<td class="order-status-cell">
-												<span class="status canceled">Отменен</span> </td>
-										</tr>
-										<tr class="drop">
-											<td colspan="6" class="drop-cell wrap-all">
-												<div class="drop-container">
-													<table class="item-shell">
-														<thead>
-															<tr>
-																<td class="name-th">Товар</td>
-																<td class="price-th">Цена</td>
-																<td class="count-th">Количество</td>
-																<td class="summ-th">Сумма</td>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/foto_i_video/fotoapparaty/263/">Комплект Canon EOS 5D Mark III + объектив EF24-105 F4L IS</a>
-																	<div class="item-extra-properties">
-																		37 918 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	37 918 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	37 918 руб. </td>
-															</tr>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/foto_i_video/fotoapparaty/220/">Фотоаппарат зеркальный Sony SLT-A37K+SAL1855</a>
-																	<div class="item-extra-properties">
-																		16 191 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	16 191 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	16 191 руб. </td>
-															</tr>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/foto_i_video/fotoapparaty/221/">Фотоаппарат зеркальный Canon EOS 5D Mark III 24-105IS</a>
-																	<div class="item-extra-properties">
-																		13 480 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	13 480 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	13 480 руб. </td>
-															</tr>
-														</tbody>
-													</table>
-													<div class="result-row">
-														<div class="result">
-
-															<table cellspacing="0" cellpadding="0" border="0">
-																<tbody>
-																	<tr class="order_property price">
-																		<td class="name">Итого:</td>
-																		<td class="r">67 589 руб.</td>
-																	</tr>
-																</tbody>
-															</table>
-														</div>
-														<!--noindex-->
-														<a href="/personal/history-of-orders/order_detail.php?ID=4" class="button msmall"><span>Подробнее</span></a>
-														<a href="/personal/history-of-orders/?ID=4&amp;COPY_ORDER=Y" class="button msmall transparent"><span>Повторить заказ</span></a>
-														<a href="/personal/history-of-orders/order_cancel.php?ID=4&amp;CANCEL=Y" class="button msmall transparent"><span>Отменить заказ</span></a>
-														<!--/noindex-->
-													</div>
-												</div>
-											</td>
-										</tr>
-
-										<tr class="tr-d">
-											<td class="item-name-cell">
-												<a class="item_name"><span class="icon opener_icon"><i></i></span><span class="name">Заказ №3</span></a>
-
-												<span class="order-extra-properties">	
-							, <span class="item">
-								Дата: 29.06.2016,
-							</span>
-												<span class="item">
-								позиций:&nbsp;2,
-							</span>
-												<span class="item">
-								Сумма:&nbsp;
-								9 060 руб.							</span>
-												<span class="item">Оплата:&nbsp; 
-								<span class="pay-status-cell">Наложенный платеж</span>,
-												</span>
-												<span class="item">
-								Статус:&nbsp; 
-								Принят, ожидается оплата							</span>
-												</span>
-											</td>
-											<td class="date-cell"> 29.06.2016</td>
-											<td class="count-cell">2&nbsp;шт.</td>
-											<td class="price-cell">9 060 руб.</td>
-											<td class="pay-status-cell">
-												Наложенный платеж </td>
-											<td class="order-status-cell">
-												<span class="status in-process">Принят, ожидается оплата</span> </td>
-										</tr>
-										<tr class="drop">
-											<td colspan="6" class="drop-cell wrap-all">
-												<div class="drop-container">
-													<table class="item-shell">
-														<thead>
-															<tr>
-																<td class="name-th">Товар</td>
-																<td class="price-th">Цена</td>
-																<td class="count-th">Количество</td>
-																<td class="summ-th">Сумма</td>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/odezhda/muzhskaya_odezhda/237/?oid=249"> Рубашка мужская Salomon S</a>
-																	<div class="item-extra-properties">
-																		1 890 руб. × 4 </div>
-																</td>
-																<td class="price-cell">
-																	1 890 руб. </td>
-																<td class="count-cell">4&nbsp;шт.</td>
-																<td class="summ-cell">
-																	7 560 руб. </td>
-															</tr>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/odezhda/zhenskaya_odezhda/236/?oid=245"> Топ женский Nike Pro Classic Bash Серый S</a>
-																	<div class="item-extra-properties">
-																		1 500 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	1 500 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	1 500 руб. </td>
-															</tr>
-														</tbody>
-													</table>
-													<div class="result-row">
-														<div class="result">
-
-															<table cellspacing="0" cellpadding="0" border="0">
-																<tbody>
-																	<tr class="order_property price">
-																		<td class="name">Итого:</td>
-																		<td class="r">9 060 руб.</td>
-																	</tr>
-																</tbody>
-															</table>
-														</div>
-														<!--noindex-->
-														<a href="/personal/history-of-orders/order_detail.php?ID=3" class="button msmall"><span>Подробнее</span></a>
-														<a href="/personal/history-of-orders/?ID=3&amp;COPY_ORDER=Y" class="button msmall transparent"><span>Повторить заказ</span></a>
-														<a href="/personal/history-of-orders/order_cancel.php?ID=3&amp;CANCEL=Y" class="button msmall transparent"><span>Отменить заказ</span></a>
-														<!--/noindex-->
-													</div>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-
-
-								<script>
-									$('.tr-d td').on('click', function (e) {
-										e.preventDefault();
-										$(this).parents("tr").toggleClass("opened").next("tr.drop").find(".drop-cell").slideToggle(200).find(".drop-container").slideToggle(200);
-									});
-								</script>
 							</div>
+						</div>
 					</div>
 				</div>
+			</section>
 		</div>
-		</section>
-	</div>
 	</div>
 
 	<footer id="footer" class="main">

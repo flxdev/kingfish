@@ -7,7 +7,7 @@
 <!-- /Added by HTTrack -->
 
 <head>
-	<title>Классный интернет-магазин</title>
+	<title>Оформление заказа</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="HandheldFriendly" content="true" />
 	<meta name="yes" content="yes" />
@@ -728,106 +728,33 @@
 								}
 							</script>
 							<div class="bx_order_make">
-								<script type="text/javascript">
-									InitOrderJS();
-
-
-
-									BX.saleOrderAjax.init({
-										'source': '/bitrix/components/bitrix/sale.order.ajax/get.php',
-										'cityTypeId': '5',
-										'messages': {
-											'otherLocation': '--- Другое местоположение',
-											'moreInfoLocation': '--- При необходимости уточнить местоположение',
-											'notFoundPrompt': '<div class=\"-bx-popup-special-prompt\">Местоположение не найдено.<br />Нажмите <a href=\"javascript:void(0)\" class=\"-bx-popup-set-mode-add-loc\">добавить местоположение<\/a>, чтобы мы узнали, куда нам доставить ваш заказ<\/div>'
-										}
-									});
-
-
-									var BXFormPosting = false;
-
-									function submitForm(val) {
-										if (BXFormPosting === true)
-											return true;
-
-										BXFormPosting = true;
-										if (val != 'Y')
-											BX('confirmorder').value = 'N';
-
-										var orderForm = BX('ORDER_FORM');
-										BX.showWait();
-
-										BX.saleOrderAjax.cleanUp();
-
-										BX.ajax.submit(orderForm, ajaxResult);
-
-										return true;
-									}
-
-									function ajaxResult(res) {
-										var orderForm = BX('ORDER_FORM');
-										try {
-											// if json came, it obviously a successfull order submit
-
-											var json = JSON.parse(res);
-											BX.closeWait();
-
-											if (json.error) {
-												BXFormPosting = false;
-												return;
-											} else if (json.redirect) {
-												window.top.location.href = json.redirect;
-											}
-										} catch (e) {
-											// json parse failed, so it is a simple chunk of html
-
-											BXFormPosting = false;
-											BX('order_form_content').innerHTML = res;
-
-											BX.saleOrderAjax.initDeferredControl();
-										}
-
-										BX.closeWait();
-										BX.onCustomEvent(orderForm, 'onAjaxSuccess');
-									}
-
-									function SetContact(profileId) {
-										BX("profile_change").value = "Y";
-										submitForm();
-									}
-
-									BX.addCustomEvent('onAjaxSuccess', function () {
-										InitOrderJS();
-									});
-								</script>
+							
 								<form action="/order/" method="POST" name="ORDER_FORM" id="ORDER_FORM" enctype="multipart/form-data">
-									<input type="hidden" name="sessid" id="sessid_4" value="a08e7c1b1d5667f00a2ac26af7cf0d0f">
+									<input type="hidden" name="sessid" id="sessid" value="ad935c202a355d6acb0bf56c93fa7bde">
 									<div id="order_form_content">
 										<div class="section filter">
 											<h3>Тип покупателя</h3>
 											<div class="label left">
 												<input type="radio" id="PERSON_TYPE_1" name="PERSON_TYPE" value="1" checked="checked" onclick="submitForm()">
-												<label for="PERSON_TYPE_1"><span>Физическое лицо</span>
-												</label>
+												<label for="PERSON_TYPE_1"><span>Физическое лицо</span></label>
 											</div>
 											<div class="label left">
 												<input type="radio" id="PERSON_TYPE_2" name="PERSON_TYPE" value="2" onclick="submitForm()">
-												<label for="PERSON_TYPE_2"><span>Юридическое лицо</span>
-												</label>
+												<label for="PERSON_TYPE_2"><span>Юридическое лицо</span></label>
 											</div>
 											<div class="clear"></div>
 											<input type="hidden" name="PERSON_TYPE_OLD" value="1">
 										</div>
 										<div class="section info">
-											<h3>Информация для оплаты и доставки заказа</h3>
+											<h3>Контактная информация</h3>
 
 										</div>
 										<div class="info_block">
-											<div class="clearfix"></div>
+<!--											<div class="clearfix"></div>-->
 
 											<div class="bx_section">
 												<h4>
-			<span class="text">Информация о покупателе</span>
+<!--	delete		<span class="text">Информация о покупателе</span>-->
 						<input type="hidden" name="showProps" id="showProps" value="N">
 		</h4>
 												<div id="sale_order_props">
@@ -835,7 +762,7 @@
 														<div data-property-id-row="1" class="prop_block">
 
 															<div class="bx_block r1x3 pt8">
-																Ф.И.О. <span class="star">*</span>
+																Ваше имя<span class="star">*</span>
 															</div>
 
 															<div class="bx_block r3x1">
@@ -844,19 +771,31 @@
 															</div>
 															<div style="clear: both;"></div>
 														</div>
+														<div data-property-id-row="7" class="prop_block">
 
+															<div class="bx_block r1x3 pt8">
+																Адрес<span class="star">*</span>
+															</div>
 
+															<div class="bx_block r3x1">
+																<input type="text" class="required" code="ADDRESS" rows="3" cols="30" name="ORDER_PROP_7" id="ORDER_PROP_7">
 
-														<script>
-															(window.top.BX || BX).saleOrderAjax.addPropertyDesc({
-																'id': '1',
-																'attributes': {
-																	'type': 'TEXT',
-																	'valueSource': 'default'
-																}
-															});
-														</script>
+															</div>
+															<div style="clear: both;"></div>
+														</div>
+														
+														<div data-property-id-row="3" class="prop_block">
 
+															<div class="bx_block r1x3 pt8">
+																Телефон <span class="star">*</span>
+															</div>
+
+															<div class="bx_block r3x1">
+																<input type="text" class="required phone" code="PHONE" maxlength="250" size="" value="" name="ORDER_PROP_3" id="ORDER_PROP_3">
+
+															</div>
+															<div style="clear: both;"></div>
+														</div>
 														<div data-property-id-row="2" class="prop_block">
 
 															<div class="bx_block r1x3 pt8">
@@ -870,43 +809,7 @@
 															<div style="clear: both;"></div>
 														</div>
 
-
-
-														<script>
-															(window.top.BX || BX).saleOrderAjax.addPropertyDesc({
-																'id': '2',
-																'attributes': {
-																	'type': 'TEXT',
-																	'valueSource': 'default'
-																}
-															});
-														</script>
-
-														<div data-property-id-row="3" class="prop_block">
-
-															<div class="bx_block r1x3 pt8">
-																Телефон <span class="star">*</span>
-															</div>
-
-															<div class="bx_block r3x1">
-																<input type="text" class="required phone" code="PHONE" maxlength="250" size="" value="" name="ORDER_PROP_3" id="ORDER_PROP_3">
-
-															</div>
-															<div style="clear: both;"></div>
-														</div>
-
-
-
-														<script>
-															(window.top.BX || BX).saleOrderAjax.addPropertyDesc({
-																'id': '3',
-																'attributes': {
-																	'type': 'TEXT',
-																	'valueSource': 'default'
-																}
-															});
-														</script>
-
+<!--
 														<div data-property-id-row="4" class="prop_block">
 
 															<div class="bx_block r1x3 pt8">
@@ -919,20 +822,8 @@
 															</div>
 															<div style="clear: both;"></div>
 														</div>
-
-
-
-														<script>
-															(window.top.BX || BX).saleOrderAjax.addPropertyDesc({
-																'id': '4',
-																'attributes': {
-																	'type': 'TEXT',
-																	'valueSource': 'default',
-																	'isZip': true
-																}
-															});
-														</script>
-
+-->
+<!--
 														<div data-property-id-row="6" class="prop_block">
 
 															<div class="bx_block r1x3 pt8">
@@ -947,7 +838,7 @@
 
 
 
-																	<div id="sls-49097" class="bx-sls ">
+																	<div id="sls-9449" class="bx-sls ">
 
 
 																		<div class="dropdown-block bx-ui-sls-input-block">
@@ -968,443 +859,104 @@
 
 																		</div>
 
-
-
-
-
 																		<div class="bx-ui-sls-error-message">
 																		</div>
 
 																	</div>
 
-																	<script>
-																		if (!window.BX && top.BX)
-																			window.BX = top.BX;
-
-																		if (typeof window.BX.locationsDeferred == 'undefined') window.BX.locationsDeferred = {};
-																		window.BX.locationsDeferred['6'] = function () {
-
-																			if (typeof window.BX.locationSelectors == 'undefined') window.BX.locationSelectors = {};
-																			window.BX.locationSelectors['6'] =
-
-																				new BX.Sale.component.location.selector.search({
-																					'scope': 'sls-49097',
-																					'source': '/bitrix/components/bitrix/sale.location.selector.search/get.php',
-																					'query': {
-																						'FILTER': {
-																							'EXCLUDE_ID': 0,
-																							'SITE_ID': 's1'
-																						},
-																						'BEHAVIOUR': {
-																							'SEARCH_BY_PRIMARY': '0',
-																							'LANGUAGE_ID': 'ru'
-																						}
-																					},
-																					'selectedItem': false,
-																					'knownItems': [],
-																					'provideLinkBy': 'id',
-																					'messages': {
-																						'nothingFound': 'К сожалению, ничего не найдено',
-																						'error': 'К сожалению, произошла внутренняя ошибка'
-																					},
-																					'callback': 'submitFormProxy',
-																					'useSpawn': false,
-																					'initializeByGlobalEvent': '',
-																					'globalEventScope': '',
-																					'pathNames': [],
-																					'types': {
-																						'1': {
-																							'CODE': 'COUNTRY'
-																						},
-																						'2': {
-																							'CODE': 'COUNTRY_DISTRICT'
-																						},
-																						'3': {
-																							'CODE': 'REGION'
-																						},
-																						'4': {
-																							'CODE': 'SUBREGION'
-																						},
-																						'5': {
-																							'CODE': 'CITY'
-																						},
-																						'6': {
-																							'CODE': 'VILLAGE'
-																						},
-																						'7': {
-																							'CODE': 'STREET'
-																						}
-																					}
-																				});
-
-																		};
-																	</script>
-
 																</div>
 															</div>
 															<div style="clear: both;"></div>
 														</div>
+-->
 
-
-
-														<script>
-															(window.top.BX || BX).saleOrderAjax.addPropertyDesc({
-																'id': '6',
-																'attributes': {
-																	'type': 'LOCATION',
-																	'valueSource': 'form',
-																	'altLocationPropId': '5'
-																}
-															});
-														</script>
-
-														<div data-property-id-row="7" class="prop_block">
+														
+														<div data-property-id-row="8" class="prop_block">
 
 															<div class="bx_block r1x3 pt8">
-																Адрес доставки <span class="star">*</span>
+																Комментарий
 															</div>
 
-															<div class="bx_block r3x1">
-																<textarea class="required" code="ADDRESS" rows="3" cols="30" name="ORDER_PROP_7" id="ORDER_PROP_7"></textarea>
-
-															</div>
+															<div class="bx_block w100">
+											<textarea name="ORDER_DESCRIPTION" id="ORDER_DESCRIPTION" style="max-width:100%;min-height:120px"></textarea>
+										</div>
 															<div style="clear: both;"></div>
-														</div>
-
-
-
-														<script>
-															(window.top.BX || BX).saleOrderAjax.addPropertyDesc({
-																'id': '7',
-																'attributes': {
-																	'type': 'TEXTAREA',
-																	'valueSource': 'default'
-																}
-															});
-														</script>
-
+														</div>	
 													</div>
 												</div>
 											</div>
-											<script type="text/javascript">
-												function fGetBuyerProps(el) {
-													var show = 'Развернуть';
-													var hide = 'Свернуть';
-													var status = BX('sale_order_props').style.display;
-													var startVal = 0;
-													var startHeight = 0;
-													var endVal = 0;
-													var endHeight = 0;
-													var pFormCont = BX('sale_order_props');
-													pFormCont.style.display = "block";
-													pFormCont.style.overflow = "hidden";
-													pFormCont.style.height = 0;
-													var display = "";
-													var ell = BX.findChild(el, {
-														'class': 'opener_icon'
-													}, false);
-													var ell_i = BX.findChild(ell, {
-														tagName: 'i'
-													}, false);
-													if (status == 'none') {
-														ell_i.setAttribute('title', 'Свернуть');
-														BX.removeClass(el, 'slides');
-														BX.addClass(ell, 'opened');
-														startVal = 0;
-														startHeight = 0;
-														endVal = 100;
-														endHeight = pFormCont.scrollHeight;
-														display = 'block';
-														BX('showProps').value = "Y";
-														//el.innerHTML = hide;
-													} else {
-														ell_i.setAttribute('title', 'Развернуть');
-														setTimeout(function () {
-															BX.addClass(el, 'slides');
-														}, 400);
-														BX.removeClass(ell, 'opened');
-														startVal = 100;
-														startHeight = pFormCont.scrollHeight;
-														endVal = 0;
-														endHeight = 0;
-														display = 'none';
-														BX('showProps').value = "N";
-														pFormCont.style.height = startHeight + 'px';
-														//el.innerHTML = show;
-													}
-
-													(new BX.easing({
-														duration: 700,
-														start: {
-															opacity: startVal,
-															height: startHeight
-														},
-														finish: {
-															opacity: endVal,
-															height: endHeight
-														},
-														transition: BX.easing.makeEaseOut(BX.easing.transitions.quart),
-														step: function (state) {
-															pFormCont.style.height = state.height + "px";
-															pFormCont.style.opacity = state.opacity / 100;
-														},
-														complete: function () {
-															BX('sale_order_props').style.display = display;
-															BX('sale_order_props').style.height = '';
-
-															pFormCont.style.overflow = "visible";
-														}
-													})).animate();
-												}
-											</script>
-
-
-
 											<div class="wrap_md">
 												<div class="l_block iblock">
 													<div class="delivery_block">
-														<script type="text/javascript">
-															function fShowStore(id, showImages, formWidth, siteId) {
-																var strUrl = '/bitrix/templates/aspro_mshop/components/bitrix/sale.order.ajax/new' + '/map.php';
-																var strUrlPost = 'delivery=' + id + '&showImages=' + showImages + '&siteId=' + siteId;
-
-																var storeForm = new BX.CDialog({
-																	'title': 'Пункты выдачи заказа',
-																	head: '',
-																	'content_url': strUrl,
-																	'content_post': strUrlPost,
-																	'width': formWidth,
-																	'height': 450,
-																	'resizable': false,
-																	'draggable': false
-																});
-
-																var button = [
-																	{
-																		title: 'Сохранить',
-																		id: 'crmOk',
-																		'action': function () {
-																			GetBuyerStore();
-																			BX.WindowManager.Get().Close();
-																		}
-				},
-				BX.CDialog.btnCancel
-			];
-																storeForm.ClearButtons();
-																storeForm.SetButtons(button);
-																storeForm.Show();
-															}
-
-															function GetBuyerStore() {
-																BX('BUYER_STORE').value = BX('POPUP_STORE_ID').value;
-																//BX('ORDER_DESCRIPTION').value = 'Пункт выдачи: '+BX('POPUP_STORE_NAME').value;
-																BX('store_desc').innerHTML = BX('POPUP_STORE_NAME').value;
-																BX.show(BX('select_store'));
-															}
-
-															function showExtraParamsDialog(deliveryId) {
-																var strUrl = '/bitrix/templates/aspro_mshop/components/bitrix/sale.order.ajax/new' + '/delivery_extra_params.php';
-																var formName = 'extra_params_form';
-																var strUrlPost = 'deliveryId=' + deliveryId + '&formName=' + formName;
-
-																if (window.BX.SaleDeliveryExtraParams) {
-																	for (var i in window.BX.SaleDeliveryExtraParams) {
-																		strUrlPost += '&' + encodeURI(i) + '=' + encodeURI(window.BX.SaleDeliveryExtraParams[i]);
-																	}
-																}
-
-																var paramsDialog = new BX.CDialog({
-																	'title': 'Дополнительные параметры для доставки',
-																	head: '',
-																	'content_url': strUrl,
-																	'content_post': strUrlPost,
-																	'width': 500,
-																	'height': 200,
-																	'resizable': true,
-																	'draggable': false
-																});
-
-																var button = [
-																	{
-																		title: 'Сохранить',
-																		id: 'saleDeliveryExtraParamsOk',
-																		'action': function () {
-																			insertParamsToForm(deliveryId, formName);
-																			BX.WindowManager.Get().Close();
-																		}
-			},
-			BX.CDialog.btnCancel
-		];
-
-																paramsDialog.ClearButtons();
-																paramsDialog.SetButtons(button);
-																//paramsDialog.adjustSizeEx();
-																paramsDialog.Show();
-															}
-
-															function insertParamsToForm(deliveryId, paramsFormName) {
-																var orderForm = BX("ORDER_FORM"),
-																	paramsForm = BX(paramsFormName);
-																wrapDivId = deliveryId + "_extra_params";
-
-																var wrapDiv = BX(wrapDivId);
-																window.BX.SaleDeliveryExtraParams = {};
-
-																if (wrapDiv)
-																	wrapDiv.parentNode.removeChild(wrapDiv);
-
-																wrapDiv = BX.create('div', {
-																	props: {
-																		id: wrapDivId
-																	}
-																});
-
-																for (var i = paramsForm.elements.length - 1; i >= 0; i--) {
-																	var input = BX.create('input', {
-																		props: {
-																			type: 'hidden',
-																			name: 'DELIVERY_EXTRA[' + deliveryId + '][' + paramsForm.elements[i].name + ']',
-																			value: paramsForm.elements[i].value
-																		}
-																	});
-
-																	window.BX.SaleDeliveryExtraParams[paramsForm.elements[i].name] = paramsForm.elements[i].value;
-
-																	wrapDiv.appendChild(input);
-																}
-
-																orderForm.appendChild(wrapDiv);
-
-																BX.onCustomEvent('onSaleDeliveryGetExtraParams', [window.BX.SaleDeliveryExtraParams]);
-															}
-
-															BX.addCustomEvent('onDeliveryExtraServiceValueChange', function () {
-																submitForm();
-															});
-														</script>
+														
 
 														<input type="hidden" name="BUYER_STORE" id="BUYER_STORE" value="0">
 														<div class="bx_section">
 															<h4>Способ доставки</h4>
+															
 															<div class="bx_block w100 vertical">
-
-																<div class="bx_element">
-
-																	<input type="radio" id="ID_DELIVERY_ID_1" name="DELIVERY_ID" value="1" checked="" onclick="submitForm();">
-
-																	<label for="ID_DELIVERY_ID_1">
-
-
-																		<div class="bx_logotype"><span style="background-image:url(/bitrix/templates/aspro_mshop/components/bitrix/sale.order.ajax/new/images/logo-default-d.gif);" onclick="BX('ID_DELIVERY_ID_1').checked=true;submitForm();"></span>
-																		</div>
-
-																		<div class="bx_description">
-
-																			<strong onclick="BX('ID_DELIVERY_ID_1').checked=true;submitForm();">
-								<div class="name"><strong>Доставка курьером</strong>
-																		</div>
-																		</strong>
-
-																		<span class="bx_result_price">
-																	Стоимость: <b>
-										500 руб.																				</b><br>
-																	
-							</span>
-																		<p onclick="BX('ID_DELIVERY_ID_1').checked=true;submitForm();">
-																			Доставка осуществляется в течение дня в удобное для вас время.
-																			<br> </p>
-																</div>
-																</label>
-																<table class="delivery_extra_services">
-																</table>
-
-																<div class="clear"></div>
-															</div>
-														</div>
-														<div class="bx_block w100 vertical">
 
 															<div class="bx_element">
 
 																<input type="radio" id="ID_DELIVERY_ID_2" name="DELIVERY_ID" value="2" onclick="submitForm();">
 
 																<label for="ID_DELIVERY_ID_2">
-
-
-																	<div class="bx_logotype"><span style="background-image:url(/bitrix/templates/aspro_mshop/components/bitrix/sale.order.ajax/new/images/logo-default-d.gif);" onclick="BX('ID_DELIVERY_ID_2').checked=true;submitForm();"></span>
-																	</div>
-
 																	<div class="bx_description">
-
 																		<strong onclick="BX('ID_DELIVERY_ID_2').checked=true;submitForm();">
-								<div class="name"><strong>Самовывоз</strong>
-																	</div>
+								<div class="name"><strong>Самовывоз</strong></div>
 																	</strong>
-
-																	<span class="bx_result_price">
-																	Стоимость: <b>
-										Бесплатно																				</b><br>
-																	
-							</span>
 																	<p onclick="BX('ID_DELIVERY_ID_2').checked=true;submitForm();">
-																		Вы можете самостоятельно забрать заказ из нашего магазина.
-																		<br> </p>
+																		г. Минск, ул. Петра Мстиславца, 20, оф. 233</p>
 															</div>
 															</label>
 
 															<div class="clear"></div>
 														</div>
 													</div>
+															<div class="bx_block w100 vertical">
+																<div class="bx_element">
+																	<input type="radio" id="ID_DELIVERY_ID_1" name="DELIVERY_ID" value="1" checked="" onclick="submitForm();">
+																	<label for="ID_DELIVERY_ID_1">
+																		<div class="bx_description">
+
+																			<strong onclick="BX('ID_DELIVERY_ID_1').checked=true;submitForm();">
+								<div class="name"><strong>Курьером</strong></div>
+																		</strong>
+																		<p onclick="BX('ID_DELIVERY_ID_1').checked=true;submitForm();">
+																			Только крупногабаритные товары по Минску, в пределах МКАД</p>
+																</div>
+																</label>
+																<div class="clear"></div>
+															</div>
+														</div>
+															<div class="bx_block w100 vertical">
+																<div class="bx_element">
+																	<input type="radio" id="ID_DELIVERY_ID_3" name="DELIVERY_ID" value="1" checked="" onclick="submitForm();">
+																	<label for="ID_DELIVERY_ID_3">
+																		<div class="bx_description">
+																			<strong onclick="BX('ID_DELIVERY_ID_3').checked=true;submitForm();">
+								<div class="name"><strong>Почтой по Республике Беларусь</strong></div>
+																		</strong>
+																		<p onclick="BX('ID_DELIVERY_ID_3').checked=true;submitForm();">
+																			По всей территории Республики Беларусь, кроме Минска </p>
+																</div>
+																</label>
+																<div class="clear"></div>
+															</div>
+														</div>
 													<div class="clear"></div>
 												</div>
 											</div>
 										</div>
 										<div class="r_block iblock">
 											<div class="pay_block">
-												<script type="text/javascript">
-													function changePaySystem(param) {
-														if (BX("account_only") && BX("account_only").value == 'Y') // PAY_CURRENT_ACCOUNT checkbox should act as radio
-														{
-															if (param == 'account') {
-																if (BX("PAY_CURRENT_ACCOUNT")) {
-																	BX("PAY_CURRENT_ACCOUNT").checked = true;
-																	BX("PAY_CURRENT_ACCOUNT").setAttribute("checked", "checked");
-																	BX.addClass(BX("PAY_CURRENT_ACCOUNT_LABEL"), 'selected');
-
-																	// deselect all other
-																	var el = document.getElementsByName("PAY_SYSTEM_ID");
-																	for (var i = 0; i < el.length; i++)
-																		el[i].checked = false;
-																}
-															} else {
-																BX("PAY_CURRENT_ACCOUNT").checked = false;
-																BX("PAY_CURRENT_ACCOUNT").removeAttribute("checked");
-																BX.removeClass(BX("PAY_CURRENT_ACCOUNT_LABEL"), 'selected');
-															}
-														} else if (BX("account_only") && BX("account_only").value == 'N') {
-															if (param == 'account') {
-																if (BX("PAY_CURRENT_ACCOUNT")) {
-																	BX("PAY_CURRENT_ACCOUNT").checked = !BX("PAY_CURRENT_ACCOUNT").checked;
-
-																	if (BX("PAY_CURRENT_ACCOUNT").checked) {
-																		BX("PAY_CURRENT_ACCOUNT").setAttribute("checked", "checked");
-																		BX.addClass(BX("PAY_CURRENT_ACCOUNT_LABEL"), 'selected');
-																	} else {
-																		BX("PAY_CURRENT_ACCOUNT").removeAttribute("checked");
-																		BX.removeClass(BX("PAY_CURRENT_ACCOUNT_LABEL"), 'selected');
-																	}
-																}
-															}
-														}
-
-														submitForm();
-													}
-												</script>
+												
 												<div class="bx_section">
 													<h4>Способ оплаты</h4>
 													<div class="bx_block float">
 														<div class="bx_element">
 
-															<input type="radio" id="ID_PAY_SYSTEM_ID_2" name="PAY_SYSTEM_ID" value="2" checked="checked" onclick="changePaySystem();">
+															<input type="radio" id="ID_PAY_SYSTEM_ID_2" name="PAY_SYSTEM_ID" value="2" onclick="changePaySystem();">
 
 															<label for="ID_PAY_SYSTEM_ID_2" onclick="BX('ID_PAY_SYSTEM_ID_2').checked=true;changePaySystem();">
 																<div class="bx_logotype">
@@ -1457,7 +1009,7 @@
 													</div>
 													<div class="bx_block w100 float">
 														<div class="bx_element">
-															<input type="radio" id="ID_PAY_SYSTEM_ID_1" name="PAY_SYSTEM_ID" value="1" onclick="changePaySystem();">
+															<input type="radio" id="ID_PAY_SYSTEM_ID_1" name="PAY_SYSTEM_ID" value="1" checked="checked" onclick="changePaySystem();">
 															<label for="ID_PAY_SYSTEM_ID_1" onclick="BX('ID_PAY_SYSTEM_ID_1').checked=true;changePaySystem();">
 																<div class="bx_logotype">
 																	<span style="background-image:url(/upload/sale/paysystem/logotip/e2d/e2d7e4b66c441acefa0e14c0b3504107.gif);"></span>
@@ -1503,7 +1055,7 @@
 									</div>
 							</div>
 							<div class="bx_ordercart basket_wrapp">
-								<h4>Состав заказа</h4>
+								<h4>Ваш заказа</h4>
 								<div class="bx_ordercart_order_table_container module-cart">
 									<table class="colored">
 										<thead>
@@ -1523,7 +1075,56 @@
 										<tbody>
 											<tr>
 												<td class="itemphoto thumb-cell">
-													<a href="/catalog/foto_i_video/fotoapparaty/263/" class="thumb"> <img src="/upload/resize_cache/iblock/9dc/110_110_1/9dc43d61be9fa8cc9b844cf522f56940.jpg" alt="Комплект Canon EOS 5D Mark III + объектив EF24-105 F4L IS" title="Комплект Canon EOS 5D Mark III + объектив EF24-105 F4L IS">
+													<a href="/catalog/foto_i_video/fotoapparaty/220/" class="thumb"> <img src="../bitrix/images/prod-inner/prod1.jpg" alt="Фотоаппарат зеркальный Sony SLT-A37K+SAL1855" title="Фотоаппарат зеркальный Sony SLT-A37K+SAL1855">
+													</a>
+												</td>
+												<td class="item name-cell " style1="width:50%">
+
+													<a href="/catalog/foto_i_video/fotoapparaty/220/">									Фотоаппарат зеркальный Sony SLT-A37K+SAL1855								</a>
+													<div class="bx_ordercart_itemart">
+													</div>
+												</td>
+												<td class="price cost-cell  ">
+													<div class="cost prices clearfix">
+														<div class="price">16 191 руб.</div>
+														<div class="price discount"><strike>17 990 руб.</strike></div>
+													</div>
+												</td>
+												<td class="custom quantity ">
+													1&nbsp;шт </td>
+												<td class="custom sum ">
+													<div class="cost prices">
+														<div class="price">16 191 руб.</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td class="itemphoto thumb-cell">
+													<a href="/catalog/foto_i_video/fotoapparaty/221/" class="thumb"> <img src="../bitrix/images/prod-inner/prod1.jpg" alt="Фотоаппарат зеркальный Canon EOS 5D Mark III 24-105IS" title="Фотоаппарат зеркальный Canon EOS 5D Mark III 24-105IS">
+													</a>
+												</td>
+												<td class="item name-cell " style1="width:50%">
+
+													<a href="/catalog/foto_i_video/fotoapparaty/221/">									Фотоаппарат зеркальный Canon EOS 5D Mark III 24-105IS								</a>
+													<div class="bx_ordercart_itemart">
+													</div>
+												</td>
+												<td class="price cost-cell  ">
+													<div class="cost prices clearfix">
+														<div class="price">13 480 руб.</div>
+													</div>
+												</td>
+												<td class="custom quantity ">
+													1&nbsp;шт </td>
+												<td class="custom sum ">
+													<div class="cost prices">
+														<div class="price">13 480 руб.</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td class="itemphoto thumb-cell">
+													<a href="/catalog/foto_i_video/fotoapparaty/263/" class="thumb"> <img src="../bitrix/images/prod-inner/prod1.jpg" alt="Комплект Canon EOS 5D Mark III + объектив EF24-105 F4L IS" title="Комплект Canon EOS 5D Mark III + объектив EF24-105 F4L IS">
 													</a>
 												</td>
 												<td class="item name-cell " style1="width:50%">
@@ -1559,7 +1160,7 @@
 												</tr>
 												<tr>
 													<td class="custom_t1" colspan="6">Товаров на:</td>
-													<td class="custom_t2">37 918 руб.</td>
+													<td class="custom_t2">67 589 руб.</td>
 												</tr>
 												<tr>
 													<td class="custom_t1" colspan="6">Доставка:</td>
@@ -1567,13 +1168,17 @@
 												</tr>
 												<tr>
 													<td class="custom_t1 fwb" colspan="6">Итого:</td>
-													<td class="custom_t2 fwb">38 418 руб.</td>
+													<td class="custom_t2 fwb">
+														<div class="price">68 089 руб.</div>
+														<strike>69 388 руб.</strike>
+													</td>
 												</tr>
 											</tbody>
 										</table>
 										<div style="clear:both;"></div>
 									</div>
 									<div style="clear:both;"></div>
+<!--delete
 									<div class="bx_section_bottom">
 										<h3>Комментарии к заказу</h3>
 										<div class="bx_block w100">
@@ -1583,6 +1188,7 @@
 										<div style="clear: both;"></div>
 										<br>
 									</div>
+-->
 								</div>
 							</div>
 
@@ -1591,8 +1197,7 @@
 						<input type="hidden" name="profile_change" id="profile_change" value="N">
 						<input type="hidden" name="is_ajax_post" id="is_ajax_post" value="Y">
 						<input type="hidden" name="json" value="Y">
-						<div class="bx_ordercart_order_pay_center"><a href="javascript:;" id="ORDER_CONFIRM_BUTTON" onclick="submitForm('Y'); return false;" class="checkout button big_btn"><span>Оформить заказ</span></a>
-						</div>
+						<div class="bx_ordercart_order_pay_center"><a href="javascript:;" id="ORDER_CONFIRM_BUTTON" onclick="submitForm('Y'); return false;" class="checkout button big_btn"><span>Оформить заказ</span></a></div>
 						</form>
 					</div>
 				</div>
@@ -1604,7 +1209,7 @@
 
 
 
-					<div id="sls-40895" class="bx-slst">
+					<div id="sls-61699" class="bx-slst">
 
 
 
@@ -1647,7 +1252,7 @@
 
 
 						new BX.Sale.component.location.selector.steps({
-							'scope': 'sls-40895',
+							'scope': 'sls-61699',
 							'source': '/bitrix/components/bitrix/sale.location.selector.steps/get.php',
 							'query': {
 								'FILTER': {
@@ -1712,7 +1317,7 @@
 
 
 
-					<div id="sls-57957" class="bx-sls ">
+					<div id="sls-47780" class="bx-sls ">
 
 
 						<div class="dropdown-block bx-ui-sls-input-block">
@@ -1749,7 +1354,7 @@
 
 
 						new BX.Sale.component.location.selector.search({
-							'scope': 'sls-57957',
+							'scope': 'sls-47780',
 							'source': '/bitrix/components/bitrix/sale.location.selector.search/get.php',
 							'query': {
 								'FILTER': {
