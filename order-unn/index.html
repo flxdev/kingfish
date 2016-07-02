@@ -7,7 +7,7 @@
 <!-- /Added by HTTrack -->
 
 <head>
-	<title>Оформление заказа</title>
+	<title>Оформление заказа. Юридическое лицо</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="HandheldFriendly" content="true" />
 	<meta name="yes" content="yes" />
@@ -735,12 +735,12 @@
 										<div class="section filter">
 											<h3>Тип покупателя</h3>
 											<div class="label left">
-												<input type="radio" id="PERSON_TYPE_1" name="PERSON_TYPE" value="1" checked="checked" onclick="submitForm()">
+												<input type="radio" id="PERSON_TYPE_1" name="PERSON_TYPE" value="1"  onclick="submitForm()">
 												<label for="PERSON_TYPE_1"><span>Физическое лицо</span>
 												</label>
 											</div>
 											<div class="label left">
-												<input type="radio" id="PERSON_TYPE_2" name="PERSON_TYPE" value="2" onclick="submitForm()">
+												<input type="radio" id="PERSON_TYPE_2" name="PERSON_TYPE" value="2" checked="checked" onclick="submitForm()">
 												<label for="PERSON_TYPE_2"><span>Юридическое лицо</span>
 												</label>
 											</div>
@@ -764,12 +764,43 @@
 														<div data-property-id-row="1" class="prop_block">
 
 															<div class="bx_block r1x3 pt8">
-																Ваше имя<span class="star">*</span>
+																Название компании<span class="star">*</span>
 															</div>
 
 															<div class="bx_block r3x1">
 																<input type="text" class="required " code="FIO" maxlength="250" size="" value="" name="ORDER_PROP_1" id="ORDER_PROP_1" aria-required="true">
 
+															</div>
+															<div style="clear: both;"></div>
+														</div>
+														<div data-property-id-row="4" class="prop_block">
+
+															<div class="bx_block r1x3 pt8">
+																Контактное лицо<span class="star">*</span>
+															</div>
+
+															<div class="bx_block r3x1">
+																<input type="text" class="required " code="FIO" maxlength="250" size="" value="" name="ORDER_PROP_4" id="ORDER_PROP_4" aria-required="true">
+
+															</div>
+															<div style="clear: both;"></div>
+														</div>
+														<div data-property-id-row="2" class="prop_block">
+															<div class="bx_block r1x3 pt8">
+																E-Mail <span class="star">*</span>
+															</div>
+															<div class="bx_block r3x1">
+																<input type="email" class="required " code="EMAIL" maxlength="250" size="" value="" name="ORDER_PROP_2" id="ORDER_PROP_2" aria-required="true">
+
+															</div>
+															<div style="clear: both;"></div>
+														</div>
+														<div data-property-id-row="3" class="prop_block">
+															<div class="bx_block r1x3 pt8">
+																Телефон <span class="star">*</span>
+															</div>
+															<div class="bx_block r3x1">
+																<input type="text" class="required phone" code="PHONE" maxlength="250" size="" value="" name="ORDER_PROP_3" id="ORDER_PROP_3" aria-required="true">
 															</div>
 															<div style="clear: both;"></div>
 														</div>
@@ -780,33 +811,20 @@
 															</div>
 
 															<div class="bx_block r3x1">
-																<input type="text" class="required error" code="ADDRESS" rows="3" cols="30" name="ORDER_PROP_7" id="ORDER_PROP_7" aria-required="true">
-																<label id="ORDER_PROP_7-error" class="error" for="ORDER_PROP_7" style="display: block;">Заполните поле!</label>
+																<input type="text" class="required" code="ADDRESS" rows="3" cols="30" name="ORDER_PROP_7" id="ORDER_PROP_7" aria-required="true">
+
 															</div>
 															<div style="clear: both;"></div>
 														</div>
-
-														<div data-property-id-row="3" class="prop_block">
+														<div data-property-id-row="8" class="prop_block">
 
 															<div class="bx_block r1x3 pt8">
-																Телефон <span class="star">*</span>
+																УНП<span class="star">*</span>
 															</div>
 
 															<div class="bx_block r3x1">
-																<input type="text" class="required phone" code="PHONE" maxlength="250" size="" value="" name="ORDER_PROP_3" id="ORDER_PROP_3" aria-required="true">
-																
-															</div>
-															<div style="clear: both;"></div>
-														</div>
-														<div data-property-id-row="2" class="prop_block">
+																<input type="text" class="required" code="" rows="3" cols="30" name="ORDER_PROP_8" id="ORDER_PROP_8" aria-required="true">
 
-															<div class="bx_block r1x3 pt8">
-																E-Mail <span class="star">*</span>
-															</div>
-
-															<div class="bx_block r3x1">
-																<input type="email" class="required error" code="EMAIL" maxlength="250" size="" value="" name="ORDER_PROP_2" id="ORDER_PROP_2" aria-required="true">
-																<label id="ORDER_PROP_2-error" class="error" for="ORDER_PROP_2">Некорректные данные!</label>
 															</div>
 															<div style="clear: both;"></div>
 														</div>
