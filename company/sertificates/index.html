@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-<!-- Mirrored from provance.flex.by/auth/registration/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Jun 2016 13:21:28 GMT -->
+<!-- Mirrored from provance.flex.by/company/news/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Jun 2016 12:55:20 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <!-- /Added by HTTrack -->
 
 <head>
-	<title>История заказов</title>
+	<title>Сертификаты</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="HandheldFriendly" content="true" />
 	<meta name="yes" content="yes" />
@@ -82,199 +82,7 @@
 			captcha: '',
 		});
 	</script>
-	<!--'start_frame_cache_options-block'-->
-	<script type="text/javascript">
-		var arMShopOptions = ({
-			"SITE_DIR": "/",
-			"FORM": ({
-				"ASK_FORM_ID": "ASK",
-				"SERVICES_FORM_ID": "SERVICES",
-				"FEEDBACK_FORM_ID": "FEEDBACK",
-				"CALLBACK_FORM_ID": "CALLBACK",
-				"RESUME_FORM_ID": "RESUME",
-				"TOORDER_FORM_ID": "TOORDER"
-			}),
-			"THEME": ({
-				"THEME_SWITCHER": "n",
-				"COLOR_THEME": "custom",
-				"CUSTOM_COLOR_THEME": "80d8c4",
-				"LOGO_IMAGE": "/upload/aspro.mshop/b03/b030f8c31f6672f5e21e3b7a504ecf1d.png",
-				"FAVICON_IMAGE": "/include/favicon.ico?1454669308",
-				"APPLE_TOUCH_ICON_57_IMAGE": "/include/favicon_57.png",
-				"APPLE_TOUCH_ICON_72_IMAGE": "/include/favicon_72.png",
-				"BANNER_WIDTH": "auto",
-				"BANNER_ANIMATIONTYPE": "SLIDE_HORIZONTAL",
-				"BANNER_SLIDESSHOWSPEED": "5000",
-				"BANNER_ANIMATIONSPEED": "600",
-				"HEAD": ({
-					"VALUE": "type_3",
-					"MENU": "type_2",
-					"MENU_COLOR": "white",
-					"HEAD_COLOR": "white",
-				}),
-				"BASKET": "normal",
-				"STORES": "light",
-				"STORES_SOURCE": "iblock",
-				"TYPE_SKU": "type_2",
-				"TYPE_VIEW_FILTER": "vertical",
-				"SHOW_BASKET_ONADDTOCART": "Y",
-				"SHOW_BASKET_PRINT": "N",
-				"PHONE_MASK": "+7 (999) 999-99-99",
-				"VALIDATE_PHONE_MASK": "^[+][7] [(][0-9]{3}[)] [0-9]{3}[-][0-9]{2}[-][0-9]{2}$",
-				"SCROLLTOTOP_TYPE": "ROUND_COLOR",
-				"SCROLLTOTOP_POSITION": "PADDING",
-			}),
-			"COUNTERS": ({
-				"YANDEX_COUNTER": "0",
-				"GOOGLE_COUNTER": "0",
-				"YANDEX_ECOMERCE": "N",
-				"GOOGLE_ECOMERCE": "N",
-				"TYPE": {
-					"ONE_CLICK": "Покупка в 1 клик",
-					"QUICK_ORDER": "Быстрый заказ",
-				},
-				"GOOGLE_EVENTS": {
-					"ADD2BASKET": "addToCart",
-					"REMOVE_BASKET": "removeFromCart",
-					"CHECKOUT_ORDER": "checkout",
-				}
-				/*
-				"GOALS" : {
-					"TO_BASKET": "TO_BASKET",
-					"ORDER_START": "ORDER_START",
-					"ORDER_SUCCESS": "ORDER_SUCCESS",
-					"QUICK_ORDER_SUCCESS": "QUICK_ORDER_SUCCESS",
-					"ONE_CLICK_BUY_SUCCESS": "ONE_CLICK_BUY_SUCCESS",
-				}
-				*/
-			}),
-			"JS_ITEM_CLICK": ({
-				"precision": 6,
-				"precisionFactor": Math.pow(10, 6)
-			})
-		});
-		if (typeof (BX.localStorage) !== 'undefined') {
-			BX.localStorage.set('arMShopOptions', arMShopOptions, 86400);
-		}
-		$(document).ready(function () {
-			$.extend($.validator.messages, {
-				required: BX.message('JS_REQUIRED'),
-				email: BX.message('JS_FORMAT'),
-				equalTo: BX.message('JS_PASSWORD_COPY'),
-				minlength: BX.message('JS_PASSWORD_LENGTH'),
-				remote: BX.message('JS_ERROR')
-			});
-
-			$.validator.addMethod(
-				'regexp',
-				function (value, element, regexp) {
-					var re = new RegExp(regexp);
-					return this.optional(element) || re.test(value);
-				},
-				BX.message('JS_FORMAT')
-			);
-
-			$.validator.addMethod(
-				'filesize',
-				function (value, element, param) {
-					return this.optional(element) || (element.files[0].size <= param)
-				},
-				BX.message('JS_FILE_SIZE')
-			);
-
-			$.validator.addMethod(
-				'date',
-				function (value, element, param) {
-					var status = false;
-					if (!value || value.length <= 0) {
-						status = false;
-					} else {
-						// html5 date allways yyyy-mm-dd
-						var re = new RegExp('^([0-9]{4})(.)([0-9]{2})(.)([0-9]{2})$');
-						var matches = re.exec(value);
-						if (matches) {
-							var composedDate = new Date(matches[1], (matches[3] - 1), matches[5]);
-							status = ((composedDate.getMonth() == (matches[3] - 1)) && (composedDate.getDate() == matches[5]) && (composedDate.getFullYear() == matches[1]));
-						} else {
-							// firefox
-							var re = new RegExp('^([0-9]{2})(.)([0-9]{2})(.)([0-9]{4})$');
-							var matches = re.exec(value);
-							if (matches) {
-								var composedDate = new Date(matches[5], (matches[3] - 1), matches[1]);
-								status = ((composedDate.getMonth() == (matches[3] - 1)) && (composedDate.getDate() == matches[1]) && (composedDate.getFullYear() == matches[5]));
-							}
-						}
-					}
-					return status;
-				}, BX.message('JS_DATE')
-			);
-
-			$.validator.addMethod(
-				'extension',
-				function (value, element, param) {
-					param = typeof param === 'string' ? param.replace(/,/g, '|') : 'png|jpe?g|gif';
-					return this.optional(element) || value.match(new RegExp('.(' + param + ')$', 'i'));
-				}, BX.message('JS_FILE_EXT')
-			);
-
-			$.validator.addMethod(
-				'captcha',
-				function (value, element, params) {
-					return $.validator.methods.remote.call(this, value, element, {
-						url: arMShopOptions['SITE_DIR'] + 'ajax/check-captcha.php',
-						type: 'post',
-						data: {
-							captcha_word: value,
-							captcha_sid: function () {
-								return $(element).closest('form').find('input[name="captcha_sid"]').val();
-							}
-						}
-					});
-				},
-				BX.message('JS_ERROR')
-			);
-
-			$.validator.addClassRules({
-				'phone': {
-					regexp: arMShopOptions['THEME']['VALIDATE_PHONE_MASK']
-				},
-				'confirm_password': {
-					equalTo: 'input[name="REGISTER\[PASSWORD\]"]',
-					minlength: 6
-				},
-				'password': {
-					minlength: 6
-				},
-				'inputfile': {
-					extension: arMShopOptions['THEME']['VALIDATE_FILE_EXT'],
-					filesize: 5000000
-				},
-				'captcha': {
-					captcha: ''
-				}
-			});
-
-			if (arMShopOptions['THEME']['PHONE_MASK']) {
-				$('input.phone').inputmask('mask', {
-					'mask': arMShopOptions['THEME']['PHONE_MASK']
-				});
-			}
-
-			jqmEd('feedback', arMShopOptions['FORM']['FEEDBACK_FORM_ID']);
-			jqmEd('ask', arMShopOptions['FORM']['ASK_FORM_ID'], '.ask_btn');
-			jqmEd('services', arMShopOptions['FORM']['SERVICES_FORM_ID'], '.services_btn', '', '.services_btn');
-			if ($('.resume_send').length) {
-				$('.resume_send').live('click', function (e) {
-					$("body").append("<span class='resume_send_wr' style='display:none;'></span>");
-					jqmEd('resume', arMShopOptions['FORM']['RESUME_FORM_ID'], '.resume_send_wr', '', this);
-					$("body .resume_send_wr").click();
-					$("body .resume_send_wr").remove();
-				})
-			}
-			jqmEd('callback', arMShopOptions['FORM']['CALLBACK_FORM_ID'], '.callback_btn');
-		});
-	</script>
-	<!--'end_frame_cache_options-block'-->
+	<div id="bxdynamic_options-block"></div>
 	<div class="wrapper has_menu h_color_white m_color_white  basket_normal head_type_3 banner_auto">
 		<div class="header_wrap ">
 			<div class="top-h-row">
@@ -370,18 +178,15 @@
 							<tr>
 								<td class="logo_wrapp">
 									<div class="logo">
-										<a href="/"><img src="../../bitrix/images/logo.svg" alt="Сайт по умолчанию" title="Сайт по умолчанию">
-										</a>
-										<a href="/" class="print_img"><img src="" alt="Сайт по умолчанию" title="Сайт по умолчанию">
-										</a>
+										<a href="/"><img src="../../bitrix/images/logo.svg" alt="Сайт по умолчанию" title="Сайт по умолчанию"></a>
+										<a href="/" class="print_img"><img src="" alt="Сайт по умолчанию" title="Сайт по умолчанию"></a>
 									</div>
 								</td>
 								<td class="center_block">
 									<div class="main-nav">
 										<div id="bx_incl_area_5">
 											<ul class="menu adaptive">
-												<li class="menu_opener"><a>Меню</a><i class="icon"></i>
-												</li>
+												<li class="menu_opener"><a>Меню</a><i class="icon"></i></li>
 											</ul>
 											<ul class="menu full">
 												<li class="menu_item_l1  catalog">
@@ -393,58 +198,36 @@
 														<div class="child cat_menu">
 															<div class="child_wrapp">
 																<ul>
-																	<li class="menu_title"><a href="/catalog/stroitelnye_materialy/">Прованс</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/stroitelnye_materialy/klei/">Клеи</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/stroitelnye_materialy/lakokrasochnye_materialy/">Лакокрасочные материалы</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/stroitelnye_materialy/sukhie_stroitelnye_smesi/">Сухие строительные смеси</a>
-																	</li>
+																	<li class="menu_title"><a href="/catalog/stroitelnye_materialy/">Прованс</a></li>
+																	<li class="menu_item"><a href="/catalog/stroitelnye_materialy/klei/">Клеи</a></li>
+																	<li class="menu_item"><a href="/catalog/stroitelnye_materialy/lakokrasochnye_materialy/">Лакокрасочные материалы</a></li>
+																	<li class="menu_item"><a href="/catalog/stroitelnye_materialy/sukhie_stroitelnye_smesi/">Сухие строительные смеси</a></li>
 																</ul>
 																<ul>
-																	<li class="menu_title"><a href="/catalog/foto_i_video/">Лофт</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/foto_i_video/videokamery/">Видеокамеры</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/foto_i_video/obektivy/">Объективы</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/foto_i_video/fotoapparaty/">Фотоаппараты</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/foto_i_video/tsifrovye_fotoramki/">Цифровые фоторамки</a>
-																	</li>
+																	<li class="menu_title"><a href="/catalog/foto_i_video/">Лофт</a></li>
+																	<li class="menu_item"><a href="/catalog/foto_i_video/videokamery/">Видеокамеры</a></li>
+																	<li class="menu_item"><a href="/catalog/foto_i_video/obektivy/">Объективы</a></li>
+																	<li class="menu_item"><a href="/catalog/foto_i_video/fotoapparaty/">Фотоаппараты</a></li>
+																	<li class="menu_item"><a href="/catalog/foto_i_video/tsifrovye_fotoramki/">Цифровые фоторамки</a></li>
 																</ul>
 																<ul class="last">
-																	<li class="menu_title"><a href="/catalog/odezhda/">Кантри</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/odezhda/zhenskaya_odezhda/">Женская одежда</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/odezhda/muzhskaya_odezhda/">Мужская одежда</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/odezhda/detskaya_dlya_devochek/">Детская для девочек</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/odezhda/dlya_malchikov/">Детская для мальчиков</a>
-																	</li>
+																	<li class="menu_title"><a href="/catalog/odezhda/">Кантри</a></li>
+																	<li class="menu_item"><a href="/catalog/odezhda/zhenskaya_odezhda/">Женская одежда</a></li>
+																	<li class="menu_item"><a href="/catalog/odezhda/muzhskaya_odezhda/">Мужская одежда</a></li>
+																	<li class="menu_item"><a href="/catalog/odezhda/detskaya_dlya_devochek/">Детская для девочек</a></li>
+																	<li class="menu_item"><a href="/catalog/odezhda/dlya_malchikov/">Детская для мальчиков</a></li>
 																</ul>
 																<ul>
-																	<li class="menu_title"><a href="/catalog/sport/">Коллекции</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/sport/veloryukzaki/">Велорюкзаки</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/sport/velosipedy/">Велосипеды</a>
-																	</li>
+																	<li class="menu_title"><a href="/catalog/sport/">Коллекции</a></li>
+																	<li class="menu_item"><a href="/catalog/sport/veloryukzaki/">Велорюкзаки</a></li>
+																	<li class="menu_item"><a href="/catalog/sport/velosipedy/">Велосипеды</a></li>
 																</ul>
 																<ul>
-																	<li class="menu_title"><a href="/catalog/elektroinstrument/">Предметы</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/elektroinstrument/dreli/">Дрели</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/elektroinstrument/perforatory/">Перфораторы</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/elektroinstrument/shurupoverty/">Шуруповерты</a>
-																	</li>
-																	<li class="menu_item"><a href="/catalog/elektroinstrument/akkumulyatory/">Аккумуляторы</a>
-																	</li>
+																	<li class="menu_title"><a href="/catalog/elektroinstrument/">Предметы</a></li>
+																	<li class="menu_item"><a href="/catalog/elektroinstrument/dreli/">Дрели</a></li>
+																	<li class="menu_item"><a href="/catalog/elektroinstrument/perforatory/">Перфораторы</a></li>
+																	<li class="menu_item"><a href="/catalog/elektroinstrument/shurupoverty/">Шуруповерты</a></li>
+																	<li class="menu_item"><a href="/catalog/elektroinstrument/akkumulyatory/">Аккумуляторы</a></li>
 																</ul>
 															</div>
 														</div>
@@ -483,8 +266,7 @@
 													<div id="bx_incl_area_5_2">
 														<form action="/catalog/" class="search1">
 															<input id="title-search-input4" class="search_field1" type="text" name="q" placeholder="Поиск по сайту" autocomplete="off">
-															<button id="search-submit-button" type="submit" class="submit"><i></i>
-															</button>
+															<button id="search-submit-button" type="submit" class="submit"><i></i></button>
 															<div id="title-search4"></div>
 															<div id="bx_incl_area_5_2_1">
 																<script type="text/javascript">
@@ -884,414 +666,101 @@
 		<div class="wrapper_inner">
 			<section class="middle">
 				<div class="container">
-					<div class="breadcrumbs" id="navigation"><a href="../../index.html" id="bx_breadcrumb_0" title="Главная"><span>Главная</span></a><span class="separator">&bull;</span><a href="../../index.html" id="bx_breadcrumb_1" title="Главная"><span>Личный кабинет</span></a><span class="separator">&bull;</span><span>История заказов</span>
-					</div>
-					<h1 id="pagetitle">История заказов</h1>
+					<div class="breadcrumbs" id="navigation"><a href="../../index.html" id="bx_breadcrumb_0" title="Главная"><span>Главная</span></a><span class="separator">&bull;</span><a href="../index.html" id="bx_breadcrumb_1" title="О компании"><span>О компании</span></a><span class="separator">&bull;</span><span>Сертификаты и дипломы</span></div>
+					<h1 id="pagetitle">Сертификаты и дипломы</h1>
 					<div id="content">
 						<div class="left_block">
-							<ul class="left_menu">
+							<ul class="left_menu left_menu_without-exit">
+								<li class=" item ">
+									<a href="../index.html">
+										<span>О компании</span>
+									</a>
+								</li>
 								<li class="   item ">
-									<a href="/personal/personal-data/">
-										<span>Персональные данные</span>
+									<a href="index.html">
+										<span>Новости</span>
 									</a>
 								</li>
 								<li class="current item ">
-									<a href="/personal/history-of-orders/">
-										<span>История заказов</span>
+									<a href="../staff/index.html">
+										<span>Сертификаты и дипломы</span>
 									</a>
 								</li>
 								<li class=" item ">
-									<a href="/personal/change-password/">
-										<span>Сменить пароль</span>
-									</a>
-								</li>
-								<li class=" item ">
-									<a href="/personal/subscribe/">
-										<span>Подписка на новости</span>
-									</a>
-								</li>
-								<li class=" item exit">
-									<a href="/personal/?logout=yes&amp;login=yes">
-										<span>Выйти</span>
+									<a href="../jobs/index.html">
+										<span>Вакансии</span>
 									</a>
 								</li>
 							</ul>
-							<script type="text/javascript">
-								$("ul.left_menu li:not(.current)").click(function () {
-									$(this).siblings().removeClass("current");
-									$(this).addClass("current");
-								});
-								if ($('.child_container').length) {
-									$('.child_container .menu_item').each(function () {
-										if ($(this).hasClass('current')) {
-											$(this).closest('.item').addClass('current');
-										}
-									})
-								}
-							</script>
-
 						</div>
 						<div class="right_block">
-
-							<div class="module-order-history">
-								<div class="filter_block border_block">
-									<ul>
-										<li class="prop active">
-											<span>Все</span>
-										</li>
-										<li class="prop ">
-											<a href="/personal/history-of-orders/?filter_history=N&amp;filter_canceled=N">Текущие</a>
-										</li>
-										<li class="prop ">
-											<a href="/personal/history-of-orders/?filter_status=F&amp;filter_history=Y">Завершенные</a>
-										</li>
-										<li class="prop ">
-											<a href="/personal/history-of-orders/?filter_canceled=Y&amp;filter_history=Y">Отмененные</a>
-										</li>
-									</ul>
-									<div class="cls"></div>
+							<div class="sertificate-block-gallery">
+								<div class="sertificate-block">
+									<p class="subtitle">Дипломы</p>
+									<div class="row galley ">
+											<ul class="module-gallery-list">
+												<li class="item_block">
+													<a href="../../bitrix/images/sertificates/sert1.jpg" class="item2 fancy" data-fancybox-group="gallery" rel="gallery2">
+														<img src="../../bitrix/images/sertificates/sert1.jpg" alt="Apple представляет совершенно новый MacBook Pro с дисплеем Retina" title="Apple представляет совершенно новый MacBook Pro с дисплеем Retina">
+													</a>
+													<p class="caption">Диплом участника международной выставки «Охота и рыболовство. Осень 2012»</p>
+												</li>
+												<li class="item_block">
+													<a href="../../bitrix/images/sertificates/sert1.jpg" class="item2 fancy" data-fancybox-group="gallery" rel="gallery2">
+														<img src="../../bitrix/images/sertificates/sert1.jpg" alt="Apple представляет совершенно новый MacBook Pro с дисплеем Retina" title="Apple представляет совершенно новый MacBook Pro с дисплеем Retina">
+													</a>
+													<p class="caption">Диплом участника международной выставки «Охота и рыболовство. Осень 2012»</p>
+												</li>
+												<li class="item_block">
+													<a href="../../bitrix/images/sertificates/sert1.jpg" class="item2 fancy" data-fancybox-group="gallery" rel="gallery2">
+														<img src="../../bitrix/images/sertificates/sert1.jpg" alt="Apple представляет совершенно новый MacBook Pro с дисплеем Retina" title="Apple представляет совершенно новый MacBook Pro с дисплеем Retina">
+													</a>
+													<p class="caption">Диплом участника международной выставки «Охота и рыболовство. Осень 2011»</p>
+												</li>
+											</ul>
+											<div class="clear"></div>
+										</div>	
 								</div>
-								<br>
-								<table class="module-orders-list colored">
-									<thead>
-										<tr>
-											<td class="item-name-th">Номер заказа</td>
-											<td class="date-th">Дата</td>
-											<td class="count-th">Количество</td>
-											<td class="price-th">Сумма</td>
-											<td class="pay-status-th">Оплата</td>
-											<td class="order-status-th">Статус</td>
-										</tr>
-									</thead>
-									<tbody>
-
-										<tr class="tr-d">
-											<td class="item-name-cell">
-												<a class="item_name"><span class="icon opener_icon"><i></i></span><span class="name">Заказ №5</span></a>
-
-												<span class="order-extra-properties">	
-							, <span class="item">
-								Дата: 29.06.2016,
-							</span>
-												<span class="item">
-								позиций:&nbsp;4,
-							</span>
-												<span class="item">
-								Сумма:&nbsp;
-								109 000 руб.							</span>
-												<span class="item">Оплата:&nbsp; 
-								<span class="pay-status-cell payed">Оплачен</span>,
-												</span>
-												<span class="item">
-								Статус:&nbsp; 
-								Выполнен							</span>
-												</span>
-											</td>
-											<td class="date-cell"> 29.06.2016</td>
-											<td class="count-cell">4&nbsp;шт.</td>
-											<td class="price-cell">109 000 руб.</td>
-											<td class="pay-status-cell payed">
-												Оплачен </td>
-											<td class="order-status-cell">
-												<span class="status delivered">Выполнен</span> </td>
-										</tr>
-										<tr class="drop">
-											<td colspan="6" class="drop-cell wrap-all">
-												<div class="drop-container">
-													<table class="item-shell">
-														<thead>
-															<tr>
-																<td class="name-th">Товар</td>
-																<td class="price-th">Цена</td>
-																<td class="count-th">Количество</td>
-																<td class="summ-th">Сумма</td>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/foto_i_video/fotoapparaty/263/">Комплект Canon EOS 5D Mark III + объектив EF24-105 F4L IS</a>
-																	<div class="item-extra-properties">
-																		37 918 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	37 918 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	37 918 руб. </td>
-															</tr>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/foto_i_video/obektivy/226/">Объектив Canon EF24-105 F4L IS USM</a>
-																	<div class="item-extra-properties">
-																		33 300 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	33 300 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	33 300 руб. </td>
-															</tr>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/foto_i_video/obektivy/227/">Объектив Canon Tokina AT-X 10-17 F/3.5-4.5</a>
-																	<div class="item-extra-properties">
-																		21 591 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	21 591 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	21 591 руб. </td>
-															</tr>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/foto_i_video/fotoapparaty/220/">Фотоаппарат зеркальный Sony SLT-A37K+SAL1855</a>
-																	<div class="item-extra-properties">
-																		16 191 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	16 191 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	16 191 руб. </td>
-															</tr>
-														</tbody>
-													</table>
-													<div class="result-row">
-														<div class="result">
-
-															<table cellspacing="0" cellpadding="0" border="0">
-																<tbody>
-																	<tr class="order_property price">
-																		<td class="name">Итого:</td>
-																		<td class="r">109 000 руб.</td>
-																	</tr>
-																</tbody>
-															</table>
-														</div>
-														<!--noindex-->
-														<a href="/personal/history-of-orders/order_detail.php?ID=5" class="button msmall"><span>Подробнее</span></a>
-<!--														add class transparent-->
-														<a href="/personal/history-of-orders/?ID=5&amp;COPY_ORDER=Y" class="button msmall transparent"><span>Повторить заказ</span></a>
-														<a href="/personal/history-of-orders/order_cancel.php?ID=5&amp;CANCEL=Y" class="button msmall transparent"><span>Отменить заказ</span></a>
-														<!--/noindex-->
-													</div>
-												</div>
-											</td>
-										</tr>
-
-										<tr class="tr-d">
-											<td class="item-name-cell">
-												<a class="item_name"><span class="icon opener_icon"><i></i></span><span class="name">Заказ №4</span></a>
-
-												<span class="order-extra-properties">	
-							, <span class="item">
-								Дата: 29.06.2016,
-							</span>
-												<span class="item">
-								позиций:&nbsp;3,
-							</span>
-												<span class="item">
-								Сумма:&nbsp;
-								67 589 руб.							</span>
-												<span class="item">Оплата:&nbsp; 
-								<span class="pay-status-cell not_payed">Не оплачен</span>,
-												</span>
-												<span class="item">
-								Статус:&nbsp; 
-								Отменен							</span>
-												</span>
-											</td>
-											<td class="date-cell"> 29.06.2016</td>
-											<td class="count-cell">3&nbsp;шт.</td>
-											<td class="price-cell">67 589 руб.</td>
-											<td class="pay-status-cell not_payed">
-												Не оплачен </td>
-											<td class="order-status-cell">
-												<span class="status canceled">Отменен</span> </td>
-										</tr>
-										<tr class="drop">
-											<td colspan="6" class="drop-cell wrap-all">
-												<div class="drop-container">
-													<table class="item-shell">
-														<thead>
-															<tr>
-																<td class="name-th">Товар</td>
-																<td class="price-th">Цена</td>
-																<td class="count-th">Количество</td>
-																<td class="summ-th">Сумма</td>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/foto_i_video/fotoapparaty/263/">Комплект Canon EOS 5D Mark III + объектив EF24-105 F4L IS</a>
-																	<div class="item-extra-properties">
-																		37 918 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	37 918 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	37 918 руб. </td>
-															</tr>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/foto_i_video/fotoapparaty/220/">Фотоаппарат зеркальный Sony SLT-A37K+SAL1855</a>
-																	<div class="item-extra-properties">
-																		16 191 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	16 191 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	16 191 руб. </td>
-															</tr>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/foto_i_video/fotoapparaty/221/">Фотоаппарат зеркальный Canon EOS 5D Mark III 24-105IS</a>
-																	<div class="item-extra-properties">
-																		13 480 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	13 480 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	13 480 руб. </td>
-															</tr>
-														</tbody>
-													</table>
-													<div class="result-row">
-														<div class="result">
-
-															<table cellspacing="0" cellpadding="0" border="0">
-																<tbody>
-																	<tr class="order_property price">
-																		<td class="name">Итого:</td>
-																		<td class="r">67 589 руб.</td>
-																	</tr>
-																</tbody>
-															</table>
-														</div>
-														<!--noindex-->
-														<a href="/personal/history-of-orders/order_detail.php?ID=4" class="button msmall"><span>Подробнее</span></a>
-														<a href="/personal/history-of-orders/?ID=4&amp;COPY_ORDER=Y" class="button msmall transparent"><span>Повторить заказ</span></a>
-														<a href="/personal/history-of-orders/order_cancel.php?ID=4&amp;CANCEL=Y" class="button msmall transparent"><span>Отменить заказ</span></a>
-														<!--/noindex-->
-													</div>
-												</div>
-											</td>
-										</tr>
-
-										<tr class="tr-d">
-											<td class="item-name-cell">
-												<a class="item_name"><span class="icon opener_icon"><i></i></span><span class="name">Заказ №3</span></a>
-
-												<span class="order-extra-properties">	
-							, <span class="item">
-								Дата: 29.06.2016,
-							</span>
-												<span class="item">
-								позиций:&nbsp;2,
-							</span>
-												<span class="item">
-								Сумма:&nbsp;
-								9 060 руб.							</span>
-												<span class="item">Оплата:&nbsp; 
-								<span class="pay-status-cell">Наложенный платеж</span>,
-												</span>
-												<span class="item">
-								Статус:&nbsp; 
-								Принят, ожидается оплата							</span>
-												</span>
-											</td>
-											<td class="date-cell"> 29.06.2016</td>
-											<td class="count-cell">2&nbsp;шт.</td>
-											<td class="price-cell">9 060 руб.</td>
-											<td class="pay-status-cell">
-												Наложенный платеж </td>
-											<td class="order-status-cell">
-												<span class="status in-process">Принят, ожидается оплата</span> </td>
-										</tr>
-										<tr class="drop">
-											<td colspan="6" class="drop-cell wrap-all">
-												<div class="drop-container">
-													<table class="item-shell">
-														<thead>
-															<tr>
-																<td class="name-th">Товар</td>
-																<td class="price-th">Цена</td>
-																<td class="count-th">Количество</td>
-																<td class="summ-th">Сумма</td>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/odezhda/muzhskaya_odezhda/237/?oid=249"> Рубашка мужская Salomon S</a>
-																	<div class="item-extra-properties">
-																		1 890 руб. × 4 </div>
-																</td>
-																<td class="price-cell">
-																	1 890 руб. </td>
-																<td class="count-cell">4&nbsp;шт.</td>
-																<td class="summ-cell">
-																	7 560 руб. </td>
-															</tr>
-															<tr>
-																<td class="name-cell">
-																	<a href="/catalog/odezhda/zhenskaya_odezhda/236/?oid=245"> Топ женский Nike Pro Classic Bash Серый S</a>
-																	<div class="item-extra-properties">
-																		1 500 руб. × 1 </div>
-																</td>
-																<td class="price-cell">
-																	1 500 руб. </td>
-																<td class="count-cell">1&nbsp;шт.</td>
-																<td class="summ-cell">
-																	1 500 руб. </td>
-															</tr>
-														</tbody>
-													</table>
-													<div class="result-row">
-														<div class="result">
-
-															<table cellspacing="0" cellpadding="0" border="0">
-																<tbody>
-																	<tr class="order_property price">
-																		<td class="name">Итого:</td>
-																		<td class="r">9 060 руб.</td>
-																	</tr>
-																</tbody>
-															</table>
-														</div>
-														<!--noindex-->
-														<a href="/personal/history-of-orders/order_detail.php?ID=3" class="button msmall"><span>Подробнее</span></a>
-														<a href="/personal/history-of-orders/?ID=3&amp;COPY_ORDER=Y" class="button msmall transparent"><span>Повторить заказ</span></a>
-														<a href="/personal/history-of-orders/order_cancel.php?ID=3&amp;CANCEL=Y" class="button msmall transparent"><span>Отменить заказ</span></a>
-														<!--/noindex-->
-													</div>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-
-
-								<script>
-									$('.tr-d td').on('click', function (e) {
-										e.preventDefault();
-										$(this).parents("tr").toggleClass("opened").next("tr.drop").find(".drop-cell").slideToggle(200).find(".drop-container").slideToggle(200);
-									});
-								</script>
+								<div class="sertificate-block">
+									<p class="subtitle">Сертификаты</p>
+									<div class="row galley">
+											<ul class="module-gallery-list">
+												<li class="item_block">
+													<a href="../../bitrix/images/sertificates/sert1.jpg" class="item2 fancy" data-fancybox-group="gallery" rel="gallery2">
+														<img src="../../bitrix/images/sertificates/sert1.jpg" alt="Apple представляет совершенно новый MacBook Pro с дисплеем Retina" title="Apple представляет совершенно новый MacBook Pro с дисплеем Retina">
+													</a>
+													<p class="caption">Одобрение типа транспортного средства</p>
+												</li>
+												<li class="item_block">
+													<a href="../../bitrix/images/sertificates/sert1.jpg" class="item2 fancy" data-fancybox-group="gallery" rel="gallery2">
+														<img src="../../bitrix/images/sertificates/sert1.jpg" alt="Apple представляет совершенно новый MacBook Pro с дисплеем Retina" title="Apple представляет совершенно новый MacBook Pro с дисплеем Retina">
+													</a>
+													<p class="caption">Сертификат соответсвия транспортного средства</p>
+												</li>
+												<li class="item_block">
+													<a href="../../bitrix/images/sertificates/sert1.jpg" class="item2 fancy" data-fancybox-group="gallery" rel="gallery2">
+														<img src="../../bitrix/images/sertificates/sert1.jpg" alt="Apple представляет совершенно новый MacBook Pro с дисплеем Retina" title="Apple представляет совершенно новый MacBook Pro с дисплеем Retina">
+													</a>
+													<p class="caption">Одобрение типа транспортного средства</p>
+												</li>
+												<li class="item_block">
+													<a href="../../bitrix/images/sertificates/sert1.jpg" class="item2 fancy" data-fancybox-group="gallery" rel="gallery2">
+														<img src="../../bitrix/images/sertificates/sert1.jpg" alt="Apple представляет совершенно новый MacBook Pro с дисплеем Retina" title="Apple представляет совершенно новый MacBook Pro с дисплеем Retina">
+													</a>
+													<p class="caption">Сертификат соответсвия продукции </p>
+												</li>
+											</ul>
+											<div class="clear"></div>
+										
+									</div>
+								</div>
 							</div>
+						</div>
 					</div>
 				</div>
+			</section>
 		</div>
-		</section>
 	</div>
-	</div>
-
 	<footer id="footer" class="main">
 		<div class="footer_inner">
 			<div class="wrapper_inner">
@@ -1562,34 +1031,11 @@
 			</div>
 		</div>
 	</footer>
-	<!--'start_frame_cache_basketitems-block'-->
-	<script type="text/javascript">
-		function jsPriceFormat(_number) {
-			BX.Currency.setCurrencyFormat('RUB', {
-				'CURRENCY': 'RUB',
-				'LID': 'ru',
-				'FORMAT_STRING': '# руб.',
-				'FULL_NAME': 'Рубль',
-				'DEC_POINT': '.',
-				'THOUSANDS_SEP': ' ',
-				'DECIMALS': '2',
-				'THOUSANDS_VARIANT': 'S',
-				'HIDE_ZERO': 'Y',
-				'CREATED_BY': '',
-				'DATE_CREATE': '2016-02-05 11:55:09',
-				'MODIFIED_BY': '1',
-				'TIMESTAMP_X': '2016-02-05 13:49:38'
-			});
-			return BX.Currency.currencyFormat(_number, 'RUB', true);
-		}
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function () {});
-	</script>
-	<!--'end_frame_cache_basketitems-block'-->
+	<div id="bxdynamic_basketitems-block"></div>
 	<div id="content_new"></div>
 </body>
 
-<!-- Mirrored from provance.flex.by/auth/registration/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Jun 2016 13:21:30 GMT -->
+<!-- Mirrored from provance.flex.by/company/news/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Jun 2016 12:55:27 GMT -->
 
 </html>
+<!--b6b7d47377ef5774bcaa42bd7f025708-->

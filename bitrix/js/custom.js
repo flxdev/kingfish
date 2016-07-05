@@ -5,10 +5,10 @@ $(document).ready(function(){
 	
 	$('.child_container').siblings('a.parent').addClass('after');	
 	
-$(function() {
-    $('.section_item').matchHeight();
-	$('.articles-list.sections .item.iblock').matchHeight();
-});	
+	$(function() {
+		$('.section_item').matchHeight();
+		$('.articles-list.sections .item.iblock').matchHeight();
+	});	
 	
 	// tabs on contacts page
 	
@@ -22,6 +22,7 @@ $(function() {
 		initMapServ();
     })
 	
+
 	
 	
 	
