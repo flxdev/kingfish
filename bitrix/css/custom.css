@@ -5,49 +5,9 @@
 /* 1. Fonts */
 
 @font-face {
-	font-family: 'Conv_MuseoSansCyrl_100';
-	src: url('fonts/MuseoSansCyrl_100.eot');
-	src: local('☺'), url('fonts/MuseoSansCyrl_100.woff') format('woff'), url('fonts/MuseoSansCyrl_100.ttf') format('truetype'), url('fonts/MuseoSansCyrl_100.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Conv_MuseoSansCyrl_100_Italic';
-	src: url('fonts/MuseoSansCyrl_100_Italic.eot');
-	src: local('☺'), url('fonts/MuseoSansCyrl_100_Italic.woff') format('woff'), url('fonts/MuseoSansCyrl_100_Italic.ttf') format('truetype'), url('fonts/MuseoSansCyrl_100_Italic.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Conv_MuseoSansCyrl_300';
-	src: url('fonts/MuseoSansCyrl_300.eot');
-	src: local('☺'), url('fonts/MuseoSansCyrl_300.woff') format('woff'), url('fonts/MuseoSansCyrl_300.ttf') format('truetype'), url('fonts/MuseoSansCyrl_300.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Conv_MuseoSansCyrl_300_Italic';
-	src: url('fonts/MuseoSansCyrl_300_Italic.eot');
-	src: local('☺'), url('fonts/MuseoSansCyrl_300_Italic.woff') format('woff'), url('fonts/MuseoSansCyrl_300_Italic.ttf') format('truetype'), url('fonts/MuseoSansCyrl_300_Italic.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
 	font-family: 'Conv_MuseoSansCyrl_500';
 	src: url('fonts/MuseoSansCyrl_500.eot');
 	src: local('☺'), url('fonts/MuseoSansCyrl_500.woff') format('woff'), url('fonts/MuseoSansCyrl_500.ttf') format('truetype'), url('fonts/MuseoSansCyrl_500.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Conv_MuseoSansCyrl_500_Italic';
-	src: url('fonts/MuseoSansCyrl_500_Italic.eot');
-	src: local('☺'), url('fonts/MuseoSansCyrl_500_Italic.woff') format('woff'), url('fonts/MuseoSansCyrl_500_Italic.ttf') format('truetype'), url('fonts/MuseoSansCyrl_500_Italic.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -72,14 +32,6 @@
 	font-family: 'Conv_MuseoSansCyrl_900';
 	src: url('fonts/MuseoSansCyrl_900.eot');
 	src: local('☺'), url('fonts/MuseoSansCyrl_900.woff') format('woff'), url('fonts/MuseoSansCyrl_900.ttf') format('truetype'), url('fonts/MuseoSansCyrl_900.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Conv_MuseoSansCyrl_900_Italic';
-	src: url('fonts/MuseoSansCyrl_900_Italic.eot');
-	src: local('☺'), url('fonts/MuseoSansCyrl_900_Italic.woff') format('woff'), url('fonts/MuseoSansCyrl_900_Italic.ttf') format('truetype'), url('fonts/MuseoSansCyrl_900_Italic.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -114,7 +66,9 @@ h3{
 }
 
 h1#pagetitle{
-	margin: 20px 0 39px;	
+	margin: 20px 0 39px;
+	padding-right: 10%;
+    line-height: 46px;
 }
 
 h2{
@@ -841,9 +795,12 @@ body .top_slider_wrapp .flex-direction-nav li{
 	letter-spacing: 0.09px;
 	color: #fff;
 	background: #044f8b;
-	padding: 8px 23px;
+	padding: 6px 23px 5px;
 	line-height: 20px;
 	border-radius: 15px;
+	float: right;
+    margin-right: 100px;
+	margin-top: 7px;
 	transition: background 1s ease;
 }
 
@@ -2079,7 +2036,7 @@ a.scroll-to-top.RECT_COLOR:hover{
 .bottom_nav .pagination > li > a {
     color: #05a2f1;
     font-family: 'Conv_MuseoSansCyrl_900', Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 13px;
     width: 37px;
     height: 37px;
     line-height: 34px;
@@ -2102,12 +2059,12 @@ a.scroll-to-top.RECT_COLOR:hover{
 }
 
 .bottom_nav .pagination .pagination-prev{
-	background: url('../images/icon/gallery_page/arrow_%20back.svg') center no-repeat;
+	background: url('../images/icon/gallery_page/arrow_back.svg') center no-repeat;
 	margin-right: 28px;
 }
 
 .bottom_nav .pagination .pagination-next{
-	background: url('../images/icon/gallery_page/arrow_%20forward.svg') center no-repeat;
+	background: url('../images/icon/gallery_page/arrow_forward.svg') center no-repeat;
 	margin-left: 28px;
 }
 
@@ -3308,16 +3265,18 @@ body .basket_wrapp .module-cart td.count-cell{
 	border-top: none;
 }
 
-.backet_back_wrapp .basket_back .button.grey_br.transparent{
+.backet_back_wrapp .basket_back .button.grey_br.transparent,
+.back .back{
 	border: none;
 	background: url('../images/icon/arrow_basket_back.svg') left center no-repeat;
 	background-size: 10px;
 }
 
-.backet_back_wrapp .basket_back .button.grey_br.transparent span{
+.backet_back_wrapp .basket_back .button.grey_br.transparent span,
+.back .back span{
 	text-transform: initial;
 	color: #919191;
-	font-family: 'Conv_MuseoSansCyrl_700', Arial, Helvetica, sans-serif;	
+	font-family: 'Conv_MuseoSansCyrl_700', Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	letter-spacing: 0.03em;
 	font-weight: normal;
@@ -3594,8 +3553,8 @@ body .basket_wrapp .module-cart td.count-cell{
 }
 
 .left_menu > li:first-child{
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+	border-top-left-radius: 10px !important;
+	border-top-right-radius: 10px !important;
 }
 
 .left_menu > li:nth-last-child(2),
@@ -4172,7 +4131,7 @@ input[type="text"], input[type="password"], input[type="email"], select, textare
 }
 
 body .flex-direction-nav li:hover .flex-prev, body .dark .flex-direction-nav li .flex-prev {
-    background-position: center;
+/*    background-position: center;*/
 }
 
 .data_table_props.compare_view.active td > a{
@@ -4917,9 +4876,13 @@ table.title-search-result td.title-search-all a:hover .icon i{
 }
 
 
-/*  */
+/* contents */
 
-.right_block p {
+.right_block p ,
+.ask_small_block .description,
+.margin.preview_text,
+.news_detail_wrapp .detail_text > p,
+.detail_text.wimg .cont_block .right-col > p{
 	color: #222;
 	font-size: 14px;
 	line-height: 24px;
@@ -4971,51 +4934,61 @@ blockquote:before{
 	display: none;
 }
 
-.right_block .cont_block{
+.right_block .cont_block,
+.detail_text.wimg .cont_block{
 	font-size: 0;
 }
 
 .right_block .cont_block .left-col,
-.right_block .cont_block .right-col{
+.right_block .cont_block .right-col,
+.detail_text.wimg .cont_block .left-col,
+.detail_text.wimg .cont_block .right-col{
 	display: inline-block;
 	vertical-align: top;
 }
 
-.right_block .cont_block .left-col{
+.right_block .cont_block .left-col,
+.detail_text.wimg .cont_block .left-col{
 	width: 30%;
 }
 
-.right_block .cont_block .right-col{
+.right_block .cont_block .right-col,
+.detail_text.wimg .cont_block .right-col{
 	width: 70%;
 	box-sizing: border-box;
 	padding-left: 4.5%;
 }
 
-.right_block .list{
+.right_block .list,
+.detail_text.wimg .list{
 	font-size: 0;
-	margin: 20px -10px;
+	margin: 20px -15px;
 }
 
-.right_block .list .title{
+.right_block .list .title,
+.detail_text.wimg .list .title{
 	color: #222;
     font-family: 'Conv_MuseoSansCyrl_900', Arial, Helvetica, sans-serif;
     font-size: 20px;
 	line-height: 24px;
     letter-spacing: 0.02em;	
 	margin-bottom: 20px;
+	padding-left: 15px;
 }
 
 .right_block .list ul,
-.jobs_wrapp .item .description_wrapp ul > li{
+.jobs_wrapp .item .description_wrapp ul > li,
+.detail_text.wimg .list ul{
 	width: 50%;
 	display: inline-block;
 	vertical-align: top;
-	padding: 0 10px;
+	padding: 0 15px;
 	box-sizing: border-box;
 }
 
 .right_block .list ul li,
-.jobs_wrapp .item .description_wrapp ul > li{
+.jobs_wrapp .item .description_wrapp ul > li,
+.detail_text.wimg .list ul li{
 	color: #222;
 	font-size: 14px;
 	line-height: 24px;
@@ -5027,7 +5000,8 @@ blockquote:before{
 }
 
 .right_block .list ul li:before,
-.jobs_wrapp .item .description_wrapp ul > li:before{
+.jobs_wrapp .item .description_wrapp ul > li:before,
+.detail_text.wimg .list ul li:before{
 	content: '';
 	display: block;
 	position: absolute;
@@ -5037,6 +5011,7 @@ blockquote:before{
 	height: 2px;
 	background: #0774b6;
 	margin: 0;
+	box-sizing: border-box;
 }
 
 .right_block .advantages{
@@ -5108,6 +5083,9 @@ blockquote:before{
 .articles-list.lists_block .item .left-data{
 	max-width: 100%;
     width: 100%;
+	border-radius: 10px;
+    overflow: hidden;
+	margin-bottom: 20px;
 }
 
 .articles-list.lists_block  .item .left-data img{
@@ -5115,8 +5093,13 @@ blockquote:before{
 }
 
 .articles-list.lists_block .right-data{
-	padding: 25px 0;
+	padding: 0;
+	padding-bottom: 22px;
 	width: 100%;
+}
+
+.articles-list .item .item-title {
+    margin-bottom: 7px;
 }
 
 .articles-list.lists_block .item .item-title a span{
@@ -5131,7 +5114,9 @@ blockquote:before{
 	color: #03396b;
 }
 
-.articles-list.lists_block .item .date_small{
+.articles-list.lists_block .item .date_small,
+.news_detail_wrapp .news_date_time_detail,
+.date_small{
 	color: #919191;
 	text-transform: uppercase;
 	font-size: 11px;
@@ -5255,7 +5240,9 @@ blockquote:before{
 }
 
 .jobs_wrapp .item.opened tr td.title .link,
-.jobs_wrapp .item.opened .salary{
+.jobs_wrapp .item.opened .salary,
+.faq.list .item.opened .q > a,
+.faq_ask > a > span{
 	color: #fff;
 }
 
@@ -5321,6 +5308,94 @@ blockquote:before{
 	display: inline-block;
 	vertical-align: middle;
 	box-sizing: border-box;
+}
+
+.brands_list{
+	font-size: 0;
+	margin: 0 -10px;
+}
+
+.brands_list li{
+    border: none;
+	padding: 10px;
+	height: 155px;
+    line-height: 130px;
+	width: 25%;
+	margin: 0;
+}
+
+.brands_list li > a{
+	display: inline-block;
+	border: 1px solid #e5e5e5;
+	width: 100%;
+    height: 100%;
+	border-radius: 10px;
+}
+
+.brands_list li:hover > a{
+	border: 1px solid #03396b;
+	-moz-box-shadow: inset 0px 0px 0 1px #03396b;
+	-webkit-box-shadow: inset 0px 0px 0 1px #03396b;
+	box-shadow: inset 0px 0px 0 1px #03396b;
+}
+
+.articles-list.lists_block.faq .item {
+	width: 33.333%;
+}
+
+.articles-list.lists_block.faq .item .left-data{
+	max-width: 100%;
+}
+
+.right_side.wide {
+    width: 230px;
+}
+
+.right_side{
+	float: left;
+	padding-right: 20px;
+	padding-left: 0;
+}
+
+.left_side.wide {
+    padding-left: 240px;
+    padding-right: 0;
+}
+
+.ask_small_block{
+	border: 2px solid #ffe00f;
+	border-radius: 10px;
+}
+
+.ask_small_block .ask_btn_block{
+	border-bottom: none;
+	padding-top: 0px;
+}
+
+.margin.preview_text {
+    margin: 0px 0px 32px;
+}
+
+.back .back{
+	padding: 0 20px;
+}
+
+.left_side.wide .back,
+.right_block .back{
+	margin: 20px 0;
+}
+
+.right_block > .date_small{
+	margin: 0 0 17px 0;
+}
+
+.articles-list.lists_block.news.video{
+	margin: 0;
+}
+
+.articles-list.lists_block.news.video iframe{
+	width: 100%;
+	
 }
 
 
