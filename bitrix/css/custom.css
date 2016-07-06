@@ -389,7 +389,7 @@ ul.menu li .child .child_wrapp{
 }
 
 #header .catalog_menu ul.menu{
-	margin: 0 -20px;
+	margin: 0 -15px;
 }
 
 body #header .catalog_menu .child{
@@ -402,7 +402,7 @@ body #header .catalog_menu .child{
 }
 
 body #header ul.menu.bottom li .child .child_wrapp:not(.clearfix){
-	padding: 0 15px;
+	padding: 42px 15px 62px;
     max-width: 1162px;
     margin: 0 auto;
 	background: #fff;
@@ -418,6 +418,81 @@ body #header ul.menu.bottom li .child .child_wrapp:not(.clearfix){
 .has_menu.m_color_white #header .catalog_menu ul.menu > li{
 	background: transparent;
 	height: 55px;
+}
+
+body #header ul.menu.bottom li .child .child_wrapp > .left_block{
+	width: 32.23%;
+	margin-right: 6.27%;
+	float: left;
+	margin-top: 10px;
+}
+
+body #header ul.menu.bottom li .child .child_wrapp > .right_block{
+	overflow: hidden;
+}
+
+body #header ul.menu.bottom li .child .child_wrapp > .right_block > a{
+	white-space: normal;
+	float: left;
+	width: 33.333%;
+	font-family: 'Conv_MuseoSansCyrl_700', Arial, Helvetica, sans-serif;
+	color: #05a2f1;
+	font-size: 16px;
+	line-height: 26px;
+	letter-spacing: 0.03em;
+	padding: 10px 0;
+}
+
+body .wrapper.has_menu #header ul.menu li .child.submenu .child_wrapp a:not(.title):hover{
+	color: #03396b;
+}
+
+body #header ul.menu.bottom li .child .child_wrapp > .left_block > .item{
+	display: inline-block;
+	width: 100%;
+	height: 205px;
+	background: #fed2e4;
+	border-radius: 10px;
+	position: relative;
+	transition: background 0.3s ease-out;
+}
+
+body #header ul.menu.bottom li .child .child_wrapp > .left_block > .item:hover{
+	background: #03396b;
+}
+
+body #header ul.menu.bottom li .child .child_wrapp > .left_block > .item img{
+	position: absolute;
+    right: 0;
+    top: 3px;
+}
+
+body #header ul.menu.bottom li .child .child_wrapp > .left_block > .item .text{
+	padding: 40px 25px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+body #header ul.menu.bottom li .child .child_wrapp > .left_block > .item .text > span{
+	color: #222;
+	line-height: 30px;
+}
+
+body #header ul.menu.bottom li .child .child_wrapp > .left_block > .item .text > span.inner_text{
+	display: block;
+	font-family: 'Conv_MuseoSansCyrl_900', Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	letter-spacing: 0.02em;
+}
+
+body #header ul.menu.bottom li .child .child_wrapp > .left_block > .item .text > span.inner_text_price{
+	font-size: 16px;
+	letter-spacing: 0.05em;
+}
+
+body #header ul.menu.bottom li .child .child_wrapp > .left_block > .item:hover .text > span{
+	color: #fff;
 }
 
 #header .catalog_menu ul.menu > li  > a{
@@ -449,8 +524,19 @@ body #header .catalog_menu ul.menu > li:not(.current):not(.stretch):hover a i{
     height: 430px;
 }
 
+.top_slider_wrapp .flexslider .slides > li{
+	background-size: cover;
+}
+
 .flex-viewport{
 	margin-top: -16px;
+}
+
+.flexslider .dark  .banner_title,
+.flexslider .dark  .banner_buttons,
+.flexslider .left .banner_title,
+.flexslider .left  .banner_buttons{
+	margin-left: 0;
 }
 
 .top_slider_wrapp .flexslider .banner_title span{
@@ -1024,7 +1110,8 @@ input.button,
 	top: 15px;
 }
 
-.brands_slider_wrapp li img{
+.brands_slider_wrapp li img,
+.news_slider_wrapp .item:hover img{
 	-webkit-filter: none;
 	filter: none;
 	opacity: 1;
