@@ -68,6 +68,7 @@
 </head>
 
 <body id="main">
+<div class="jqmOverlay" style="height: 100%; width: 100%; position: fixed; left: 0px; top: 0px; z-index: 2999; opacity: 0.5;"></div>
 	<div id="panel"></div>
 	<script type="text/javascript">
 		var arMShopOptions = [];
@@ -1022,6 +1023,48 @@
 	</footer>
 	<div id="bxdynamic_basketitems-block"></div>
 	<div id="content_new"></div>
+	
+	<div class="reviews_frame popup jqmID6 show" style="z-index: 3000; display: block; margin-left: -243px; top: 434.5px; opacity: 1;">
+		<div class="popup-intro">
+			<div class="pop-up-title">Задать вопрос</div>
+		</div>
+		<a class="jqmClose close"><i></i></a>
+		<div class="form-wr">
+			<form name="REPLIERZZtH" id="REPLIERZZtH" method="post" action="" novalidate="novalidate">
+
+				<div class="form-control bg">
+					<label><span>Ваше имя&nbsp;<span class="star">*</span></span></label>
+								<input type="text" class="inputtext" data-sid="CLIENT_NAME" required="" name="form_text_7" value="" size="0" aria-required="true">			
+				</div>
+				<div class="form-control">
+					<label><span>Контактный телефон&nbsp;<span class="star">*</span></span></label>
+								<input type="text" class="phone" data-sid="PHONE" required="" name="form_text_8" value="" size="0" aria-required="true">			
+				</div>
+				<div class="form-control">
+					<label><span>E-mail</span></label>
+					<input type="email" placeholder="" class="inputtext" data-sid="EMAIL" name="form_email_9" value="" size="0">			
+				</div>
+				
+				<div class="form-control bg">
+					<label class="description">
+						Вопрос<span class="star">*</span> </label>
+					<textarea name="" id="reviews_id_COMMENT" class="inputtextinputtext phoneinputtext error"></textarea>
+					<label id="reviews-error" class="error" for="reviews_id_FIO">Заполните поле!</label>
+				</div>
+
+				<div class="but-r clearfix">
+					<!--noindex-->
+					<button class="button short" type="submit" id="reviews_form_button" name="reviews_form_button" value="Отправить"><span>Отправить</span></button>
+					<!--/noindex-->
+				</div>
+			</form>
+			<div class="reviews_result" id="reviews_result">
+				<div class="reviews_result_success">Спасибо за заказ!</div>
+				<div class="reviews_result_fail">Ошибка!</div>
+				<div class="reviews_result_text">В ближайшее время наш менеджер свяжется с вами.</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 <!-- Mirrored from provance.flex.by/info/faq/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Jun 2016 12:52:53 GMT -->

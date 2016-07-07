@@ -139,8 +139,7 @@ a:hover,
 .header_wrap .top-h-row .menu li > a:hover, 
 .top-h-row .menu li.current > a,
 ul.menu .child .child_wrapp > a:hover{
-	color: #03396b;
-/*	color: red;*/
+	color: #03396b !important;
 }
 
 ul.menu .child {
@@ -270,6 +269,63 @@ ul.menu li .child .child_wrapp{
 	color: #03396b;
 }
 
+.basket_normal .popup.card_popup_frame .basket_popup_wrapp{
+	border-top: none;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 1px 15px #f5f5f5;
+    -moz-box-shadow: 0 1px 15px #f5f5f5;
+    box-shadow: 0 1px 15px #f5f5f5;
+	top: 40px;
+}
+
+#header .popup .cart_shell td{
+	border-bottom: 1px solid #e5e5e5;
+	border-top: none;
+}
+
+.card_popup_frame.popup .total_wrapp{
+	background: transparent;
+}
+
+.card_popup_frame.popup .total_wrapp .total{
+	border: none;
+	margin: 0;
+    padding: 30px 40px 30px 90px;
+}
+
+.card_popup_frame.popup .total_wrapp .total .price{
+	font-family: 'Conv_MuseoSansCyrl_900', Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	line-height: 24px;
+	letter-spacing: 0.02em;
+}
+
+.card_popup_frame.popup  .item-title a span,
+.popup .cart_shell .cost-cell .price{
+	font-family: 'Conv_MuseoSansCyrl_900', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: 0.03em;
+	color: #05a2f1;
+}
+
+.popup .basket_popup_wrapp .cart_shell .item-title{
+	padding: 16px 40px 16px 10px;
+}
+
+.card_popup_frame.popup  .remove-cell{
+	right: 18px;
+}
+
+.basket_popup_wrapp .item-title .one-item,
+.popup .cart_shell .cost-cell .price{
+	color: #222;
+	font-size: 14px;
+	line-height: 22px;
+	letter-spacing: 0.03em;
+	margin-top: 10px;
+}
+
 #header .middle-h-row .basket_wrapp{
 	width: 27%;
 }
@@ -385,7 +441,6 @@ ul.menu li .child .child_wrapp{
 	background: linear-gradient(to right,  #049eef 0%,#0486d2 40%,#046bae 64%,#044e8c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#049eef', endColorstr='#044e8c',GradientType=1 ); /* IE6-9 */
 	border: none;
-
 }
 
 #header .catalog_menu ul.menu{
@@ -578,6 +633,26 @@ body .top_slider_wrapp .flex-direction-nav li{
 .top_slider_wrapp .flex-direction-nav li:hover{
 	border-bottom-width: 2px!important;
 	border-color: #fff;
+}
+
+.top_slider_wrapp .flex-direction-nav li a{
+	background-image: url('../images/icon/gallery_page/arrow_back-white.svg');
+	background-position: center;
+}
+
+.top_slider_wrapp .flex-direction-nav li.flex-nav-prev a.flex-prev,
+.top_slider_wrapp .flex-direction-nav li.flex-nav-prev:hover a.flex-prev{
+	background-position: 12px 11px;
+	background-size: 12px;
+}
+
+.top_slider_wrapp .flex-direction-nav li.flex-nav-next a.flex-next{
+	background-position: 14px 11px;
+	background-size: 12px;
+}
+
+.top_slider_wrapp .flex-direction-nav li a.flex-next{
+	background-image: url('../images/icon/gallery_page/arrow_forward-white.svg');
 }
 
 .top_slider_wrapp .flex-direction-nav li:first-child {
@@ -1525,7 +1600,8 @@ a.scroll-to-top.RECT_COLOR:hover{
 /*	catalog  */
 
 .container .breadcrumbs a span, 
-.container .breadcrumbs span{
+.container .breadcrumbs span,
+.card_popup_frame.popup .total_wrapp .total span:not(.price){
 	color: #919191;
 	text-transform: uppercase;
 	font-size: 11px;
@@ -2458,7 +2534,8 @@ a.scroll-to-top.RECT_COLOR:hover{
 }
 
 .noffer .info_item .middle_info .buy_block .one_click,
-.basket_fast_order .button.transparent{
+.basket_fast_order .button.transparent,
+.popup .button.vbig_btn.transparent{
 	width: 100%;
     box-sizing: border-box;
 	border: 2px solid #05a2f1;
@@ -2470,20 +2547,23 @@ a.scroll-to-top.RECT_COLOR:hover{
 }
 
 .noffer .info_item .middle_info .buy_block .one_click span,
-.basket_fast_order .button.transparent span{
+.basket_fast_order .button.transparent span,
+.popup .button.vbig_btn.transparent{
 	font-family: 'Conv_MuseoSansCyrl_900', Arial, Helvetica, sans-serif;
 	color: #05a2f1;
 	transition: color 0.07s ease-out;
 }
 
 .noffer .info_item .middle_info .buy_block .one_click:hover,
-.basket_fast_order .button.transparent:not(.text):hover {
+.basket_fast_order .button.transparent:not(.text):hover,
+.popup .button.vbig_btn.transparent:hover{
 	border: 2px solid #03396b;
 	background: transparent;
 }
 
 .noffer .info_item .middle_info .buy_block .one_click:hover span,
-.basket_fast_order .button.transparent:hover span{
+.basket_fast_order .button.transparent:hover span,
+.popup .button.vbig_btn.transparent:hover{
 	color: #03396b;
 }
 
@@ -2736,7 +2816,9 @@ table.offers_table td.property:nth-child(3) .minus{
 
 .form-control label,
 .subscribe-edit h5,
-.bx_order_make .bx_block.r1x3.pt8{
+.bx_order_make .bx_block.r1x3.pt8,
+.popup .reviews-upload-info span,
+.popup input[type="file"]{
 	text-transform: uppercase;
 	color: #919191;
 	font-size: 11px;
@@ -2996,7 +3078,7 @@ table.colored td.property:nth-child(4),
 	top: -25px;
     right: 65px;
 	background-image: url('../images/icon/fancy/close.svg');
-	background-position: center;
+	background-position: center !important;
 	background-repeat: no-repeat;
 }
 
@@ -3008,11 +3090,13 @@ table.colored td.property:nth-child(4),
 	padding-left: 20px;
 	font-size: 14px;
 	letter-spacing: 0.03em;
+	font-style: initial;
 }
 
 .fancybox-close:hover,
 .popup .close:hover i{
 	background-image: url('../images/icon/fancy/close-hover.svg');
+	background-position: center !important;
 }
 
 .fancybox-close:hover:after,
@@ -5052,6 +5136,10 @@ blockquote:before{
 	margin: 20px -15px;
 }
 
+.right_block .faq.list{
+	margin: 20px 0;
+}
+
 .right_block .list .title,
 .detail_text.wimg .list .title{
 	color: #222;
@@ -5329,8 +5417,9 @@ blockquote:before{
 .jobs_wrapp .item.opened tr td.title .link,
 .jobs_wrapp .item.opened .salary,
 .faq.list .item.opened .q > a,
+.faq.list .item.opened .q > a:hover,
 .faq_ask > a > span{
-	color: #fff;
+	color: #fff !important;
 }
 
 .jobs_wrapp .item .description_wrapp{
@@ -5357,6 +5446,10 @@ blockquote:before{
 .jobs_wrapp .item .description_wrapp .button.resume_send{
 	color: #fff;
 	margin-bottom: 30px;
+}
+
+.jobs_wrapp .item .description_wrapp .button.resume_send:hover span{
+	color: #fff;
 }
 
 .faq.list .item .a,
@@ -5494,30 +5587,235 @@ blockquote:before{
 
 /* popup */
 
-.popup .popup-intro{
-	border-bottom: none;
+.popup{
+	min-width: 486px;
 }
 
-.popup .popup-intro .pop-up-title{
+.popup .close{
+	right: 60px;
+    top: -25px;
+}
+
+.popup.show{
+	border-radius: 15px;
+}
+
+.popup .popup-intro,
+.reviews_result_success,
+.forgot_password_result{
+	border-bottom: none;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
+.popup .popup-intro .pop-up-title,
+.popup .form .form_head h2{
 	text-align: center;
 	font-family: 'Conv_MuseoSansCyrl_900', Arial, Helvetica, sans-serif;
 	font-size: 36px;
 	letter-spacing: 0.02em;
 	color: #222;
+	padding: 65px 35px 36px;
+}
+
+.popup .form .form_head h2{
+	padding: 0;
+}
+
+.popup .form .form_head{
+	border-bottom: none;
 }
 
 .popup .but-r{
 	text-align: center;
+	margin-bottom: 25px;
+}
+
+.popup .form-wr,
+.popup .form .form_body{
+    padding: 29px 60px 35px;
 }
 
 .popup .close:hover{
 	background: transparent;
 }
 
-.one_click_buy_result{
+.one_click_buy_result,
+.reviews_result,
+.forgot_password_result,
+.cv_result{
 	text-align: center;
 	font-size: 14px;
 	line-height: 24px;
 	letter-spacing: 0.03em;
 	color: #222;
+}
+
+.reviews-reply-field-upload{
+	padding: 0px 0px 40px;
+}
+
+.reviews-reply-field-upload > a span{
+	text-transform: uppercase;
+    color: #05a2f1;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+}
+
+.reviews-reply-field-upload > a:hover span{
+	color: #03396b;
+}
+
+.popup.show .form-control label {
+	margin-bottom: 6px;
+}
+
+.popup textarea {
+	height: 203px;
+	resize: none;
+}
+
+.popup.callback_frame textarea{
+	height: 120px;
+}
+
+input.error, 
+textarea.error{
+	color: #e92828;
+	background: transparent;
+}
+
+.popup label.error{
+	text-transform: initial;
+	font-size: 14px;
+}
+
+.popup button.button{
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.popup button.button.vbig_btn.wides{
+	width: 200px;
+}
+
+.reviews_result,
+.forgot_password_result,
+.cv_result{
+	display: none;
+}
+
+.popup input[type="file"]{
+	font-size: 14px;
+}
+
+label.uploadbutton input {
+    display: none;   
+}
+
+label.uploadbutton .button {
+    width: 88px;
+    line-height: 33px;
+	height: 33px;
+	padding: 0;
+    text-align: center;
+    background: #ffe00f;
+    color: #184873;
+    display: inline-block;
+	border-radius: 5px;
+	text-transform: initial;
+	font-size: 14px;
+	font-family: 'Conv_MuseoSansCyrl_700', Arial, Helvetica, sans-serif;
+	letter-spacing: 0.03em;
+	margin-right: 15px;
+}
+
+label.uploadbutton .button:hover{
+	background: #03396b;
+	color: #fff;
+}
+
+label.uploadbutton .input{
+	display: inline-block;
+}
+
+.popup .reviews-upload-info{
+	margin-bottom: 8px;
+}
+
+input[type="text"]:hover, 
+input[type="password"]:hover, 
+input[type="email"]:hover, 
+select:hover, 
+textarea:hover{
+	cursor: pointer;
+	border-color: #03396b;
+}
+
+.reviews_result_success,
+.cv_result_success{
+	text-align: center;
+    font-family: 'Conv_MuseoSansCyrl_900', Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    letter-spacing: 0.02em;
+    color: #222;
+    padding: 65px 35px 36px;
+}
+
+.popup.enter_frame{
+	width: 905px;
+	max-width: 905px;
+}  
+
+.auth_wrapp .main_info{
+	width: 52.5%;
+	margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.auth_wrapp .main_info .form-wr{
+	padding-top: 0;
+	padding-bottom: 0;
+} 
+
+.auth_wrapp .socserv{
+	width: 47.5%;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.popup .but-r .filter.block{
+	text-align: right;
+}
+
+.popup .forgot{
+	color: #05a2f1;
+	font-size: 14px;
+	letter-spacing: 0.03em;
+	float: none;
+}
+
+.popup .but-r .buttons {
+    margin-top: 25px;
+}
+
+.more_text_small {
+    font-size: 14px;
+    color: #222;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    padding: 5px 0px 30px;
+}
+
+.popup .button.vbig_btn.transparent{
+	width: auto;
+}
+
+.popup .form .form_footer {
+    text-align: center;
+	padding-bottom: 45px;
+}
+
+.reviews-upload-info .star{
+	color: #e62222 !important;
 }

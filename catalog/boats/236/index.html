@@ -68,6 +68,7 @@
 </head>
 
 <body id="main">
+	<div class="jqmOverlay" style="height: 100%; width: 100%; position: fixed; left: 0px; top: 0px; z-index: 2999; opacity: 0.5;"></div>
 	<div id="panel"></div>
 	<script type="text/javascript">
 		var arMShopOptions = [];
@@ -1063,7 +1064,7 @@
 															<a rel="nofollow" target="_blank" title="Twitter" class="b-share__handle b-share__link b-share-btn__twitter" href="#" data-service="twitter"><span class="b-share-icon b-share-icon_twitter"></span></a>
 															<a rel="nofollow" target="_blank" title="Одноклассники" class="b-share__handle b-share__link b-share-btn__odnoklassniki" href="#" data-service="odnoklassniki"><span class="b-share-icon b-share-icon_odnoklassniki"></span></a>
 															<a rel="nofollow" target="_blank" title="Мой Мир" class="b-share__handle b-share__link b-share-btn__moimir" href="#" data-service="moimir"><span class="b-share-icon b-share-icon_moimir"></span></a>
-															
+
 															</span>
 														</div>
 													</div>
@@ -1097,80 +1098,87 @@
 												</div>
 												<div class="item-stock" id=bx_117848907_236_store_quantity><span class="icon stock"></span><span class="value">В наличии</span></div>
 												<div class="rating">
-							<!--'start_frame_cache_sBq3II'-->
-<div class="iblock-vote" id="vote_236">
+													<!--'start_frame_cache_sBq3II'-->
+													<div class="iblock-vote" id="vote_236">
 
-<script type="text/javascript">
-if(!window.voteScript) window.voteScript =
-{
-	trace_vote: function(div, flag)
-	{
-		var my_div;
-		var r = div.id.match(/^vote_(\d+)_(\d+)$/);		
-		var i = 0;
-		do{
-			star_div = document.getElementById('vote_'+r[1]+'_'+i);
-			if(star_div){
-				if(flag){
-					star_div.savedClass = star_div.className;
-					if(i<=r[2]){
-						star_div.className = 'star-active star-over';
-					}
-					else{
-						star_div.className = 'star-active star-empty';
-					}
-				}
-				else{
-					star_div.className = star_div.savedClass;
-				}
-			}
-			++i;
-		}
-		while(star_div);
-	},
-		do_vote: function(div, parent_id, arParams)
-	{
-		var r = div.id.match(/^vote_(\d+)_(\d+)$/);
+														<script type="text/javascript">
+															if (!window.voteScript) window.voteScript = {
+																trace_vote: function (div, flag) {
+																	var my_div;
+																	var r = div.id.match(/^vote_(\d+)_(\d+)$/);
+																	var i = 0;
+																	do {
+																		star_div = document.getElementById('vote_' + r[1] + '_' + i);
+																		if (star_div) {
+																			if (flag) {
+																				star_div.savedClass = star_div.className;
+																				if (i <= r[2]) {
+																					star_div.className = 'star-active star-over';
+																				} else {
+																					star_div.className = 'star-active star-empty';
+																				}
+																			} else {
+																				star_div.className = star_div.savedClass;
+																			}
+																		}
+																		++i;
+																	}
+																	while (star_div);
+																},
+																do_vote: function (div, parent_id, arParams) {
+																	var r = div.id.match(/^vote_(\d+)_(\d+)$/);
 
-		var vote_id = r[1];
-		var vote_value = r[2];
+																	var vote_id = r[1];
+																	var vote_value = r[2];
 
-		function __handler(data)
-		{
-			var obContainer = document.getElementById(parent_id);
-			if (obContainer)
-			{
-				var obResult = document.createElement("DIV");
-				obResult.innerHTML = data;
-				obContainer.parentNode.replaceChild(obResult, obContainer);
-			}
-		}
+																	function __handler(data) {
+																		var obContainer = document.getElementById(parent_id);
+																		if (obContainer) {
+																			var obResult = document.createElement("DIV");
+																			obResult.innerHTML = data;
+																			obContainer.parentNode.replaceChild(obResult, obContainer);
+																		}
+																	}
 
-		PShowWaitMessage('wait_' + parent_id, true);
+																	PShowWaitMessage('wait_' + parent_id, true);
 
-				var url = '/bitrix/components/bitrix/iblock.vote/component.php'
+																	var url = '/bitrix/components/bitrix/iblock.vote/component.php'
 
-				arParams['vote'] = 'Y';
-		arParams['vote_id'] = vote_id;
-		arParams['rating'] = vote_value;
+																	arParams['vote'] = 'Y';
+																	arParams['vote_id'] = vote_id;
+																	arParams['rating'] = vote_value;
 
-		var TID = CPHttpRequest.InitThread();
-		CPHttpRequest.SetAction(TID, __handler);
-				CPHttpRequest.Post(TID, url, arParams);
-			}
-}
-</script>
+																	var TID = CPHttpRequest.InitThread();
+																	CPHttpRequest.SetAction(TID, __handler);
+																	CPHttpRequest.Post(TID, url, arParams);
+																}
+															}
+														</script>
 
-<table border="0" cellspacing="0" cellpadding="0">
-	<tbody><tr>
-										<td><div id="vote_236_0" class="star-active star-empty" title="1" onmouseover="voteScript.trace_vote(this, true);" onmouseout="voteScript.trace_vote(this, false)" onclick="voteScript.do_vote(this, 'vote_236', {'SESSION_PARAMS':'36b7b203759368397ebc08731e403bb8','PAGE_PARAMS':{'ELEMENT_ID':'236'},'sessid':'62992dacc4efce13500aa619ca58cf74','AJAX_CALL':'Y'})"></div></td>
-							<td><div id="vote_236_1" class="star-active star-empty" title="2" onmouseover="voteScript.trace_vote(this, true);" onmouseout="voteScript.trace_vote(this, false)" onclick="voteScript.do_vote(this, 'vote_236', {'SESSION_PARAMS':'36b7b203759368397ebc08731e403bb8','PAGE_PARAMS':{'ELEMENT_ID':'236'},'sessid':'62992dacc4efce13500aa619ca58cf74','AJAX_CALL':'Y'})"></div></td>
-							<td><div id="vote_236_2" class="star-active star-empty" title="3" onmouseover="voteScript.trace_vote(this, true);" onmouseout="voteScript.trace_vote(this, false)" onclick="voteScript.do_vote(this, 'vote_236', {'SESSION_PARAMS':'36b7b203759368397ebc08731e403bb8','PAGE_PARAMS':{'ELEMENT_ID':'236'},'sessid':'62992dacc4efce13500aa619ca58cf74','AJAX_CALL':'Y'})"></div></td>
-							<td><div id="vote_236_3" class="star-active star-empty" title="4" onmouseover="voteScript.trace_vote(this, true);" onmouseout="voteScript.trace_vote(this, false)" onclick="voteScript.do_vote(this, 'vote_236', {'SESSION_PARAMS':'36b7b203759368397ebc08731e403bb8','PAGE_PARAMS':{'ELEMENT_ID':'236'},'sessid':'62992dacc4efce13500aa619ca58cf74','AJAX_CALL':'Y'})"></div></td>
-							<td><div id="vote_236_4" class="star-active star-empty" title="5" onmouseover="voteScript.trace_vote(this, true);" onmouseout="voteScript.trace_vote(this, false)" onclick="voteScript.do_vote(this, 'vote_236', {'SESSION_PARAMS':'36b7b203759368397ebc08731e403bb8','PAGE_PARAMS':{'ELEMENT_ID':'236'},'sessid':'62992dacc4efce13500aa619ca58cf74','AJAX_CALL':'Y'})"></div></td>
-							</tr>
-</tbody></table>
-</div><!--'end_frame_cache_sBq3II'-->						</div>
+														<table border="0" cellspacing="0" cellpadding="0">
+															<tbody>
+																<tr>
+																	<td>
+																		<div id="vote_236_0" class="star-active star-empty" title="1" onmouseover="voteScript.trace_vote(this, true);" onmouseout="voteScript.trace_vote(this, false)" onclick="voteScript.do_vote(this, 'vote_236', {'SESSION_PARAMS':'36b7b203759368397ebc08731e403bb8','PAGE_PARAMS':{'ELEMENT_ID':'236'},'sessid':'62992dacc4efce13500aa619ca58cf74','AJAX_CALL':'Y'})"></div>
+																	</td>
+																	<td>
+																		<div id="vote_236_1" class="star-active star-empty" title="2" onmouseover="voteScript.trace_vote(this, true);" onmouseout="voteScript.trace_vote(this, false)" onclick="voteScript.do_vote(this, 'vote_236', {'SESSION_PARAMS':'36b7b203759368397ebc08731e403bb8','PAGE_PARAMS':{'ELEMENT_ID':'236'},'sessid':'62992dacc4efce13500aa619ca58cf74','AJAX_CALL':'Y'})"></div>
+																	</td>
+																	<td>
+																		<div id="vote_236_2" class="star-active star-empty" title="3" onmouseover="voteScript.trace_vote(this, true);" onmouseout="voteScript.trace_vote(this, false)" onclick="voteScript.do_vote(this, 'vote_236', {'SESSION_PARAMS':'36b7b203759368397ebc08731e403bb8','PAGE_PARAMS':{'ELEMENT_ID':'236'},'sessid':'62992dacc4efce13500aa619ca58cf74','AJAX_CALL':'Y'})"></div>
+																	</td>
+																	<td>
+																		<div id="vote_236_3" class="star-active star-empty" title="4" onmouseover="voteScript.trace_vote(this, true);" onmouseout="voteScript.trace_vote(this, false)" onclick="voteScript.do_vote(this, 'vote_236', {'SESSION_PARAMS':'36b7b203759368397ebc08731e403bb8','PAGE_PARAMS':{'ELEMENT_ID':'236'},'sessid':'62992dacc4efce13500aa619ca58cf74','AJAX_CALL':'Y'})"></div>
+																	</td>
+																	<td>
+																		<div id="vote_236_4" class="star-active star-empty" title="5" onmouseover="voteScript.trace_vote(this, true);" onmouseout="voteScript.trace_vote(this, false)" onclick="voteScript.do_vote(this, 'vote_236', {'SESSION_PARAMS':'36b7b203759368397ebc08731e403bb8','PAGE_PARAMS':{'ELEMENT_ID':'236'},'sessid':'62992dacc4efce13500aa619ca58cf74','AJAX_CALL':'Y'})"></div>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+													<!--'end_frame_cache_sBq3II'-->
+												</div>
 											</div>
 											<div class="buy_block iblock">
 												<span class="big_btn slide_offer button type_block"><i></i><span>Купить</span></span>
@@ -1181,11 +1189,11 @@ if(!window.voteScript) window.voteScript =
 										</div>
 										<div class="element_detail_text wrap_md">
 											<div class="iblock price_txt">
-											<p>Длинна лодки: 2500 мм</p>
-											<p>Диаметр баллона: 340 мм</p>
-											<p>Ширина лодки: 1200 мм</p>
-											<p>Пассажировместимость: 2 чел.</p>
-												Надувные гребные лодки серии Scout – это наилучшее способ провести время на воде вдали от городской суеты. Лодка настолько легкая, что вам даже не нужен автомобиль, чтобы доставить все это на берег. 
+												<p>Длинна лодки: 2500 мм</p>
+												<p>Диаметр баллона: 340 мм</p>
+												<p>Ширина лодки: 1200 мм</p>
+												<p>Пассажировместимость: 2 чел.</p>
+												Надувные гребные лодки серии Scout – это наилучшее способ провести время на воде вдали от городской суеты. Лодка настолько легкая, что вам даже не нужен автомобиль, чтобы доставить все это на берег.
 											</div>
 										</div>
 									</div>
@@ -1217,7 +1225,7 @@ if(!window.voteScript) window.voteScript =
 									<li class="" id="product_reviews_tab">
 										<span>Отзывы о товаре (2)</span><span class="count empty"></span>
 									</li>
-									
+
 								</ul>
 								<ul class="tabs_content tabs-body">
 									<li class="prices_tab current">
@@ -1242,13 +1250,13 @@ if(!window.voteScript) window.voteScript =
 											</thead>
 											<tbody>
 												<tr>
-													<td class="property"> 
-													<img src="../../../bitrix/images/prod-inner/prod1-min.jpg" alt="">Надувная лодка Adventure Scout S-250 (Зеленая)</td>
+													<td class="property">
+														<img src="../../../bitrix/images/prod-inner/prod1-min.jpg" alt="">Надувная лодка Adventure Scout S-250 (Зеленая)</td>
 													<td class="property">
 														Зеленый </td>
 													<td class="property">
 														<span class="plus">
-												</span>  </td>
+												</span> </td>
 													<td class="property">
 														<div class="item-stock" id="bx_117848907_236_store_quantity"><span class="icon stock"></span><span class="value">В наличии</span></div>
 													</td>
@@ -1256,9 +1264,9 @@ if(!window.voteScript) window.voteScript =
 														<div class="cost prices clearfix">
 															<div class="price">
 																1 400 руб. <small>/шт</small> </div>
-																<div class="price discount">
-																	<strike id="bx_117848907_236_old_price">1 400 руб.</strike>
-																</div>
+															<div class="price discount">
+																<strike id="bx_117848907_236_old_price">1 400 руб.</strike>
+															</div>
 														</div>
 														<div class="adaptive text">
 															<!--noindex-->
@@ -1282,10 +1290,10 @@ if(!window.voteScript) window.voteScript =
 																</div>
 																<div class="buy iblock ablock">
 																	<div class="counter_wrapp">
-																		<span class="small to-cart button" data-props="SIZES;COLOR_REF" data-item="246" data-float_ratio="" data-ratio="1" data-bakset_div="bx_basket_div_246" data-props="" data-part_props="N" data-add_props="Y" data-empty_props="" data-offers="Y" data-iblockID="13" data-quantity="1" style="display:none;"><i></i><span></span></span><a rel="nofollow" href="../../../../basket/index.html" class="small in-cart button" data-props="SIZES;COLOR_REF" data-item="246" ><i></i><span>В корзине</span></a> </div>
+																		<span class="small to-cart button" data-props="SIZES;COLOR_REF" data-item="246" data-float_ratio="" data-ratio="1" data-bakset_div="bx_basket_div_246" data-props="" data-part_props="N" data-add_props="Y" data-empty_props="" data-offers="Y" data-iblockID="13" data-quantity="1" style="display:none;"><i></i><span></span></span><a rel="nofollow" href="../../../../basket/index.html" class="small in-cart button" data-props="SIZES;COLOR_REF" data-item="246"><i></i><span>В корзине</span></a> </div>
 																</div>
 															</div>
-<!--delete block .one_click_buy
+															<!--delete block .one_click_buy
 															<div class="one_click_buy ablock">
 																<span class="button small transparent one_click" data-item="246" data-offers="Y" data-iblockID="13" data-quantity="1" data-props="SIZES;COLOR_REF" onclick="oneClickBuy('246', '13', this)">
 															<span>Купить в 1 клик</span>
@@ -1297,7 +1305,7 @@ if(!window.voteScript) window.voteScript =
 													</td>
 													<!--noindex-->
 													<td class="like_icons">
-														
+
 														<div class="compare_item_button o_246">
 															<span title="" class="compare_item to text N" data-iblock="13" data-item="246"><i></i></span>
 															<span title="" class="compare_item in added text N" style="display: none;" data-iblock="13" data-item="246"><i></i></span>
@@ -1314,7 +1322,7 @@ if(!window.voteScript) window.voteScript =
 															<span class="plus">+</span>
 														</div>
 														<div class="counter_wrapp buy">
-															<span class="small to-cart button" data-props="SIZES;COLOR_REF" data-item="246" data-float_ratio="" data-ratio="1" data-bakset_div="bx_basket_div_246" data-props="" data-part_props="N" data-add_props="Y" data-empty_props="" data-offers="Y" data-iblockID="13" data-quantity="1" style="display:none;"><i></i><span></span></span><a rel="nofollow" href="../../../../basket/index.html" class="small in-cart button" data-props="SIZES;COLOR_REF" data-item="246" ><i></i><span>В корзине</span></a> </div>
+															<span class="small to-cart button" data-props="SIZES;COLOR_REF" data-item="246" data-float_ratio="" data-ratio="1" data-bakset_div="bx_basket_div_246" data-props="" data-part_props="N" data-add_props="Y" data-empty_props="" data-offers="Y" data-iblockID="13" data-quantity="1" style="display:none;"><i></i><span></span></span><a rel="nofollow" href="../../../../basket/index.html" class="small in-cart button" data-props="SIZES;COLOR_REF" data-item="246"><i></i><span>В корзине</span></a> </div>
 													</td>
 													<!--/noindex-->
 												</tr>
@@ -1324,7 +1332,7 @@ if(!window.voteScript) window.voteScript =
 														Серый</td>
 													<td class="property">
 														<span class="minus">
-												</span>  </td>
+												</span> </td>
 													<td class="property">
 														<div class="item-stock" id="bx_117848907_236_store_quantity"><span class="icon stock"></span><span class="value">В наличии</span></div>
 													</td>
@@ -1363,7 +1371,7 @@ if(!window.voteScript) window.voteScript =
 													</td>
 													<!--noindex-->
 													<td class="like_icons">
-														
+
 														<div class="compare_item_button o_245">
 															<span title="" class="compare_item to text N" data-iblock="13" data-item="245"><i></i></span>
 															<span title="" class="compare_item in added text N" style="display: none;" data-iblock="13" data-item="245"><i></i></span>
@@ -1390,7 +1398,7 @@ if(!window.voteScript) window.voteScript =
 														Зеленый </td>
 													<td class="property">
 														<span class="plus">
-												</span>  </td>
+												</span> </td>
 													<td class="property">
 														<div class="item-stock" id="bx_117848907_236_store_quantity"><span class="icon stock"></span><span class="value">В наличии</span></div>
 													</td>
@@ -1429,7 +1437,7 @@ if(!window.voteScript) window.voteScript =
 													</td>
 													<!--noindex-->
 													<td class="like_icons">
-														
+
 														<div class="compare_item_button o_248">
 															<span title="" class="compare_item to text N" data-iblock="13" data-item="248"><i></i></span>
 															<span title="" class="compare_item in added text N" style="display: none;" data-iblock="13" data-item="248"><i></i></span>
@@ -1464,9 +1472,9 @@ if(!window.voteScript) window.voteScript =
 														<div class="cost prices clearfix">
 															<div class="price">
 																1 500 руб. <small>/шт</small> </div>
-																<div class="price discount">
-																	<strike id="bx_117848907_236_old_price">1 400 руб.</strike>
-																</div>
+															<div class="price discount">
+																<strike id="bx_117848907_236_old_price">1 400 руб.</strike>
+															</div>
 														</div>
 														<div class="adaptive text">
 															<!--noindex-->
@@ -1498,7 +1506,7 @@ if(!window.voteScript) window.voteScript =
 													</td>
 													<!--noindex-->
 													<td class="like_icons">
-														
+
 														<div class="compare_item_button o_247">
 															<span title="" class="compare_item to text N" data-iblock="13" data-item="247"><i></i></span>
 															<span title="" class="compare_item in added text N" style="display: none;" data-iblock="13" data-item="247"><i></i></span>
@@ -1525,21 +1533,21 @@ if(!window.voteScript) window.voteScript =
 									<li class="">
 										<div class="detail_text">
 											<div style="text-align: justify;">Надувные гребные лодки серии Scout — это наилучшее способ провести время на воде вдали от городской суеты. Лодка настолько легкая, а упаковочный рюкзак настолько удобный, что вам даже не нужен автомобиль, чтобы доставить все это на берег. Получая удовольствие от легкой прогулки, Вы сможете забрести на рыбалку туда, куда никогда не доберетесь на автомобиле! Все что вам необходимо для душевной рыбалки – это рюкзак с лодкой серии Scout за плечами и приятного плавания. </div>
-											<div style="text-align: justify;"> 
+											<div style="text-align: justify;">
 												<br>
-											 </div>
-											<div style="text-align: justify;">Мы предлагаем две модели лодкой серии Scout — гребная лодка, модель S-250, и для Вашего дополнительного удобства, модель S-250 T – лодка с навесным съемным транцем для подвесного мотора максимальной мощностью до 2 л.с.</div>
 											</div>
-																																						<div class="files_block">
+											<div style="text-align: justify;">Мы предлагаем две модели лодкой серии Scout — гребная лодка, модель S-250, и для Вашего дополнительного удобства, модель S-250 T – лодка с навесным съемным транцем для подвесного мотора максимальной мощностью до 2 л.с.</div>
+										</div>
+										<div class="files_block">
 											<h4>Документы</h4>
 											<div class="wrap_md">
 												<div class="wrapp_docs iblock">
-																												<div class="file_type clearfix word">
+													<div class="file_type clearfix word">
 														<i class="icon pdf"></i>
 														<div class="description">
 															<a target="_blank" href="/upload/iblock/974/974d33ffdccf729af206406c8530eb3d.pdf">Эксплуатационные 
 характеристики Scout</a>
-<!--delete
+															<!--delete
 															<span class="size">Размер:
 																159,8 кб										</span>
 -->
@@ -1547,12 +1555,12 @@ if(!window.voteScript) window.voteScript =
 													</div>
 												</div>
 												<div class="wrapp_docs iblock">
-																												<div class="file_type clearfix word">
+													<div class="file_type clearfix word">
 														<i class="icon doc"></i>
 														<div class="description">
 															<a target="_blank" href="/upload/iblock/974/974d33ffdccf729af206406c8530eb3d.pdf">Эксплуатационные 
 характеристики Scout</a>
-<!--delete
+															<!--delete
 															<span class="size">Размер:
 																159,8 кб										</span>
 -->
@@ -1560,12 +1568,12 @@ if(!window.voteScript) window.voteScript =
 													</div>
 												</div>
 												<div class="wrapp_docs iblock">
-																												<div class="file_type clearfix word">
+													<div class="file_type clearfix word">
 														<i class="icon zip"></i>
 														<div class="description">
 															<a target="_blank" href="/upload/iblock/974/974d33ffdccf729af206406c8530eb3d.pdf">Эксплуатационные 
 характеристики Scout</a>
-<!--delete
+															<!--delete
 															<span class="size">Размер:
 																159,8 кб										</span>
 -->
@@ -1577,86 +1585,90 @@ if(!window.voteScript) window.voteScript =
 									</li>
 									<li class="">
 										<table class="props_list">
-											<tbody><tr>
-												<td class="char_name">
-													<span>Длина внешняя, мм</span>
-												</td>
-												<td class="char_value">
-													<span>
+											<tbody>
+												<tr>
+													<td class="char_name">
+														<span>Длина внешняя, мм</span>
+													</td>
+													<td class="char_value">
+														<span>
 												2500</span>
-												</td>
-											</tr>
-											<tr>
-												<td class="char_name">
-													<span>Ширина внешняя, мм</span>
-												</td>
-												<td class="char_value">
-													<span>
+													</td>
+												</tr>
+												<tr>
+													<td class="char_name">
+														<span>Ширина внешняя, мм</span>
+													</td>
+													<td class="char_value">
+														<span>
 													1200																				</span>
-												</td>
-											</tr>
-											<tr>
-												<td class="char_name">
-													<span>Длина внутренняя, мм</span>
-												</td>
-												<td class="char_value">
-													<span>
+													</td>
+												</tr>
+												<tr>
+													<td class="char_name">
+														<span>Длина внутренняя, мм</span>
+													</td>
+													<td class="char_value">
+														<span>
 												1820																						</span>
-												</td>
-											</tr>
-											<tr>
-												<td class="char_name">
-													<span>Фурнитура</span>
-												</td>
-												<td class="char_value">
-													<span>
+													</td>
+												</tr>
+												<tr>
+													<td class="char_name">
+														<span>Фурнитура</span>
+													</td>
+													<td class="char_value">
+														<span>
 												Scoprega S.p.A. & Ceredi s.n.c, Италия																						</span>
-												</td>
-											</tr>
-										</tbody></table>
+													</td>
+												</tr>
+											</tbody>
+										</table>
 										<table class="props_list">
-											<tbody><tr>
-												<td class="char_name">
-													<span>Вид поставки</span>
-												</td>
-												<td class="char_value">
-													<span class="plus">
+											<tbody>
+												<tr>
+													<td class="char_name">
+														<span>Вид поставки</span>
+													</td>
+													<td class="char_value">
+														<span class="plus">
 													</span>
-												</td>
-											</tr>
-											<tr>
-												<td class="char_name">
-													<span>Размер упаковки, см</span>
-												</td>
-												<td class="char_value">
-													<span class="">
+													</td>
+												</tr>
+												<tr>
+													<td class="char_name">
+														<span>Размер упаковки, см</span>
+													</td>
+													<td class="char_value">
+														<span class="">
 																90x40x33 																				</span>
-												</td>
-											</tr>
-											<tr>
-												<td class="char_name">
-													<span>Вес, кг</span>
-												</td>
-												<td class="char_value">
-													<span class="minus">
+													</td>
+												</tr>
+												<tr>
+													<td class="char_name">
+														<span>Вес, кг</span>
+													</td>
+													<td class="char_value">
+														<span class="minus">
 												</span>
-												</td>
-											</tr>
-										</tbody></table>
+													</td>
+												</tr>
+											</tbody>
+										</table>
 									</li>
 									<li class="">
 										<p>Стандартная комплектация лодки Scout S-250:</p>
 										<ul>
 											<li>Сварной надувной баллон с двумя независимыми раздельными внутренними отсеками. </li>
-<!--											<li>Носовое буксировочное кольцо.</li>-->
+											<!--											<li>Носовое буксировочное кольцо.</li>-->
 											<li>Реечная слань из морской ламинированой водоотталкивающей фанеры.</li>
-<!--											<li>Комфортабельный рюкзак для переноса лодки.</li>-->
+											<!--											<li>Комфортабельный рюкзак для переноса лодки.</li>-->
 											<li>Два съемный деревянных сидения. </li>
-<!--											<li>Насос, переходник к насосу.</li>-->
+											<!--											<li>Насос, переходник к насосу.</li>-->
 											<li>Два съемный деревянных сидения. </li>
-<!--											<li>Рем. комплет (материал, клей) для экстренного ремонта. </li>-->
+											<!--											<li>Рем. комплет (материал, клей) для экстренного ремонта. </li>-->
 											<li>Леер спасательный вдоль баллона.</li>
-<!--											<li>Руководство по эксплуатации.</li>-->
+											<!--											<li>Руководство по эксплуатации.</li>-->
 										</ul>
 										<ul>
 											<li>Носовое буксировочное кольцо.</li>
@@ -1668,7 +1680,8 @@ if(!window.voteScript) window.voteScript =
 									</li>
 									<li class="">
 										<div class="video_block">
-											<iframe width="560" height="315" src="https://www.youtube.com/embed/mWL3WN0sNRU" frameborder="0" allowfullscreen></iframe>											</div>
+											<iframe width="560" height="315" src="https://www.youtube.com/embed/mWL3WN0sNRU" frameborder="0" allowfullscreen></iframe>
+										</div>
 									</li>
 									<li class="">
 										<div class="wrap_md forms">
@@ -1754,9 +1767,9 @@ if(!window.voteScript) window.voteScript =
 							</script>
 							<div id="reviews_content">
 								<div class="iblock text_block">
-												Делитесь впечатениями о товаре, его качесвте и насколько он комфортный в использовании!
-												<button class="button wicon leave_review" id="swREPLIERZZtH"><span>Оставить отзыв</span></button>
-												</div>
+									Делитесь впечатениями о товаре, его качесвте и насколько он комфортный в использовании!
+									<button class="button wicon leave_review" id="swREPLIERZZtH"><span>Оставить отзыв</span></button>
+								</div>
 								<div class="reviews-block-container reviews-reviews-block-container" id="REPLIERZZtHcontainer">
 									<div class="reviews-block-outer">
 										<div class="reviews-block-inner">
@@ -1778,12 +1791,12 @@ if(!window.voteScript) window.voteScript =
 															<div class="reviews-text" id="message_text_7">Это тестовый отзыв. Загрузить можно только одно изображение.</div>
 															<div class="reviews-message-img">
 																<div class="forum-attach"><img src="../../../bitrix/images/review/rewiev-pic.jpg" width="300" height="137" data-bx-viewer="image" data-bx-src="/bitrix/components/bitrix/forum.interface/show_file.php?fid=611" data-bx-download="/bitrix/components/bitrix/forum.interface/show_file.php?fid=611&action=download" data-bx-width="885" data-bx-height="407" data-bx-title="slide1.jpg" data-bx-size="82768" />
-<!--   delete																	<div><a href="../../../../bitrix/components/bitrix/forum.interface/slide1.jpg_%3b%20filename_%3dutf-8%27%27slide15f34.jpg?fid=611&amp;action=download" class="forum-file forum-file-jpg" 1title="Скачать файл &laquo;slide1.jpg&raquo;" target="_blank"><span>slide1.jpg</span></a> <span class="forum-file-size">(80.83 КБ)</span></div>-->
+																	<!--   delete																	<div><a href="../../../../bitrix/components/bitrix/forum.interface/slide1.jpg_%3b%20filename_%3dutf-8%27%27slide15f34.jpg?fid=611&amp;action=download" class="forum-file forum-file-jpg" 1title="Скачать файл &laquo;slide1.jpg&raquo;" target="_blank"><span>slide1.jpg</span></a> <span class="forum-file-size">(80.83 КБ)</span></div>-->
 																</div>
 															</div>
 														</td>
 													</tr>
-<!--
+													<!--
 													<tr class="reviews-actions">
 														<td>
 															<div class="reviews-post-reply-buttons">
@@ -1813,10 +1826,10 @@ if(!window.voteScript) window.voteScript =
 													<tr>
 														<td>
 															<div class="reviews-text" id="message_text_8">Использую эту модель Adventure scout s 250 (в народе Эдвенчер) уже примерно лет 10, ни разу не подводила, хотя каюсь использовал временами жестко и волоком по камушкам и на жаре сутками бывает стоит и даже пару раз по первой корочке льду была маленьким ледоколом. Никому не советую такую фигню повторять, но по надежности реально меня эта лодка радует. По вместимости тоже не плохо сам 1.90 ростом комфортно чувствую себя там всегда, если зять на хвоста садиться, то понятно что комфорта убавляется но только когда на спин ловим, получается близко к друг другу, кидать приходиться осторожно, а в плане плыть грести или на удочку ловить проблем не составляет. Вот как то так.</div>
-															
+
 														</td>
 													</tr>
-<!--
+													<!--
 													<tr class="reviews-actions">
 														<td>
 															<div class="reviews-post-reply-buttons">
@@ -2104,12 +2117,12 @@ if(!window.voteScript) window.voteScript =
 													</div>
 													<div class="item-stock"><span class="icon  order"></span><span class="value">Под заказ</span></div>
 													<div class="cost prices clearfix">
-													<div class="price discount">
+														<div class="price discount">
 															<strike>3 500 руб.</strike>
 														</div>
 														<div class="price">3 150 руб. </div>
-														
-														
+
+
 													</div>
 													<div class="buttons_block clearfix" style="display: none; opacity: 1;">
 														<a class="button basket read_more" rel="nofollow" href="/catalog/odezhda/zhenskaya_odezhda/264/" data-item="264">Подробнее</a> </div>
@@ -2143,12 +2156,12 @@ if(!window.voteScript) window.voteScript =
 													</div>
 													<div class="item-stock"><span class="icon  order"></span><span class="value">Под заказ</span></div>
 													<div class="cost prices clearfix">
-													<div class="price discount">
+														<div class="price discount">
 															<strike>3 500 руб.</strike>
 														</div>
 														<div class="price">3 150 руб. </div>
-														
-														
+
+
 													</div>
 													<div class="buttons_block clearfix" style="display: none; opacity: 1;">
 														<a class="button basket read_more" rel="nofollow" href="/catalog/odezhda/zhenskaya_odezhda/264/" data-item="264">Подробнее</a> </div>
@@ -2182,12 +2195,12 @@ if(!window.voteScript) window.voteScript =
 													</div>
 													<div class="item-stock"><span class="icon  order"></span><span class="value">Под заказ</span></div>
 													<div class="cost prices clearfix">
-													<div class="price discount">
+														<div class="price discount">
 															<strike>3 500 руб.</strike>
 														</div>
 														<div class="price">3 150 руб. </div>
-														
-														
+
+
 													</div>
 													<div class="buttons_block clearfix" style="display: none; opacity: 1;">
 														<a class="button basket read_more" rel="nofollow" href="/catalog/odezhda/zhenskaya_odezhda/264/" data-item="264">Подробнее</a> </div>
@@ -2221,12 +2234,12 @@ if(!window.voteScript) window.voteScript =
 													</div>
 													<div class="item-stock"><span class="icon  order"></span><span class="value">Под заказ</span></div>
 													<div class="cost prices clearfix">
-													<div class="price discount">
+														<div class="price discount">
 															<strike>3 500 руб.</strike>
 														</div>
 														<div class="price">3 150 руб. </div>
-														
-														
+
+
 													</div>
 													<div class="buttons_block clearfix" style="display: none; opacity: 1;">
 														<a class="button basket read_more" rel="nofollow" href="/catalog/odezhda/zhenskaya_odezhda/264/" data-item="264">Подробнее</a> </div>
@@ -2260,12 +2273,12 @@ if(!window.voteScript) window.voteScript =
 													</div>
 													<div class="item-stock"><span class="icon  order"></span><span class="value">Под заказ</span></div>
 													<div class="cost prices clearfix">
-													<div class="price discount">
+														<div class="price discount">
 															<strike>3 500 руб.</strike>
 														</div>
 														<div class="price">3 150 руб. </div>
-														
-														
+
+
 													</div>
 													<div class="buttons_block clearfix" style="display: none; opacity: 1;">
 														<a class="button basket read_more" rel="nofollow" href="/catalog/odezhda/zhenskaya_odezhda/264/" data-item="264">Подробнее</a> </div>
@@ -2644,6 +2657,224 @@ if(!window.voteScript) window.voteScript =
 	</script>
 	<!--'end_frame_cache_basketitems-block'-->
 	<div id="content_new"></div>
+
+	<div class="reviews_frame popup jqmID6 show" style="z-index: 3000; display: block; margin-left: -210px; top: 434.5px; opacity: 1;">
+		<div class="popup-intro">
+			<div class="pop-up-title">Отзыв</div>
+		</div>
+		<a class="jqmClose close"><i></i></a>
+		<div class="form-wr">
+			<form name="REPLIERZZtH" id="REPLIERZZtH" method="post" action="" novalidate="novalidate">
+
+				<div class="form-control bg">
+					<label class="description">
+						Ваше имя <span class="star">*</span> </label>
+					<input type="text" name="" value="" class="inputtext" id="reviews_id_FIO">
+				</div>
+
+				<div class="form-control bg">
+					<label class="description">
+						Сообщение <span class="star">*</span> </label>
+					<textarea name="" id="reviews_id_COMMENT" class="inputtextinputtext phoneinputtext error"></textarea>
+					<label id="reviews-error" class="error" for="reviews_id_FIO">Заполните поле!</label>
+				</div>
+
+				<div class="reviews-reply-field reviews-reply-field-upload">
+
+					<div class="reviews-upload-info" style="display:none;" id="upload_files_info_ZZtH">
+						<span>Размер файла не должен превышать 5 МБ.</span>
+					</div>
+					<!--
+					<div class="reviews-upload-file" style="display:none;" id="upload_files_0_ZZtH">
+						<input name="FILE_NEW_0" type="file" value="" size="30">
+					</div>
+-->
+
+					<label class="uploadbutton" style="display:none;" id="upload_files_0_ZZtH">
+						<div class="button">Выбрать</div>
+						<div class='input'>Выберите файл</div>
+						<input type="file" onchange="this.previousSibling.previousSibling.innerHTML = this.value" />
+					</label>
+					<a class="forum-upload-file-attach" href="javascript:void(0);" onclick="AttachFile('0', '1', 'ZZtH', this); return false;">
+						<span>Загрузить изображение</span>
+					</a>
+				</div>
+
+				<div class="but-r clearfix">
+					<!--noindex-->
+					<button class="button short" type="submit" id="reviews_form_button" name="reviews_form_button" value="Отправить"><span>Отправить</span></button>
+					<!--/noindex-->
+				</div>
+				<!--
+				<input type="hidden" name="OFFER_PROPERTIES" value="&quot;&quot;">
+				<input type="hidden" name="IBLOCK_ID" value="13">
+				<input type="hidden" name="ELEMENT_ID" value="220">
+				<input type="hidden" name="ELEMENT_QUANTITY" value="1">
+				<input type="hidden" name="CURRENCY" value="RUB">
+				<input type="hidden" name="SITE_ID" value="s1">
+				<input type="hidden" name="PROPERTIES" value="a:3:{i:0;s:3:&quot;FIO&quot;;i:1;s:5:&quot;PHONE&quot;;i:2;s:7:&quot;COMMENT&quot;;}">
+				<input type="hidden" name="PAY_SYSTEM_ID" value="1">
+				<input type="hidden" name="DELIVERY_ID" value="1">
+				<input type="hidden" name="PERSON_TYPE_ID" value="1">
+				<input type="hidden" name="sessid" id="sessid" value="e77fa6807c7119d8009db80373e40c97">
+-->
+			</form>
+			<div class="reviews_result" id="reviews_result">
+				<div class="reviews_result_success">Спасибо за заказ!</div>
+				<div class="reviews_result_fail">Ошибка!</div>
+				<div class="reviews_result_text">В ближайшее время наш менеджер свяжется с вами.</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="enter_frame popup jqmID5 show" style="z-index: 3000; display: block; margin-left: -305px; top: 217.5px; opacity: 1;">
+		<div id="wrap_ajax_auth">
+			<a href="#" class="close jqmClose"><i></i></a>
+			<div class="popup-intro">
+				<div class="pop-up-title">Вход в личный кабинет</div>
+			</div>
+			<div id="comp_67608f897f16d71c9a32f25a402279f9">
+				<div id="ajax_auth">
+					<div class="auth_wrapp form-block">
+						<div class="wrap_md">
+							<div class="main_info iblock">
+								<div class="form-wr">
+									<form id="avtorization-form" name="system_auth_form6zOYVN" method="post" target="_top" action="/ajax/show_auth_popup.php?login=yes" novalidate="novalidate">
+										<input type="hidden" name="backurl" value="/ajax/auth.php">
+										<input type="hidden" name="AUTH_FORM" value="Y">
+										<input type="hidden" name="TYPE" value="AUTH">
+										<div class="r form-control bg">
+											<label class="" for="USER_LOGIN_POPUP">Email <span class="star">*</span></label>
+											<input type="text" name="USER_LOGIN" id="USER_LOGIN_POPUP" class="required" maxlength="50" value="" placeholder="Email" autocomplete="on" tabindex="1" aria-required="true">
+										</div>
+										<div class="r form-control bg">
+											<label class="" for="USER_PASSWORD_POPUP">Пароль <span class="star">*</span></label>
+											<input type="password" name="USER_PASSWORD" id="USER_PASSWORD_POPUP" class="required" maxlength="50" placeholder="Пароль" tabindex="2" aria-required="true">
+										</div>
+										<div class="but-r cleaarboth">
+											<div class="filter block">
+												<a class="forgot" href="/auth/forgot-password/" tabindex="3">Забыли пароль?</a>
+												<!--delete
+												<div class="prompt remember">
+													<input type="checkbox" id="USER_REMEMBER_frm" name="USER_REMEMBER" value="Y" tabindex="5">
+													<label for="USER_REMEMBER_frm" title="Запомнить меня на" tabindex="5">Запомнить меня</label>
+												</div>
+-->
+											</div>
+											<div class="buttons">
+												<button type="submit" class="button vbig_btn wides" name="Login" value="" tabindex="4">
+													<span>Войти</span>
+												</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="iblock socserv">
+								<div class="more_text_small">
+									После регистрации на сайте вам будет доступно отслеживание состояния заказов, личный кабинет и другие новые возможности. </div>
+								<!--noindex--><a href="/auth/registration/" rel="nofollow" class="button transparent vbig_btn wides" tabindex="6">Зарегистрироваться</a>
+								<!--/noindex-->
+
+							</div>
+						</div>
+
+						<!--    delete
+						<div class="reg-new">
+							<div class="soc-avt">
+								Войти как пользователь
+								<div class="row clearfix">
+									<a title="Livejournal" href="javascript:void(0)" onclick="BxShowAuthService('Livejournal', 'form')" class="button icon livejournal" type="livejournal" id="bx_auth_href_formLivejournal">
+										<i class="soc-icon livejournal" title="livejournal" alt="livejournal"></i>
+									</a>
+									<a title="Mail.Ru" href="javascript:void(0)" onclick="BxShowAuthService('MailRuOpenID', 'form')" class="button icon openid-mail-ru" type="openid-mail-ru" id="bx_auth_href_formMailRuOpenID">
+										<i class="soc-icon openid-mail-ru" title="openid-mail-ru" alt="openid-mail-ru"></i>
+									</a>
+									<a title="Liveinternet" href="javascript:void(0)" onclick="BxShowAuthService('Liveinternet', 'form')" class="button icon liveinternet" type="liveinternet" id="bx_auth_href_formLiveinternet">
+										<i class="soc-icon liveinternet" title="liveinternet" alt="liveinternet"></i>
+									</a>
+									<a title="OpenID" href="javascript:void(0)" onclick="BxShowAuthService('OpenID', 'form')" class="button icon openid" type="openid" id="bx_auth_href_formOpenID">
+										<i class="soc-icon openid" title="openid" alt="openid"></i>
+									</a>
+									<div style="clear:both;"></div>
+									<form method="post" name="bx_auth_servicesform" target="_top" action="/auth/?login=yes" novalidate="novalidate">
+										<div id="bx_auth_servform" style="display:none">
+											<div id="bx_auth_serv_formLivejournal" style="display:none">
+												<span class="bx-ss-icon livejournal"></span>
+												<input type="text" name="OPENID_IDENTITY_LIVEJOURNAL" value="" size="20" class="required" required="required">
+												<span>.livejournal.com</span>
+												<input type="hidden" name="sessid" id="sessid" value="e77fa6807c7119d8009db80373e40c97">
+												<input type="hidden" name="auth_service_error" value="">
+												<input type="submit" class="button short" name="" value="Войти">
+											</div>
+											<div id="bx_auth_serv_formMailRuOpenID" style="display:none">
+												<span class="bx-ss-icon openid-mail-ru"></span>
+												<input type="text" name="OPENID_IDENTITY_MAILRU" value="" size="20" class="required" required="required">
+												<span>@mail.ru</span>
+												<input type="hidden" name="sessid" id="sessid_1" value="e77fa6807c7119d8009db80373e40c97">
+												<input type="hidden" name="auth_service_error" value="">
+												<input type="submit" class="button short" name="" value="Войти">
+											</div>
+											<div id="bx_auth_serv_formLiveinternet" style="display:none">
+												<span class="bx-ss-icon liveinternet"></span>
+												<span>liveinternet.ru/users/</span>
+												<input type="text" name="OPENID_IDENTITY_LIVEINTERNET" value="" size="15" class="required" required="required">
+												<input type="hidden" name="sessid" id="sessid_2" value="e77fa6807c7119d8009db80373e40c97">
+												<input type="hidden" name="auth_service_error" value="">
+												<input type="submit" class="button short" name="" value="Войти">
+											</div>
+											<div id="bx_auth_serv_formOpenID" style="display:none">
+												<span class="bx-ss-icon openid"></span>
+												<span>OpenID:</span>
+												<input type="text" name="OPENID_IDENTITY_OPENID" value="" size="30" class="required" required="required">
+												<input type="hidden" name="sessid" id="sessid_3" value="e77fa6807c7119d8009db80373e40c97">
+												<input type="hidden" name="auth_service_error" value="">
+												<input type="submit" class="button short" name="" value="Войти">
+											</div>
+										</div>
+										<input type="hidden" name="auth_service_id" value="">
+									</form>
+								</div>
+
+							</div>
+						</div>
+-->
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="forgot_password_frame popup jqmID6 show" style="z-index: 3000; display: block; margin-left: -210px; top: 434.5px; opacity: 1;">
+		<div class="popup-intro">
+			<div class="pop-up-title">Забыли пароль?</div>
+		</div>
+		<a class="jqmClose close"><i></i></a>
+		<div class="form-wr">
+			<form name="REPLIERZZtH" id="REPLIERZZtH" method="post" action="" novalidate="novalidate">
+
+				<div class="r form-control bg">
+					<label class="" for="USER_LOGIN_POPUP">E-mail <span class="star">*</span></label>
+					<input type="text" name="" id="USER_LOGIN_POPUP" class="required" maxlength="50" value="" placeholder="" autocomplete="on" tabindex="1" aria-required="true">
+				</div>
+
+				<div class="but-r clearfix">
+					<!--noindex-->
+					<button class="button short" type="submit" id="reviews_form_button" name="reviews_form_button" value="Отправить"><span>Отправить</span></button>
+					<!--/noindex-->
+				</div>
+
+			</form>
+			<div class="forgot_password_result" id="reviews_result">
+				<div class="forgot_password_result_success">Пароль выслан</div>
+				<div class="forgot_password_result_fail">Ошибка!</div>
+				<div class="forgot_password_result_text">Контрольная строка, а также ваши регистрационные данные были высланы на е-mail. Пожалуйста, дождитесь письма, чтобы восстановить данные.</div>
+			</div>
+		</div>
+	</div>
+
 </body>
 
 <!-- Mirrored from provance.flex.by/catalog/odezhda/zhenskaya_odezhda/236/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Jun 2016 13:12:26 GMT -->

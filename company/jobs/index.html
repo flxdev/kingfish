@@ -68,6 +68,7 @@
 </head>
 
 <body id="main">
+<div class="jqmOverlay" style="height: 100%; width: 100%; position: fixed; left: 0px; top: 0px; z-index: 2999; opacity: 0.5;"></div>
 	<div id="panel"></div>
 	<script type="text/javascript">
 		var arMShopOptions = [];
@@ -1167,6 +1168,62 @@
 	</footer>
 	<div id="bxdynamic_basketitems-block"></div>
 	<div id="content_new"></div>
+	
+	<div class="cv_frame popup jqmID6 show" style="z-index: 3000; display: block; margin-left: -243px; top: 434.5px; opacity: 1;">
+		<div class="popup-intro">
+			<div class="pop-up-title">Отзыв</div>
+		</div>
+		<a class="jqmClose close"><i></i></a>
+		<div class="form-wr">
+			<form name="REPLIERZZtH" id="REPLIERZZtH" method="post" action="" novalidate="novalidate">
+
+				<div class="form-control bg">
+					<label class="description">
+						Ваше имя <span class="star">*</span> </label>
+					<input type="text" name="" value="" class="inputtext" id="reviews_id_FIO" required="">
+				</div>
+				<div class="form-control">
+					<label>
+							<span>Телефон&nbsp;<span class="star">*</span></span></label>
+								<input type="text" class="phone" data-sid="PHONE" required="" name="form_text_28" value="" size="0" aria-required="true">			
+				</div>
+				<div class="form-control bg">
+					<label class="description">
+						E-mail</label>
+					<input type="text" name="" value="" class="inputtext" id="">
+				</div>
+				<div class="form-control bg">
+					<label class="description">
+						Желаемая должность <span class="star">*</span> </label>
+					<input type="text" name="" value="" class="inputtext" id="" required="">
+				</div>
+				
+
+				<div class="reviews-reply-field reviews-reply-field-upload">
+
+					<div class="reviews-upload-info" id="upload_files_info_ZZtH">
+						<span>Прикрепить резюме<span class="star">*</span> </span>
+					</div>
+					<label class="uploadbutton" id="upload_files_0_ZZtH">
+						<div class="button">Обзор</div>
+						<div class="input">Выберите файл</div>
+						<input type="file" onchange="this.previousSibling.previousSibling.innerHTML = this.value">
+					</label>
+				</div>
+
+				<div class="but-r clearfix">
+					<!--noindex-->
+					<button class="button short" type="submit" id="reviews_form_button" name="reviews_form_button" value="Отправить"><span>Отправить</span></button>
+					<!--/noindex-->
+				</div>	</form>
+			<div class="cv_result" id="reviews_result">
+				<div class="cv_result_success">Спасибо</div>
+				<div class="cv_result_fail">Ошибка!</div>
+				<div class="cv_result_text">Благодарим вас за проявленный интерес к нашей компании. Мы изучим ваше резюме и свяжемся с вами в ближайшее время.</div>
+			</div>
+		</div>
+	</div>
+	
 </body>
 
 <!-- Mirrored from provance.flex.by/company/jobs/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 16 Jun 2016 12:55:41 GMT -->

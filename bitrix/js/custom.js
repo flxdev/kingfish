@@ -22,7 +22,21 @@ $(document).ready(function(){
 		initMapServ();
     })
 	
-
+	if($('.reviews_result').is(':visible')){
+		$('.popup-intro').css('display','none');
+	}
+	
+	if($('.forgot_password_result').is(':visible')){
+		$('.popup-intro').css('display','none');
+	}
+	
+	if($('.cv_result').is(':visible')){
+		$('.popup-intro').css('display','none');
+	}
+	
+	
+	
+	
 	
 	
 	
