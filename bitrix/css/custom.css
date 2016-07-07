@@ -139,7 +139,7 @@ a:hover,
 .header_wrap .top-h-row .menu li > a:hover, 
 .top-h-row .menu li.current > a,
 ul.menu .child .child_wrapp > a:hover{
-	color: #03396b !important;
+	color: #03396b;
 }
 
 ul.menu .child {
@@ -486,7 +486,8 @@ body #header ul.menu.bottom li .child .child_wrapp > .right_block{
 	overflow: hidden;
 }
 
-body #header ul.menu.bottom li .child .child_wrapp > .right_block > a{
+body #header ul.menu.bottom li .child .child_wrapp > .right_block > a,
+body #header ul.menu.bottom li .child .child_wrapp > .right_block > ul > li > a{
 	white-space: normal;
 	float: left;
 	width: 33.333%;
@@ -496,9 +497,38 @@ body #header ul.menu.bottom li .child .child_wrapp > .right_block > a{
 	line-height: 26px;
 	letter-spacing: 0.03em;
 	padding: 10px 0;
+	box-sizing: border-box;
 }
 
-body .wrapper.has_menu #header ul.menu li .child.submenu .child_wrapp a:not(.title):hover{
+body #header ul.menu.bottom li .child .child_wrapp > .right_block > ul{
+	margin: 0;
+	width: 100%;
+}
+
+body #header ul.menu.bottom li .child .child_wrapp > .right_block > ul > li{
+	width: 33.333%;
+	box-sizing: border-box;
+	margin: 0;
+	float: left;
+}
+
+body #header ul.menu.bottom li .child .child_wrapp > .right_block > ul > li > a{
+	width: 100%;
+}
+
+body #header ul.menu.bottom li .child .child_wrapp > .right_block > ul > li > .sub_submenu > a{
+	display: block;
+	color: #222;
+	font-family: 'Conv_MuseoSansCyrl_700', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 26px;
+	letter-spacing: 0.03em;
+	padding: 8px 0;
+}
+
+body .wrapper.has_menu #header ul.menu li .child.submenu .child_wrapp a:not(.title):hover,
+body #header ul.menu.bottom li .child .child_wrapp > .right_block > a:hover,
+body #header ul.menu.bottom li .child .child_wrapp > .right_block > ul > li > a:hover{
 	color: #03396b;
 }
 
@@ -512,6 +542,10 @@ body #header ul.menu.bottom li .child .child_wrapp > .left_block > .item{
 	transition: background 0.3s ease-out;
 }
 
+body #header ul.menu.bottom li.more .child .child_wrapp > .left_block > .item{
+	background: #c7f4f2;
+}
+
 body #header ul.menu.bottom li .child .child_wrapp > .left_block > .item:hover{
 	background: #03396b;
 }
@@ -520,6 +554,11 @@ body #header ul.menu.bottom li .child .child_wrapp > .left_block > .item img{
 	position: absolute;
     right: 0;
     top: 3px;
+}
+
+body #header ul.menu.bottom li.more .child .child_wrapp > .left_block > .item img{
+	right: 20px;
+    top: 20px;
 }
 
 body #header ul.menu.bottom li .child .child_wrapp > .left_block > .item .text{
@@ -5818,4 +5857,15 @@ textarea:hover{
 
 .reviews-upload-info .star{
 	color: #e62222 !important;
+}
+
+
+/* media queries */
+
+
+@media (max-width: 1180px){
+	.basket_wrapp .header-compare-block,
+	.basket_wrapp .wraps_icon_block {
+		margin: 0px 25px 0px 0px;
+	}
 }
