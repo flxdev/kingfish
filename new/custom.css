@@ -3939,8 +3939,8 @@ body .basket_wrapp .module-cart td.count-cell{
 }
 
 .left_menu > li:first-child{
-	border-top-left-radius: 0px !important;
-	border-top-right-radius: 0px !important;
+	border-top-left-radius: 10px !important;
+	border-top-right-radius: 10px !important;
 }
 
 .left_menu > li.item:last-child,
