@@ -6778,3 +6778,18 @@ body .counter_wrapp .counter_block {
 .phones > span .js_feedback:hover{
 	color: #03396b;
 }
+
+/* 04.05.2017 Andrei Kurlyandchik */
+#header .middle-h-row .center_block .search #title-searchs-input{
+	padding: 8px 93px 7px 13px;
+}
+
+.popup textarea{
+	height: 100px;
+	resize: none;
+	min-height: 100px;
+}
+
+.middle_phone .phones .order_wrap_btn {
+	padding-left: 20px;
+}

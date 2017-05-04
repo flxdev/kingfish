@@ -3091,18 +3091,29 @@
 						</ul>
 					</div>
 				</div>
+				/* 04.05.2017 Andrei Kurlyandchik */
 				<script>
-					$(".brands_slider_wrapp").flexslider({
-						animation: "slide",
-						selector: ".brands_slider > li",
-						slideshow: false,
-						animationSpeed: 600,
-						directionNav: true,
-						controlNav: false,
-						pauseOnHover: true,
-						itemWidth: 179,
-						animationLoop: true,
-						controlsContainer: ".brands_slider_navigation",
+					var timeoutSlideManufacturer;
+					InitFlexSliderManufacturer = function () {
+						$(".brands_slider_wrapp").flexslider({
+							animation: "slide",
+							selector: ".brands_slider > li",
+							slideshow: false,
+							animationSpeed: 600,
+							directionNav: true,
+							controlNav: false,
+							pauseOnHover: true,
+							itemWidth: 179,
+							animationLoop: true,
+							controlsContainer: ".brands_slider_navigation",
+						});
+					}
+
+					$(document).ready(function () {
+						$(window).resize(function () {
+							clearTimeout(timeoutSlideManufacturer);
+							timeoutSlide = setTimeout(InitFlexSliderManufacturer(), 50);
+						})
 					});
 				</script>
 			</div>
